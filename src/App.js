@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import AppLayout from './layout'
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        Bulls and Cows
+      <div className="app">
+        <AppLayout />
       </div>
     )
   }
