@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Display from '../components/Display'
-
+import Game from '../pages/Game'
 
 const StyledAppLayout = styled.div`
   height: 100vh;
@@ -27,7 +26,9 @@ const NavButton = styled.button`
 `
 
 const Content = styled.main`
+  box-sizing: border-box;
   padding: 0 20px 20px 20px;
+  min-height: calc(100vh - 76px);
 `
 
 class AppLayout extends Component {
@@ -39,7 +40,7 @@ class AppLayout extends Component {
           <NavButton>Settings</NavButton>
         </NavBar>
         <Content>
-          <Display />
+          <Game />
         </Content>
       </StyledAppLayout>
     )
