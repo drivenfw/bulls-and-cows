@@ -11,8 +11,8 @@ const StyledDisplay = styled.div`
   overflow-y: scroll;
 `
 
-const Display = () =>
-  <StyledDisplay />
+const Display = ({ className }) =>
+  <StyledDisplay className={className} />
 
 export default Display
 

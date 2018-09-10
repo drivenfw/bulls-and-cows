@@ -2,13 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Display from '../../components/Display'
+import Controls from './Controls'
 
 
-const StyledGame = styled.div``
+const StyledDisplay = styled(Display)``
+
+const StyledGame = styled.div`
+  & > ${StyledDisplay} {
+    margin-bottom: 20px;
+  } 
+`
 
 const Game = () =>
   <StyledGame>
-    <Display />
+    <StyledDisplay />
+    <Controls />
   </StyledGame>
 
 export default Game
