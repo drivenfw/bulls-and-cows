@@ -8,6 +8,7 @@ const StyledAppLayout = styled.div`
 `
 
 const NavBar = styled.nav`
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -23,6 +24,17 @@ const NavButton = styled.button`
   border-radius: 100px / 70px;
   box-shadow: 0 0 5px 3px lightgrey;
   background: white;
+  transition: transform 50ms ease-in;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(1.05);
+    border-width: 2px;
+    background: lightgrey;
+  }
 `
 
 const Content = styled.main`
