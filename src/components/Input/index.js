@@ -4,13 +4,14 @@ import styled from 'styled-components'
 
 const StyledInput = styled.div`
   width: 40px;
-  margin: 5px;
+  padding: 5px;
+  overflow: hidden;
 `
 
 const UpButton = styled.div`
   font-size: 2em;
   text-align: center;
-  transform: scaleX(1.6) scaleY(1.4);
+  transform: scaleX(2.2) scaleY(0.9);
   color: grey;
   cursor: pointer;
   user-select: none;
@@ -20,7 +21,7 @@ const UpButton = styled.div`
   transition: all 0.1s ease;
 
   &:active {
-    transform: scaleX(1.6) scaleY(1.4) translateY(1px);
+    transform: scaleX(2.2) scaleY(0.8) translateY(1px);
     text-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
 `
@@ -29,7 +30,6 @@ const ScrollingInput = styled.div`
   box-sizing: border-box;
   width: 40px;
   height: 70px;
-  margin: 10px 0 15px 0;
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 0 0 5px 3px lightgrey;
@@ -38,26 +38,25 @@ const ScrollingInput = styled.div`
 const DownButton = styled.div`
   font-size: 2em;
   text-align: center;
-  transform: scaleX(1.6) scaleY(1.4);
+  transform: rotate(180deg) scaleX(2.2) scaleY(0.8);
   color: grey;
   cursor: pointer;
   user-select: none;
   text-shadow:
-    0 -2px 7px rgba(255,255,255,0.8),
-    0 -5px 5px rgba(0,0,0,0.3);
+    0 2px 7px rgba(255,255,255,0.8),
+    0 5px 5px rgba(0,0,0,0.4);
   transition: all 0.1s ease;
 
   &:active {
-    transform: scaleX(1.6) scaleY(1.4) translateY(-1px);
-    text-shadow: 0 -2px 3px rgba(0,0,0,0.3);
+    transform: rotate(180deg) scaleX(2.2) scaleY(0.8) translateY(1px);
+    text-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
 `
-
 const Input = () =>
   <StyledInput>
-    <UpButton>▲</UpButton>
+    <UpButton>⌃</UpButton>
     <ScrollingInput />
-    <DownButton>▼</DownButton>
+    <DownButton>⌃</DownButton>
   </StyledInput>
 
 export default Input
