@@ -7,11 +7,10 @@ import Input from '../../components/Input'
 const StyledControls = styled.div`
   display: flex;
   justify-content: center;
-  height: calc(100vh - 338px);
 `
 
-const Controls = () => 
-  <StyledControls>
+const Controls = ({ className }) => 
+  <StyledControls className={className}>
     <Input />
     <Input />
     <Input />
