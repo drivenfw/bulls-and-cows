@@ -23,42 +23,60 @@ const SecondHand = styled.div`
 `
 
 class Clock extends Component {
-  state = { secondHand: false }
+  state = { 
+    rootElWidth: 1,
+    rootElHeight: 1
+  }
 
-  clockRef = React.createRef()
+  rootEl = React.createRef()
+
+  widthChange = () => {
+    const { rootElWidth, rootElHeight } = this.state
+    const { clientWidth, clientHeight } = this.rootEl.current
+
+    if (rootElWidth !== clientWidth || rootElHeight !== clientHeight) {
+      this.setState({
+        rootElWidth: clientWidth,
+        rootElHeight: clientHeight
+      }) 
+    }
+  }
 
   componentDidMount() {
-    this.width = this.clockRef.current.clientWidth
-    this.height = this.clockRef.current.clientHeight
+    window.addEventListener('resize', this.widthChange)
+    this.setState({ 
+      rootElWidth: this.rootEl.current.clientWidth,
+      rootElHeight: this.rootEl.current.clientHeight
+    })
+  }
 
-    this.setState({ secondHand: true })
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.widthChange)
   }
 
   render() {
-    const { secondHand } = this.state
+    const { rootElWidth, rootElHeight } = this.state
 
     const time = granularTime(this.props.timeSecs)
     const angleDeg = 6 * time.secs
     const angleRad = Math.PI / 180 * angleDeg
-    const width = handLength(this.width, this.height, angleRad)
-    const translateX = this.width / 2 - width - 5
+    const width = handLength(rootElWidth, rootElHeight, angleRad)
+    const translateX = rootElWidth / 2 - width - 5
 
     return (
-      <StyledClock innerRef={this.clockRef}>
-        {secondHand && 
-          <SecondHand 
-            rotate={angleDeg} 
-            width={width}
-            translateX={translateX}
-          />
-        }
+      <StyledClock innerRef={this.rootEl}>
+        <SecondHand 
+          rotate={angleDeg} 
+          width={width}
+          translateX={translateX}
+        />
       </StyledClock>
     )
   }
 }
 
 Clock.defaultProps = {
-  timeSecs: 43
+  timeSecs: 27
 }
 
 export default Clock
