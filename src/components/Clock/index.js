@@ -19,7 +19,8 @@ const SecondHand = styled.div`
   transform-origin: 100%;
   transform: 
     translateX(${props => props.translateX}px) 
-    translateY(34px) rotate(${props => 90 + props.rotate}deg);
+    translateY(34px) 
+    rotate(${props => 90 + props.rotate}deg);
 `
 
 class Clock extends Component {
@@ -76,7 +77,7 @@ class Clock extends Component {
 }
 
 Clock.defaultProps = {
-  timeSecs: 27
+  timeSecs: 43
 }
 
 export default Clock
