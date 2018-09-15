@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Carousel from '../Carousel'
+
 
 const StyledInput = styled.div`
   width: 40px;
@@ -26,15 +28,6 @@ const UpButton = styled.div`
   }
 `
 
-const ScrollingInput = styled.div`
-  box-sizing: border-box;
-  width: 40px;
-  height: 70px;
-  border: 1px solid grey;
-  border-radius: 2px;
-  box-shadow: 0 0 5px 3px lightgrey;
-`
-
 const DownButton = styled.div`
   font-size: 2em;
   text-align: center;
@@ -55,7 +48,7 @@ const DownButton = styled.div`
 const Input = () =>
   <StyledInput>
     <UpButton>⌃</UpButton>
-    <ScrollingInput />
+    <Carousel />
     <DownButton>⌃</DownButton>
   </StyledInput>
 
