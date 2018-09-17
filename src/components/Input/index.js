@@ -45,12 +45,56 @@ const DownButton = styled.div`
     text-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
 `
-const Input = () =>
-  <StyledInput>
-    <UpButton>⌃</UpButton>
-    <Carousel />
-    <DownButton>⌃</DownButton>
-  </StyledInput>
+
+const Value = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 1.7em;
+`
+
+class Input extends React.Component {
+  state = { direction: 'up', index: 0 }
+
+  options = Array.from({ length: 9 }, (_, i) => i + 1)
+
+  up = () => {
+    this.setState(({ index }) => ({
+      direction: 'down',
+      index: index < this.options.length - 1 ? index + 1 : 0
+    }))
+  }
+
+  down = () => {
+    this.setState(({ index }) => ({
+      direction: 'up',
+      index: index > 0 ? index - 1 : this.options.length - 1
+    })) 
+  }
+
+  get value() {
+    return this.options[this.state.index]
+  }
+
+  render() {
+    const { direction, index } = this.state
+    const value = this.options[index]
+    const valueEl = <Value key={value}>{value}</Value>
+
+    return (
+      <StyledInput>
+        <UpButton onClick={this.up}>⌃</UpButton>
+        <Carousel direction={direction}>
+          {valueEl}
+        </Carousel>
+        <DownButton onClick={this.down}>⌃</DownButton>
+      </StyledInput>
+    )
+  }
+}
 
 export default Input
 
