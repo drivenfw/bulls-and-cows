@@ -50,8 +50,18 @@ const StyledCarousel = styled.div`
   }
 `
 
-const Carousel = ({ children, direction }) => 
-  <StyledCarousel>
+export const Value = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 1.7em;
+`
+
+const Carousel = ({ children, className, direction }) => 
+  <StyledCarousel className={className}>
     <TransitionGroup>
       {React.Children.map(children, child => (
         <CSSTransition

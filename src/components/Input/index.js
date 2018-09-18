@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Carousel from '../Carousel'
+import Carousel, { Value } from '../Carousel'
 
 
 const StyledInput = styled.div`
@@ -44,16 +44,6 @@ const DownButton = styled.div`
     transform: rotate(180deg) scaleX(2.2) scaleY(0.8) translateY(1px);
     text-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
-`
-
-const Value = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  font-size: 1.7em;
 `
 
 class Input extends React.Component {
