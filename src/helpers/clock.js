@@ -15,3 +15,10 @@ export const handLength = (clockWidth, clockHeight, angleRad) => {
     - 10
 }
 
+export const paddedNumber = (number, paddingSize) => {
+  const padding = [...Array(paddingSize)]
+    .map(p => 0).join('')
+
+  return (padding + number).slice(-paddingSize)
+}
+

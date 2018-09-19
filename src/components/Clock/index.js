@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import { granularTime, handLength } from '../../helpers/clock'
+import Carousel, { Value } from '../Carousel'
+
+import { granularTime, handLength, paddedNumber } from '../../helpers/clock'
 
 
 const StyledClock = styled.div`
@@ -10,17 +12,45 @@ const StyledClock = styled.div`
   border-radius: 50%;
   box-shadow: 0 0 5px 3px lightgrey;
   padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`
+
+const StyledCarousel = styled(Carousel)`
+  width: 20px;
+  height: 30px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 3px 1px lightgrey;
+`
+
+const StyledValue = styled(Value)`
+  color: grey;
+`
+
+const CarouselGroup = styled.div`
+  display: flex;
+  & > ${StyledCarousel}:first-child {
+    margin-right: 3px;
+  }
+`
+
+const Counters = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
 `
 
 const SecondHand = styled.div`
   width: ${props => props.width}px;
   height: 1px;
-  background:grey;
+  background: grey;
   transform-origin: 100%;
   transform: 
-    translateX(${props => props.translateX}px) 
-    translateY(34px) 
+    translateX(-50%)
     rotate(${props => 90 + props.rotate}deg);
+  position: absolute;
 `
 
 class Clock extends Component {
@@ -59,17 +89,35 @@ class Clock extends Component {
     const { rootElWidth, rootElHeight } = this.state
 
     const time = granularTime(this.props.timeSecs)
+    const hours = paddedNumber(time.hours, 2).split('').map(s => parseInt(s, 10))
+    const mins = paddedNumber(time.mins, 2).split('').map(s => parseInt(s, 10))
     const angleDeg = 6 * time.secs
     const angleRad = Math.PI / 180 * angleDeg
     const width = handLength(rootElWidth, rootElHeight, angleRad)
-    const translateX = rootElWidth / 2 - width - 5
 
     return (
       <StyledClock innerRef={this.rootEl}>
+        <Counters>
+          <CarouselGroup>
+            <StyledCarousel direction="down">
+              <StyledValue key={hours[0]}>{hours[0]}</StyledValue>
+            </StyledCarousel>
+            <StyledCarousel direction="down">
+              <StyledValue key={hours[1]}>{hours[1]}</StyledValue>
+            </StyledCarousel>
+          </CarouselGroup>
+          <CarouselGroup>
+            <StyledCarousel direction="down">
+              <StyledValue key={mins[0]}>{mins[0]}</StyledValue>
+            </StyledCarousel>
+            <StyledCarousel direction="down">
+              <StyledValue key={mins[1]}>{mins[1]}</StyledValue>
+            </StyledCarousel>
+          </CarouselGroup>
+        </Counters>
         <SecondHand 
           rotate={angleDeg} 
           width={width}
-          translateX={translateX}
         />
       </StyledClock>
     )
@@ -77,7 +125,7 @@ class Clock extends Component {
 }
 
 Clock.defaultProps = {
-  timeSecs: 43
+  timeSecs: 44
 }
 
 export default Clock
