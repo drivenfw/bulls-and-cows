@@ -7,7 +7,7 @@ import { granularTime, handLength, paddedNumber } from '../../helpers/clock'
 
 
 const StyledClock = styled.div`
-  height: 70px;
+  height: 65px;
   border: 1px solid grey;
   border-radius: 50%;
   box-shadow: 0 0 5px 3px lightgrey;
@@ -27,6 +27,7 @@ const StyledCarousel = styled(Carousel)`
 
 const StyledValue = styled(Value)`
   color: grey;
+  font-size: 1.5em;
 `
 
 const CarouselGroup = styled.div`
