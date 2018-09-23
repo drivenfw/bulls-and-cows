@@ -10,13 +10,10 @@ const StyledControls = styled(Controls)``
 const StyledDisplay = styled(Display)``
 
 const StyledGame = styled.div`
-  & > ${StyledControls} {
-    margin-bottom: 10px;
-  }
-
-  & > ${StyledDisplay} {
-    margin-bottom: 10px;
-  } 
+  height: calc(100vh - 96px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const Game = () =>
