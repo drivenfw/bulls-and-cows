@@ -5,10 +5,10 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 const StyledCarousel = styled.div`
   box-sizing: border-box;
-  width: 40px;
-  height: 70px;
+  width: 35px;
+  height: 60px;
   border: 1px solid grey;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 0 0 5px 3px lightgrey;
   position: relative;
   overflow: hidden;
@@ -57,7 +57,7 @@ export const Value = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  font-size: 1.7em;
+  font-size: 2em;
 `
 
 const Carousel = ({ children, className, direction }) => 
