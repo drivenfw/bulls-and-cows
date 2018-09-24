@@ -5,13 +5,12 @@ import Carousel, { Value } from '../Carousel'
 
 
 const StyledInput = styled.div`
-  width: 40px;
-  padding: 5px;
+  padding: 4px;
   overflow: hidden;
 `
 
 const UpButton = styled.div`
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
   transform: scaleX(2.2) scaleY(0.9);
   color: grey;
@@ -29,7 +28,7 @@ const UpButton = styled.div`
 `
 
 const DownButton = styled.div`
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
   transform: rotate(180deg) scaleX(2.2) scaleY(0.8);
   color: grey;
