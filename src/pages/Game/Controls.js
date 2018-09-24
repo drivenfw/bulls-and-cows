@@ -28,6 +28,11 @@ const StyledButton = styled(Button)`
   &:active {
     transform: scale(1.1);
   }
+
+  @media (min-width: 375px) {
+    width: 50px;
+    height: 50px;
+  }
 `
 
 const ButtonGroup = styled.div`

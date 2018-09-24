@@ -6,19 +6,24 @@ import Game from '../pages/Game'
 
 
 const StyledAppLayout = styled.div`
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const NavBar = styled.nav`
-  height: 36px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 20px;
 `
 
+const StyledButton = styled(Button)`
+  @media (min-width: 375px) { 
+    width: 140px; 
+    font-size: 1.2em;
+  }
+`
+
 const Content = styled.main`
-  box-sizing: border-box;
   padding: 0 20px 20px 20px;
 `
 
@@ -27,8 +32,8 @@ class AppLayout extends Component {
     return (
       <StyledAppLayout>
         <NavBar>
-          <Button>Game</Button>
-          <Button>Settings</Button>
+          <StyledButton>Game</StyledButton>
+          <StyledButton>Settings</StyledButton>
         </NavBar>
         <Content>
           <Game />

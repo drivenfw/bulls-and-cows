@@ -7,7 +7,7 @@ import { granularTime, handLength, paddedNumber } from '../../helpers/clock'
 
 
 const StyledClock = styled.div`
-  height: 65px;
+  height: 70px;
   border: 1px solid grey;
   border-radius: 50%;
   box-shadow: 0 0 5px 3px lightgrey;
@@ -23,11 +23,17 @@ const StyledCarousel = styled(Carousel)`
   height: 30px;
   border: 1px solid lightgrey;
   box-shadow: 0 0 3px 1px lightgrey;
+  font-size: 1.5em;
+
+  @media (min-width: 375px) {
+    width: 25px;
+    height: 35px;
+    font-size: 1.8em;
+  }
 `
 
 const StyledValue = styled(Value)`
   color: grey;
-  font-size: 1.5em;
 `
 
 const CarouselGroup = styled.div`
@@ -87,6 +93,7 @@ class Clock extends Component {
   }
 
   render() {
+    const { className } = this.props
     const { rootElWidth, rootElHeight } = this.state
 
     const time = granularTime(this.props.timeSecs)
@@ -97,7 +104,10 @@ class Clock extends Component {
     const width = handLength(rootElWidth, rootElHeight, angleRad)
 
     return (
-      <StyledClock innerRef={this.rootEl}>
+      <StyledClock 
+        innerRef={this.rootEl}
+        className={className}
+      >
         <Counters>
           <CarouselGroup>
             <StyledCarousel direction="down">

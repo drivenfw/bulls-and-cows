@@ -10,6 +10,7 @@ const StyledCarousel = styled.div`
   border: 1px solid grey;
   border-radius: 3px;
   box-shadow: 0 0 5px 3px lightgrey;
+  font-size: 2em;
   position: relative;
   overflow: hidden;
 
@@ -57,7 +58,6 @@ export const Value = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  font-size: 2em;
 `
 
 const Carousel = ({ children, className, direction }) => 

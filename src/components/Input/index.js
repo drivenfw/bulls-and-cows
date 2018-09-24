@@ -4,9 +4,19 @@ import styled from 'styled-components'
 import Carousel, { Value } from '../Carousel'
 
 
+const StyledCarousel = styled(Carousel)``
+
 const StyledInput = styled.div`
   padding: 4px;
   overflow: hidden;
+
+  @media (min-width: 375px) {
+    & > ${StyledCarousel} {
+      width: 40px;
+      height: 75px;
+      font-size: 2.5em;
+    }
+  }
 `
 
 const UpButton = styled.div`
@@ -25,6 +35,10 @@ const UpButton = styled.div`
     transform: scaleX(2.2) scaleY(0.8) translateY(1px);
     text-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
+
+  @media (min-width: 375px) {
+    font-size: 2em;
+  }
 `
 
 const DownButton = styled.div`
@@ -42,6 +56,10 @@ const DownButton = styled.div`
   &:active {
     transform: rotate(180deg) scaleX(2.2) scaleY(0.8) translateY(1px);
     text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  }
+
+  @media (min-width: 375px) {
+    font-size: 2em;
   }
 `
 
@@ -76,9 +94,9 @@ class Input extends React.Component {
     return (
       <StyledInput>
         <UpButton onClick={this.up}>⌃</UpButton>
-        <Carousel direction={direction}>
+        <StyledCarousel direction={direction}>
           {valueEl}
-        </Carousel>
+        </StyledCarousel>
         <DownButton onClick={this.down}>⌃</DownButton>
       </StyledInput>
     )
