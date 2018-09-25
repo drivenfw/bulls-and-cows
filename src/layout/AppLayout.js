@@ -6,14 +6,20 @@ import Game from '../pages/Game'
 
 
 const StyledAppLayout = styled.div`
-  min-height: 100vh;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  margin: 0 auto;
 `
 
 const NavBar = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px;
+
+  @media (min-width: 375px) {
+    justify-content: space-around;
+  }
 `
 
 const StyledButton = styled(Button)`
@@ -21,10 +27,18 @@ const StyledButton = styled(Button)`
     width: 140px; 
     font-size: 1.2em;
   }
+
+  @media (min-width: 550px) {
+    font-size: 1em;
+  }
 `
 
 const Content = styled.main`
-  padding: 0 20px 20px 20px;
+  padding: 0 10px 20px 10px;
+
+  @media (min-width: 375px) {
+    padding: 0 20px 20px 20px;
+  }
 `
 
 class AppLayout extends Component {

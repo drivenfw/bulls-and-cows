@@ -13,20 +13,44 @@ const StyledDisplay = styled(Display)`
     height: 200px;
     font-size: 1.4em;
   }
+
+  @media (min-width: 550px) {
+    height: 100px;
+  }
 `
 
 const StyledControls = styled(Controls)`
   margin-bottom: 10px;
 `
 
+const TopGroup = styled.div`
+  @media (min-width: 550px) {
+    display: flex;
+    margin-bottom: 10px;
+
+    & > ${StyledDisplay} {
+      width: 160px;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+
+    & > ${StyledControls} {
+      margin-bottom: 0;
+    }
+  }
+`
+
 const StyledClock = styled(Clock)`
   @media (min-width: 375px) {
     height: 90px;
   }
+
+  @media (min-width: 550px) {
+    height: 70px;
+  }
 `
 
 const StyledGame = styled.div`
-  min-height: calc(100vh - 96px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start
@@ -34,8 +58,10 @@ const StyledGame = styled.div`
 
 const Game = () =>
   <StyledGame>
-    <StyledDisplay />
-    <StyledControls />
+    <TopGroup>
+      <StyledDisplay />
+      <StyledControls />
+    </TopGroup>
     <StyledClock />
   </StyledGame>
 

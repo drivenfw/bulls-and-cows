@@ -33,6 +33,11 @@ const StyledButton = styled(Button)`
     width: 50px;
     height: 50px;
   }
+
+  @media (min-width: 550px) {
+    width: 43px;
+    height: 43px;
+  }
 `
 
 const ButtonGroup = styled.div`
@@ -44,6 +49,8 @@ const ButtonGroup = styled.div`
 const InputGroup = styled.div`
   display: flex;
   justify-content: center;
+  margin-left: 15px;
+  margin-right: 15px;
 `
 
 const Controls = ({ className }) => 
