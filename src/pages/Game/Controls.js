@@ -38,6 +38,11 @@ const StyledButton = styled(Button)`
     width: 43px;
     height: 43px;
   }
+
+  @media (min-width: 850px) {
+    width: 50px;
+    height: 50px;
+  }
 `
 
 const ButtonGroup = styled.div`

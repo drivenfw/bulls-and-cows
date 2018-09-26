@@ -30,6 +30,12 @@ const StyledCarousel = styled(Carousel)`
     height: 35px;
     font-size: 1.8em;
   }
+
+  @media (min-width: 850px) {
+    width: 30px;
+    height: 40px;
+    font-size: 2em;
+  }
 `
 
 const StyledValue = styled(Value)`
@@ -47,6 +53,10 @@ const Counters = styled.div`
   display: flex;
   justify-content: space-between;
   width: 180px;
+
+  @media (min-width: 850px) {
+    width: 250px;
+  }
 `
 
 const SecondHand = styled.div`

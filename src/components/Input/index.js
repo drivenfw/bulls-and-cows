@@ -25,6 +25,14 @@ const StyledInput = styled.div`
       font-size: 2em;
     }
   }
+
+  @media (min-width: 850px) {
+    & > ${StyledCarousel} {
+      width: 45px;
+      height: 80px;
+      font-size: 3em;
+    }
+  }
 `
 
 const UpButton = styled.div`
@@ -51,6 +59,10 @@ const UpButton = styled.div`
   @media (min-width: 550px) {
     font-size: 1.8em;
   }
+
+  @media (min-width: 850px) {
+    font-size: 2.3em;
+  }
 `
 
 const DownButton = styled.div`
@@ -76,6 +88,10 @@ const DownButton = styled.div`
 
   @media (min-width: 550px) {
     font-size: 1.8em;
+  }
+
+  @media (min-width: 850px) {
+    font-size: 2.3em;
   }
 `
 
