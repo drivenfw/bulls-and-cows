@@ -25,7 +25,7 @@ const StyledDisplay = styled(Display)`
     width: 300px;
     height: 200px;
     margin-right: 30px;
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 `
 
