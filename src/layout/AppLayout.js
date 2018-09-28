@@ -12,16 +12,23 @@ const StyledAppLayout = styled.div`
 `
 
 const NavBar = styled.nav`
+  height: 36px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
 
   @media (min-width: 375px) {
+    height: 45px;
     justify-content: space-around;
   }
 
+  @media (min-width: 550px) {
+    height: 36px;
+  }
+
   @media (min-width: 850px) {
+    height: 45px;
     padding: 30px;
   }
 `
