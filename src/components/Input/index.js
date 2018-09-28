@@ -20,7 +20,7 @@ const StyledInput = styled.div`
 
   @media (min-width: 550px) {
     & > ${StyledCarousel} {
-      width: 35px;
+      width: 30px;
       height: 50px;
       font-size: 2em;
     }
@@ -57,7 +57,7 @@ const UpButton = styled.div`
   }
 
   @media (min-width: 550px) {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 
   @media (min-width: 850px) {
@@ -87,7 +87,7 @@ const DownButton = styled.div`
   }
 
   @media (min-width: 550px) {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 
   @media (min-width: 850px) {

@@ -35,8 +35,8 @@ const StyledButton = styled(Button)`
   }
 
   @media (min-width: 550px) {
-    width: 43px;
-    height: 43px;
+    width: 40px;
+    height: 40px;
   }
 
   @media (min-width: 850px) {
