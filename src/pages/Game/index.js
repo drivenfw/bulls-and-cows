@@ -24,6 +24,7 @@ const StyledDisplay = styled(Display)`
   @media (min-width: 850px) {
     width: 300px;
     height: 200px;
+    margin-right: 30px;
     font-size: 1.2em;
   }
 `
@@ -54,7 +55,7 @@ const StyledClock = styled(Clock)`
 
   @media (min-width: 850px) {
     height: 90px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 `
 

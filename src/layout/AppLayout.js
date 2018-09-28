@@ -8,7 +8,10 @@ import Game from '../pages/Game'
 const StyledAppLayout = styled.div`
   border: 1px solid lightgrey;
   border-radius: 10px;
-  margin: 20px;
+
+  @media (orientation: portrait) {
+    margin: 20px;
+  }
 `
 
 const NavBar = styled.nav`
@@ -44,6 +47,7 @@ const StyledButton = styled(Button)`
   }
 
   @media (min-width: 850px) {
+    width: 200px;
     font-size: 1.2em;
   }
 `
