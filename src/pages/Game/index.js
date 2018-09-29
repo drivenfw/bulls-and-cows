@@ -10,22 +10,22 @@ const StyledDisplay = styled(Display)`
   margin-bottom: 10px;
 
   @media (min-width: 375px) {
-    height: 200px;
+    height: 180px;
   }
 
   @media (min-width: 550px) {
     width: 180px;
-    height: 180px;
+    height: 168px;
     margin-right: 20px;
     margin-bottom: 0;
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
   @media (min-width: 850px) {
     width: 300px;
-    height: 200px;
+    height: 198px;
     margin-right: 30px;
-    font-size: 1.4em;
+    font-size: 1.375em;
   }
 `
 

@@ -3,19 +3,19 @@ import styled from 'styled-components'
 
 
 const StyledDisplay = styled.div`
-  height: 170px;
+  height: 150px;
   padding: .52em .78em;
   border: 1px solid grey;
   border-radius: 10px;
   box-shadow: inset 0 0 3px 2px lightgrey;
   color: #4D4D4D;
-  font-size: 1.2em;
+  font-size: 1.25em;
 `
 
 const Inner = styled.div`
   width: 86%;
   height: 100%;
-  margin-right: 3%;
+  padding-right: 3%;
   overflow-y: scroll;
   line-height: 1.5;
   display: inline-block;
