@@ -41,6 +41,25 @@ const Button = styled.div`
   transform: scaleX(1.3) scaleY(3);
   cursor: pointer;
   user-select: none;
+  transition: all 0.1s ease;
+`
+
+const UpButton = styled(Button)`
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+
+  &:active {
+    transform: scaleX(1.4) scaleY(3) translateY(1px);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+`
+
+const DownButton = styled(Button)`
+  text-shadow: 0 -2px 5px rgba(0,0,0,0.4);
+
+  &:active {
+    transform: scaleX(1.4) scaleY(3) translateY(-1px);
+    text-shadow: 0 -1px 3px rgba(0,0,0,0.3);
+  }
 `
 
 class Display extends Component {
@@ -50,6 +69,7 @@ class Display extends Component {
   }
 
   getLineHeight = () =>
+    // TODO: if (window.getComputedStyle) - ?
     getComputedStyle(this.innerEl.current).getPropertyValue('line-height')
 
   scrollUp = () => {
@@ -74,8 +94,8 @@ class Display extends Component {
         </Inner>
         <ScrollBar>
           <div>
-            <Button onClick={this.scrollUp}>⬆</Button>
-            <Button onClick={this.scrollDown}>⬇</Button>
+            <UpButton onClick={this.scrollUp}>⬆</UpButton>
+            <DownButton onClick={this.scrollDown}>⬇</DownButton>
           </div>
         </ScrollBar>
       </StyledDisplay>
