@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Carousel, { Value } from '../Carousel'
 
@@ -8,22 +8,28 @@ import { granularTime, handLength, paddedNumber } from '../../helpers/clock'
 
 const StyledClock = styled.div`
   height: 70px;
-  border: 1px solid grey;
   border-radius: 50%;
-  box-shadow: 0 0 5px 3px lightgrey;
   padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+
+  ${({ theme }) => css`
+    border: 1px solid ${theme.primaryColor};
+    box-shadow: 0 0 5px 3px ${theme.primaryColor2};
+  `}
 `
 
 const StyledCarousel = styled(Carousel)`
   width: 20px;
   height: 30px;
-  border: 1px solid lightgrey;
-  box-shadow: 0 0 3px 1px lightgrey;
   font-size: 1.5em;
+
+  ${({ theme }) => css`
+    border: 1px solid ${theme.primaryColor};
+    box-shadow: 0 0 3px 1px ${theme.primaryColor2};
+  `}
 
   @media (min-width: 375px) {
     width: 25px;
@@ -39,7 +45,7 @@ const StyledCarousel = styled(Carousel)`
 `
 
 const StyledValue = styled(Value)`
-  color: grey;
+  color: ${props => props.theme.primaryColor};
 `
 
 const CarouselGroup = styled.div`
@@ -62,7 +68,7 @@ const Counters = styled.div`
 const SecondHand = styled.div`
   width: ${props => props.width}px;
   height: 1px;
-  background: grey;
+  background: ${props => props.theme.primaryColor};
   transform-origin: 100%;
   transform: 
     translateX(-50%)

@@ -6,7 +6,7 @@ import Game from '../pages/Game'
 
 
 const StyledAppLayout = styled.div`
-  border: 1px solid lightgrey;
+  border: 1px solid ${props => props.theme.primaryColor2};
   border-radius: 10px;
 
   @media (orientation: portrait) {

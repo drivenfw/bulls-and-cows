@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Carousel, { Value } from '../Carousel'
 
@@ -39,13 +39,16 @@ const UpButton = styled.div`
   font-size: 1.8em;
   text-align: center;
   transform: scaleX(2.2) scaleY(0.9);
-  color: grey;
   cursor: pointer;
   user-select: none;
-  text-shadow:
-    0 2px 7px rgba(255,255,255,0.8),
-    0 5px 5px rgba(0,0,0,0.4);
   transition: all 0.1s ease;
+
+  ${({ theme }) => css`
+    color: ${theme.primaryColor};
+    text-shadow:
+      0 2px 7px ${theme.primaryColor1},
+      0 5px 5px ${theme.primaryColor2};
+  `}
 
   &:active {
     transform: scaleX(2.2) scaleY(0.8) translateY(1px);
@@ -69,13 +72,16 @@ const DownButton = styled.div`
   font-size: 1.8em;
   text-align: center;
   transform: rotate(180deg) scaleX(2.2) scaleY(0.8);
-  color: grey;
   cursor: pointer;
   user-select: none;
-  text-shadow:
-    0 2px 7px rgba(255,255,255,0.8),
-    0 5px 5px rgba(0,0,0,0.4);
   transition: all 0.1s ease;
+
+  ${({ theme }) => css`
+    color: ${theme.primaryColor};
+    text-shadow:
+      0 2px 7px ${theme.primaryColor1},
+      0 5px 5px ${theme.primaryColor2};
+  `}
 
   &:active {
     transform: rotate(180deg) scaleX(2.2) scaleY(0.8) translateY(1px);

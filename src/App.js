@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import AppLayout from './layout/AppLayout'
+
+import themes from './themes'
 
 
 const StyledApp = styled.div`
@@ -15,7 +17,9 @@ class App extends Component {
   render() {
     return (
       <StyledApp>
-        <AppLayout />
+        <ThemeProvider theme={themes.main}>
+          <AppLayout />
+        </ThemeProvider>
       </StyledApp>
     )
   }

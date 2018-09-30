@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 
@@ -7,12 +7,15 @@ const StyledCarousel = styled.div`
   box-sizing: border-box;
   width: 35px;
   height: 60px;
-  border: 1px solid grey;
   border-radius: 3px;
-  box-shadow: 0 0 5px 3px lightgrey;
   font-size: 2em;
   position: relative;
   overflow: hidden;
+
+  ${({ theme }) => css`
+    border: 1px solid ${theme.primaryColor};
+    box-shadow: 0 0 5px 3px ${theme.primaryColor2};
+  `}
 
   & .turn-down-enter {
     top: -100%;
@@ -58,6 +61,7 @@ export const Value = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
+  color: ${props => props.theme.primaryColor};
 `
 
 const Carousel = ({ children, className, direction }) => 

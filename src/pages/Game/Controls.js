@@ -58,11 +58,21 @@ const InputGroup = styled.div`
   margin-right: 15px;
 `
 
+const StyledIcon = styled.div`
+  & path {
+    fill: ${props => props.theme.primaryColor};
+  }
+`
+
 const Controls = ({ className }) => 
   <StyledControls className={className}>
     <ButtonGroup>
-      <StyledButton><Play /></StyledButton>
-      <StyledButton><Stop /></StyledButton>
+      <StyledButton>
+        <StyledIcon><Play /></StyledIcon>
+      </StyledButton>
+      <StyledButton>
+        <StyledIcon><Stop /></StyledIcon>
+      </StyledButton>
     </ButtonGroup>
     <InputGroup>
       <Input />
@@ -70,7 +80,9 @@ const Controls = ({ className }) =>
       <Input />
       <Input />
     </InputGroup>
-    <StyledButton><Submit /></StyledButton>
+    <StyledButton>
+      <StyledIcon><Submit /></StyledIcon>
+    </StyledButton>
   </StyledControls>
 
 export default Controls
