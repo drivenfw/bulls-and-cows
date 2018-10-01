@@ -14,6 +14,7 @@ const StyledClock = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  background: white;
 
   ${({ theme }) => css`
     border: 1px solid ${theme.primaryColor};

@@ -11,6 +11,7 @@ const StyledCarousel = styled.div`
   font-size: 2em;
   position: relative;
   overflow: hidden;
+  background: white;
 
   ${({ theme }) => css`
     border: 1px solid ${theme.primaryColor};

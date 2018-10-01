@@ -7,6 +7,7 @@ const StyledDisplay = styled.div`
   padding: .52em .78em;
   border-radius: 10px;
   font-size: 1.25em;
+  background: white;
 
   ${({ theme }) => css`
     border: 1px solid ${theme.primaryColor};
