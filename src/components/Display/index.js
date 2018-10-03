@@ -12,7 +12,6 @@ const StyledDisplay = styled.div`
   ${({ theme }) => css`
     border: 1px solid ${theme.primaryColor};
     box-shadow: inset 0 0 3px 2px ${theme.primaryColor2};
-    // color: #4D4D4D;
     color: ${theme.primaryColor};
   `}
 `

@@ -1,14 +1,37 @@
 import React, { Component } from 'react'
+import { 
+  BrowserRouter as Router, 
+  Route,
+  Link
+} from 'react-router-dom'
 import styled from 'styled-components'
 
 import Button from '../components/Button'
 import Game from '../pages/Game'
+import Settings from '../pages/Settings'
 
 
 const StyledAppLayout = styled.div`
+  min-width: 310px;
+  height: 505px;
   border: 1px solid ${props => props.theme.primaryColor2};
   background: ${props => props.theme.secondaryColor};
   border-radius: 10px;
+
+  @media (min-width: 375px) {
+    min-width: 362px;
+    height: 587px;
+  }
+
+  @media (min-width: 550px) {
+    min-width: 529px;
+    height: 294px;
+  }
+
+  @media (min-width: 850px) {
+    min-width: 769px;
+    height: 486px;
+  }
 
   @media (orientation: portrait) {
     margin: 20px;
@@ -39,8 +62,8 @@ const NavBar = styled.nav`
 
 const StyledButton = styled(Button)`
   @media (min-width: 375px) { 
-    width: 140px; 
-    font-size: 1.2em;
+    width: 130px; 
+    font-size: 1.1em;
   }
 
   @media (min-width: 550px) {
@@ -68,15 +91,22 @@ const Content = styled.main`
 class AppLayout extends Component {
   render() {
     return (
-      <StyledAppLayout>
-        <NavBar>
-          <StyledButton>Game</StyledButton>
-          <StyledButton>Settings</StyledButton>
-        </NavBar>
-        <Content>
-          <Game />
-        </Content>
-      </StyledAppLayout>
+      <Router>
+        <StyledAppLayout>
+          <NavBar>
+            <Link to="/">
+              <StyledButton>Game</StyledButton>
+            </Link>
+            <Link to="/settings">
+              <StyledButton>Settings</StyledButton>
+            </Link>
+          </NavBar>
+          <Content>
+            <Route exact path="/" component={Game} />
+            <Route path="/settings" component={Settings} />
+          </Content>
+        </StyledAppLayout>
+      </Router>
     )
   }
 }
