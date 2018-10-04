@@ -15,7 +15,7 @@ const StyledAppLayout = styled.div`
   min-width: 310px;
   height: 505px;
   border: 1px solid ${props => props.theme.primaryColor2};
-  background: ${props => props.theme.secondaryColor};
+  // background: ${props => props.theme.secondaryColor};
   border-radius: 10px;
 
   @media (min-width: 375px) {
@@ -90,6 +90,7 @@ const Content = styled.main`
 
   @media (min-width: 550px) {
     height: 200px;
+    padding: 0 10px 20px 10px;
   }
 
   @media (min-width: 850px) {

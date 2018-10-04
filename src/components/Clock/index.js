@@ -70,6 +70,7 @@ const SecondHand = styled.div`
   width: ${props => props.width}px;
   height: 1px;
   background: ${props => props.theme.primaryColor};
+  box-shadow: -2px 2px 3px ${props => props.theme.primaryColor1};
   transform-origin: 100%;
   transform: 
     translateX(-50%)

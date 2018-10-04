@@ -14,11 +14,11 @@ const StyledDisplay = styled(Display)`
   }
 
   @media (min-width: 550px) {
-    width: 180px;
-    height: 168px;
+    width: 200px;
+    height: 180px;
     margin-right: 20px;
     margin-bottom: 0;
-    font-size: 1em;
+    font-size: 1.25em;
   }
 
   @media (min-width: 850px) {
@@ -92,16 +92,16 @@ class Game extends Component {
       <StyledGame>
         <TopGroup>
           <StyledDisplay>
-            1. Lorem ipsum dolor<br />
-            2. Lorem ipsum dolor<br />
-            3. Lorem ipsum dolor<br />
-            4. Lorem ipsum dolor<br />
-            5. Lorem ipsum dolor<br />
-            6. Lorem ipsum dolor<br />
-            7. Lorem ipsum dolor<br />
-            8. Lorem ipsum dolor<br />
-            9. Lorem ipsum dolor<br />
-            10. Lorem ipsum dolor<br />
+            1. Lorem ipsum <br />
+            2. Lorem ipsum <br />
+            3. Lorem ipsum <br />
+            4. Lorem ipsum <br />
+            5. Lorem ipsum <br />
+            6. Lorem ipsum <br />
+            7. Lorem ipsum <br />
+            8. Lorem ipsum <br />
+            9. Lorem ipsum <br />
+            10. Lorem ipsum <br />
           </StyledDisplay>
           <div>
             <StyledControls />
