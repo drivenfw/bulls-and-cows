@@ -2,7 +2,18 @@ import { createReducer } from 'redux-act'
 
 
 const initialState = {
-  content: '',
+  content: [
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum',
+   'Lorem ipsum'
+  ],
   scroll: 0
 }
 

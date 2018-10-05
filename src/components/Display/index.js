@@ -73,7 +73,7 @@ class Display extends Component {
   }
 
   getLineHeight = () =>
-    // TODO: if (window.getComputedStyle) - ?
+    // TODO: if (window.getComputedStyle) else currentStyle - ?
     getComputedStyle(this.innerEl.current).getPropertyValue('line-height')
 
   scrollUp = () => {

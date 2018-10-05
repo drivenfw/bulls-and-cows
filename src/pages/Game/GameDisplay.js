@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 import Display from '../../components/Display'
@@ -26,19 +27,18 @@ const StyledGameDisplay = styled(Display)`
     font-size: 1.375em;
   }
 `
-const GameDisplay = ({ className }) =>
+const GameDisplay = ({ className, content, scroll }) =>
   <StyledGameDisplay>
-    1. Lorem ipsum <br />
-    2. Lorem ipsum <br />
-    3. Lorem ipsum <br />
-    4. Lorem ipsum <br />
-    5. Lorem ipsum <br />
-    6. Lorem ipsum <br />
-    7. Lorem ipsum <br />
-    8. Lorem ipsum <br />
-    9. Lorem ipsum <br />
-    10. Lorem ipsum <br />
+    {content.map((line, index) =>
+      <span key={index}>{index + 1}. {line}<br /></span>
+    )}
   </StyledGameDisplay>
 
-export default GameDisplay
+const mapStateToProps = ({
+  display: { content, scroll }
+}) => ({
+  content, scroll
+})
+
+export default connect(mapStateToProps)(GameDisplay)
 
