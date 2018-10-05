@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 import Button from '../../components/Button'
@@ -23,10 +24,6 @@ const StyledButton = styled(Button)`
 
   &:first-child {
     margin-bottom: 10px;
-  }
-
-  &:active {
-    transform: scale(1.1);
   }
 
   @media (min-width: 375px) {
@@ -58,13 +55,24 @@ const InputGroup = styled.div`
   margin-right: 15px;
 `
 
-const Controls = ({ className }) => 
+const Controls = ({ 
+  className,
+  startDisabled,
+  stopDisabled,
+  submitDisabled
+}) => (
   <StyledControls className={className}>
     <ButtonGroup>
-      <StyledButton>
+      <StyledButton
+        disabled={startDisabled}
+        scale={1.1}
+      >
         <Play />
       </StyledButton>
-      <StyledButton>
+      <StyledButton
+        disabled={stopDisabled}
+        scale={1.1}
+      >
         <Stop />
       </StyledButton>
     </ButtonGroup>
@@ -74,10 +82,20 @@ const Controls = ({ className }) =>
       <Input />
       <Input />
     </InputGroup>
-    <StyledButton>
+    <StyledButton
+      disabled={submitDisabled}
+      scale={1.1}
+    >
       <Submit />
     </StyledButton>
   </StyledControls>
+)
 
-export default Controls
+const mapStateToProps = ({ 
+  layout: { startDisabled, stopDisabled, submitDisabled }
+}) => ({
+  startDisabled, stopDisabled, submitDisabled  
+})
+
+export default connect(mapStateToProps)(Controls)
 

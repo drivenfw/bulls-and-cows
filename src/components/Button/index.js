@@ -21,9 +21,25 @@ const Button = styled.button`
   }
 
   &:active {
-    transform: scale(1.05);
     border-width: 2px;
     background: ${props => props.theme.primaryColor2};
+    transform: scale(${props => props.scale || 1.05});
+  }
+
+  #icon-fill path {
+    fill: ${props => props.theme.primaryColor};
+  }
+
+  &:disabled {
+    transform: none;
+    border: 1px solid ${props => props.theme.primaryColor2};
+    box-shadow: inset 0 0 2px ${props => props.theme.primaryColor2};
+    background: white;
+    cursor: auto;
+
+    #icon-fill path {
+      fill: ${props => props.theme.primaryColor2};
+    }
   }
 `
 
