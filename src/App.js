@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import { Provider } from 'react-redux'
 import styled, { ThemeProvider } from 'styled-components'
 
 import AppLayout from './layout/AppLayout'
 
 import themes from './themes'
+import configureStore from './configureStore'
 
+
+const store = configureStore()
 
 const StyledApp = styled.div`
   min-height: 100vh;
@@ -16,11 +20,13 @@ const StyledApp = styled.div`
 class App extends Component {
   render() {
     return (
-      <StyledApp>
-        <ThemeProvider theme={themes.main}>
-          <AppLayout />
-        </ThemeProvider>
-      </StyledApp>
+      <Provider store={store}>
+        <StyledApp>
+          <ThemeProvider theme={themes.main}>
+            <AppLayout />
+          </ThemeProvider>
+        </StyledApp>
+      </Provider>
     )
   }
 }
