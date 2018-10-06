@@ -92,7 +92,7 @@ const Controls = ({
 )
 
 const mapStateToProps = ({ 
-  layout: { startDisabled, stopDisabled, submitDisabled }
+  controls: { startDisabled, stopDisabled, submitDisabled }
 }) => ({
   startDisabled, stopDisabled, submitDisabled  
 })

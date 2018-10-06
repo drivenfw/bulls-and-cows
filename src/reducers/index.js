@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 
 import display from './display'
-import layout from './layout'
+import controls from './controls'
 
 
 const reducer = combineReducers({
-  display,
-  layout
+  controls,
+  display
 })
 
 export default reducer
