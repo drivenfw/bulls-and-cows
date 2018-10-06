@@ -1,6 +1,6 @@
 import { createReducer } from 'redux-act'
 
-import { play } from '../actions/controls'
+import { pause, play } from '../actions/controls'
 
 
 const initialState = {
@@ -10,6 +10,12 @@ const initialState = {
 }
 
 const layout = createReducer({
+  [pause]: state => ({
+    ...state,
+    playBtn: true,
+    stopDisabled: true,
+    submitDisabled: true
+  }),
   [play]: state => ({
     ...state,
     playBtn: false,

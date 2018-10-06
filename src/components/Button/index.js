@@ -8,7 +8,7 @@ const Button = styled.button`
   outline: none;
   border-radius: 100px / 70px;
   background: white;
-  transition: transform 50ms ease-in;
+  transition: all 50ms ease-in;
 
   ${({ theme }) => css`
     border: 1px solid ${theme.primaryColor};
