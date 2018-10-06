@@ -5,10 +5,12 @@ import styled from 'styled-components'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 
-// import Pause from '../../icons/Pause'
+import Pause from '../../icons/Pause'
 import Play from '../../icons/Play'
 import Stop from '../../icons/Stop'
 import Submit from '../../icons/Submit'
+
+import { play } from '../../actions/controls'
 
 
 const StyledControls = styled.div`
@@ -57,22 +59,22 @@ const InputGroup = styled.div`
 
 const Controls = ({ 
   className,
-  startDisabled,
+  playBtn,
   stopDisabled,
-  submitDisabled
+  submitDisabled,
+  onPlay
 }) => (
   <StyledControls className={className}>
     <ButtonGroup>
-      <StyledButton
-        disabled={startDisabled}
-        scale={1.1}
-      >
-        <Play />
-      </StyledButton>
-      <StyledButton
-        disabled={stopDisabled}
-        scale={1.1}
-      >
+      {playBtn 
+        ? <StyledButton scale={1.1} onClick={onPlay}>
+            <Play />
+          </StyledButton>
+        : <StyledButton scale={1.1}>
+            <Pause />
+          </StyledButton>
+      }
+      <StyledButton disabled={stopDisabled} scale={1.1}>
         <Stop />
       </StyledButton>
     </ButtonGroup>
@@ -92,10 +94,17 @@ const Controls = ({
 )
 
 const mapStateToProps = ({ 
-  controls: { startDisabled, stopDisabled, submitDisabled }
+  controls: { playBtn, stopDisabled, submitDisabled }
 }) => ({
-  startDisabled, stopDisabled, submitDisabled  
+  playBtn, stopDisabled, submitDisabled  
 })
 
-export default connect(mapStateToProps)(Controls)
+const mapDispatchToProps = dispatch => ({
+  onPlay: () => dispatch(play())
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps  
+)(Controls)
 

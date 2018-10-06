@@ -1,8 +1,9 @@
-import { delay } from 'redux-saga'
+import { all } from 'redux-saga/effects'
+
+import { watchControlsActions } from './controls'
 
 
 export default function *main() {
-  yield delay(1000)
-  console.log('Saga started')
+  yield all([watchControlsActions])
 }
 
