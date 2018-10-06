@@ -8,7 +8,7 @@ import Loadable from 'react-loadable'
 import styled from 'styled-components'
 
 import Button from '../components/Button'
-import Spinner from './Spinner'
+import Spinner from '../components/Spinner'
 
 
 const StyledAppLayout = styled.div`
@@ -98,14 +98,22 @@ const Content = styled.main`
   }
 `
 
+const StyledSpinner = styled(Spinner)`
+  @media (min-width: 850px) {
+    width: 250px;
+    height: 250px;
+    border-width: 10px;
+  }
+`
+
 const GamePage = Loadable({
   loader: () => import('../pages/Game'),
-  loading: Spinner
+  loading: StyledSpinner
 })
 
 const SettingsPage = Loadable({
   loader: () => import('../pages/Settings'),
-  loading: Spinner
+  loading: StyledSpinner
 })
 
 class AppLayout extends Component {

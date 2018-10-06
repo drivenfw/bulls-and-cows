@@ -17,11 +17,5 @@ export default styled.div`
   `}
 
   animation: ${rotate360} 1s linear infinite;
-
-  @media (min-width: 850px) {
-    width: 250px;
-    height: 250px;
-    border-width: 10px;
-  }
 `
 
