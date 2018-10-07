@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Clock from '../../components/Clock'
 import Controls from './Controls'
+import GameClock from './GameClock'
 import GameDisplay from './GameDisplay'
 
 
@@ -18,21 +18,6 @@ const TopGroup = styled.div`
   @media (min-width: 550px) {
     display: flex;
     align-items: center;
-  }
-`
-
-const StyledClock = styled(Clock)`
-  @media (min-width: 375px) {
-    height: 90px;
-  }
-
-  @media (min-width: 550px) {
-    height: 70px;
-  }
-
-  @media (min-width: 850px) {
-    height: 90px;
-    margin-top: 30px;
   }
 `
 
@@ -71,10 +56,10 @@ class Game extends Component {
           <GameDisplay />
           <div>
             <StyledControls />
-            {!desktop && <StyledClock />}
+            {!desktop && <GameClock />}
           </div>
         </TopGroup>
-        {desktop && <StyledClock />}
+        {desktop && <GameClock />}
       </StyledGame>
     )
   }
