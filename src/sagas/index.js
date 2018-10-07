@@ -4,6 +4,6 @@ import { watchControlsActions } from './controls'
 
 
 export default function *main() {
-  yield all([watchControlsActions])
+  yield all([watchControlsActions()])
 }
 
