@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 
-import display from './display'
+import clock from './clock'
 import controls from './controls'
+import display from './display'
 
 
 const reducer = combineReducers({
+  clock,
   controls,
   display
 })
