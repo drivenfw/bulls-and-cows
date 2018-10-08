@@ -28,7 +28,7 @@ const StyledGameDisplay = styled(Display)`
   }
 `
 const GameDisplay = ({ className, content, scroll }) =>
-  <StyledGameDisplay>
+  <StyledGameDisplay scroll={scroll}>
     {content.map((line, index) =>
       <span key={index}>{index + 1}. {line}<br /></span>
     )}
