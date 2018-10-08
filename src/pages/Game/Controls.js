@@ -65,39 +65,43 @@ const Controls = ({
   onPause,
   onPlay,
   onStop
-}) => (
-  <StyledControls className={className}>
-    <ButtonGroup>
-      {playBtn 
-        ? <StyledButton scale={1.1} onClick={onPlay}>
-            <Play />
-          </StyledButton>
-        : <StyledButton scale={1.1} onClick={onPause}>
-            <Pause />
-          </StyledButton>
-      }
-      <StyledButton 
-        disabled={stopDisabled}
+}) => {
+  const inputOptions = Array.from({ length: 9 }, (_, i) => i + 1)
+
+  return (
+    <StyledControls className={className}>
+      <ButtonGroup>
+        {playBtn 
+          ? <StyledButton scale={1.1} onClick={onPlay}>
+              <Play />
+            </StyledButton>
+          : <StyledButton scale={1.1} onClick={onPause}>
+              <Pause />
+            </StyledButton>
+        }
+        <StyledButton 
+          disabled={stopDisabled}
+          scale={1.1}
+          onClick={onStop}
+        >
+          <Stop />
+        </StyledButton>
+      </ButtonGroup>
+      <InputGroup>
+        <Input options={inputOptions} />
+        <Input options={inputOptions} />
+        <Input options={inputOptions} />
+        <Input options={inputOptions} />
+      </InputGroup>
+      <StyledButton
+        disabled={submitDisabled}
         scale={1.1}
-        onClick={onStop}
       >
-        <Stop />
+        <Submit />
       </StyledButton>
-    </ButtonGroup>
-    <InputGroup>
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-    </InputGroup>
-    <StyledButton
-      disabled={submitDisabled}
-      scale={1.1}
-    >
-      <Submit />
-    </StyledButton>
-  </StyledControls>
-)
+    </StyledControls>
+  )
+}
 
 const mapStateToProps = ({ 
   controls: { playBtn, stopDisabled, submitDisabled }

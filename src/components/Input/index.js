@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import Carousel, { Value } from '../Carousel'
@@ -102,9 +103,12 @@ const DownButton = styled.div`
 `
 
 class Input extends React.Component {
-  state = { direction: 'up', index: 0 }
+  constructor(props) {
+    super(props)
 
-  options = Array.from({ length: 9 }, (_, i) => i + 1)
+    this.state = { direction: 'up', index: 0 }
+    this.options = props.options
+  }
 
   up = () => {
     this.setState(({ index }) => ({
@@ -139,6 +143,10 @@ class Input extends React.Component {
       </StyledInput>
     )
   }
+}
+
+Input.propTypes = {
+  options: PropTypes.array
 }
 
 export default Input
