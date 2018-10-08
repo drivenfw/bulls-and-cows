@@ -10,7 +10,7 @@ import Play from '../../icons/Play'
 import Stop from '../../icons/Stop'
 import Submit from '../../icons/Submit'
 
-import { pause, play } from '../../actions/controls'
+import { pause, play, stop } from '../../actions/controls'
 
 
 const StyledControls = styled.div`
@@ -63,7 +63,8 @@ const Controls = ({
   stopDisabled,
   submitDisabled,
   onPause,
-  onPlay
+  onPlay,
+  onStop
 }) => (
   <StyledControls className={className}>
     <ButtonGroup>
@@ -75,7 +76,11 @@ const Controls = ({
             <Pause />
           </StyledButton>
       }
-      <StyledButton disabled={stopDisabled} scale={1.1}>
+      <StyledButton 
+        disabled={stopDisabled}
+        scale={1.1}
+        onClick={onStop}
+      >
         <Stop />
       </StyledButton>
     </ButtonGroup>
@@ -102,7 +107,8 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => ({
   onPause: () => dispatch(pause()),
-  onPlay: () => dispatch(play())
+  onPlay: () => dispatch(play()),
+  onStop: () => dispatch(stop())
 })
 
 export default connect(
