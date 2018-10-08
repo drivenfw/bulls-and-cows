@@ -128,6 +128,13 @@ class Input extends React.Component {
     return this.options[this.state.index]
   }
 
+  set value(newValue) {
+    const index = this.options.indexOf(newValue)
+
+    if (index >= 0) 
+      this.setState({ index })
+  }
+
   render() {
     const { direction, index } = this.state
     const value = this.options[index]

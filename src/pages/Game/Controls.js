@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -10,7 +10,7 @@ import Play from '../../icons/Play'
 import Stop from '../../icons/Stop'
 import Submit from '../../icons/Submit'
 
-import { pause, play, stop } from '../../actions/controls'
+import { pause, play, stop, submit } from '../../actions/controls'
 
 
 const StyledControls = styled.div`
@@ -57,50 +57,69 @@ const InputGroup = styled.div`
   margin-right: 15px;
 `
 
-const Controls = ({ 
-  className,
-  playBtn,
-  stopDisabled,
-  submitDisabled,
-  onPause,
-  onPlay,
-  onStop
-}) => {
-  const inputOptions = Array.from({ length: 9 }, (_, i) => i + 1)
+class Controls extends Component {
+  inputs = Array.from({ length: 4 }, () => React.createRef())
 
-  return (
-    <StyledControls className={className}>
-      <ButtonGroup>
-        {playBtn 
-          ? <StyledButton scale={1.1} onClick={onPlay}>
-              <Play />
-            </StyledButton>
-          : <StyledButton scale={1.1} onClick={onPause}>
-              <Pause />
-            </StyledButton>
-        }
-        <StyledButton 
-          disabled={stopDisabled}
+  submitHandler = () => {
+    const { onSubmit } = this.props
+    const value = this.inputs.map(input =>
+      input.current.value
+    )
+
+    onSubmit(value)
+
+    this.inputs.forEach(input => 
+      input.current.value = 1
+    )
+  }
+
+  render() {
+    const {
+      className,
+      playBtn,
+      stopDisabled,
+      submitDisabled,
+      onPause,
+      onPlay,
+      onStop
+    } = this.props
+    const inputOptions = Array.from({ length: 9 }, (_, i) => i + 1)
+
+    return (
+      <StyledControls className={className}>
+        <ButtonGroup>
+          {playBtn 
+            ? <StyledButton scale={1.1} onClick={onPlay}>
+                <Play />
+              </StyledButton>
+            : <StyledButton scale={1.1} onClick={onPause}>
+                <Pause />
+              </StyledButton>
+          }
+          <StyledButton 
+            disabled={stopDisabled}
+            scale={1.1}
+            onClick={onStop}
+          >
+            <Stop />
+          </StyledButton>
+        </ButtonGroup>
+        <InputGroup>
+          <Input ref={this.inputs[0]} options={inputOptions} />
+          <Input ref={this.inputs[1]} options={inputOptions} />
+          <Input ref={this.inputs[2]} options={inputOptions} />
+          <Input ref={this.inputs[3]} options={inputOptions} />
+        </InputGroup>
+        <StyledButton
+          disabled={submitDisabled}
           scale={1.1}
-          onClick={onStop}
+          onClick={this.submitHandler}
         >
-          <Stop />
+          <Submit />
         </StyledButton>
-      </ButtonGroup>
-      <InputGroup>
-        <Input options={inputOptions} />
-        <Input options={inputOptions} />
-        <Input options={inputOptions} />
-        <Input options={inputOptions} />
-      </InputGroup>
-      <StyledButton
-        disabled={submitDisabled}
-        scale={1.1}
-      >
-        <Submit />
-      </StyledButton>
-    </StyledControls>
-  )
+      </StyledControls>
+    )
+  }
 }
 
 const mapStateToProps = ({ 
@@ -112,7 +131,8 @@ const mapStateToProps = ({
 const mapDispatchToProps = dispatch => ({
   onPause: () => dispatch(pause()),
   onPlay: () => dispatch(play()),
-  onStop: () => dispatch(stop())
+  onStop: () => dispatch(stop()),
+  onSubmit: value => dispatch(submit(value)) 
 })
 
 export default connect(
