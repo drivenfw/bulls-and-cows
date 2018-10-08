@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 
@@ -67,25 +68,29 @@ const DownButton = styled(Button)`
 `
 
 class Display extends Component {
-  constructor(props) {
-    super(props)
-    this.innerEl = React.createRef()
-  }
+  innerEl = React.createRef()
 
   getLineHeight = () =>
     // TODO: if (window.getComputedStyle) else currentStyle - ?
     getComputedStyle(this.innerEl.current).getPropertyValue('line-height')
 
-  scrollUp = () => {
-    this.innerEl.current.scrollTop -= parseFloat(this.getLineHeight())
+  scrollUp = lines => {
+    while (lines--) {
+      this.innerEl.current.scrollTop -= parseFloat(this.getLineHeight())
+    }
   } 
 
-  scrollDown = () => {
-    this.innerEl.current.scrollTop += parseFloat(this.getLineHeight())
+  scrollDown = lines => {
+    while (lines--) {
+      this.innerEl.current.scrollTop += parseFloat(this.getLineHeight())
+    }
   }
 
   componentDidMount() {
-    window.innerEl = this.innerEl.current
+    const { scroll } = this.props
+
+    if (scroll)
+      this.scrollDown(scroll)
   }
 
   render() {
@@ -98,13 +103,17 @@ class Display extends Component {
         </Inner>
         <ScrollBar>
           <div>
-            <UpButton onClick={this.scrollUp}>⬆</UpButton>
-            <DownButton onClick={this.scrollDown}>⬇</DownButton>
+            <UpButton onClick={() => this.scrollUp(1)}>⬆</UpButton>
+            <DownButton onClick={() => this.scrollDown(1)}>⬇</DownButton>
           </div>
         </ScrollBar>
       </StyledDisplay>
     )
   }
+}
+
+Display.propTypes = {
+  scroll: PropTypes.number
 }
 
 export default Display
