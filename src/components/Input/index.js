@@ -103,41 +103,44 @@ const DownButton = styled.div`
 `
 
 class Input extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { direction: 'up', index: 0 }
-    this.options = props.options
-  }
+  state = { direction: 'up', index: 0 }
 
   up = () => {
+    const { options } = this.props
+
     this.setState(({ index }) => ({
       direction: 'down',
-      index: index < this.options.length - 1 ? index + 1 : 0
+      index: index < options.length - 1 ? index + 1 : 0
     }))
   }
 
   down = () => {
+    const { options } = this.props
+
     this.setState(({ index }) => ({
       direction: 'up',
-      index: index > 0 ? index - 1 : this.options.length - 1
+      index: index > 0 ? index - 1 : options.length - 1
     })) 
   }
 
   get value() {
-    return this.options[this.state.index]
+    const { options } = this.props
+
+    return options[this.state.index]
   }
 
   set value(newValue) {
-    const index = this.options.indexOf(newValue)
+    const { options } = this.props
+    const index = options.indexOf(newValue)
 
     if (index >= 0) 
       this.setState({ index })
   }
 
   render() {
+    const { options } = this.props
     const { direction, index } = this.state
-    const value = this.options[index]
+    const value = options[index]
     const valueEl = <Value key={value}>{value}</Value>
 
     return (
