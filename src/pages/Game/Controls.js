@@ -60,13 +60,23 @@ const InputGroup = styled.div`
 class Controls extends Component {
   inputs = Array.from({ length: 4 }, () => React.createRef())
 
-  stopHandler = () => {
-    const { onStop } = this.props
-
+  resetInputs = () => {
     this.inputs.forEach(input => 
       input.current.value = 1
     )
+  }
 
+  playHandler = () => {
+    const { onPlay } = this.props
+
+    this.resetInputs()
+    onPlay()
+  }
+
+  stopHandler = () => {
+    const { onStop } = this.props
+
+    this.resetInputs()
     onStop()
   }
 
@@ -87,8 +97,7 @@ class Controls extends Component {
       playBtn,
       stopDisabled,
       submitDisabled,
-      onPause,
-      onPlay
+      onPause
     } = this.props
 
     // TODO: leverage reselect
@@ -98,7 +107,10 @@ class Controls extends Component {
       <StyledControls className={className}>
         <ButtonGroup>
           {playBtn 
-            ? <StyledButton scale={1.1} onClick={onPlay}>
+            ? <StyledButton
+                scale={1.1} 
+                onClick={this.playHandler}
+              >
                 <Play />
               </StyledButton>
             : <StyledButton
