@@ -86,11 +86,21 @@ class Display extends Component {
     }
   }
 
-  componentDidMount() {
+  applyInitialScroll = () => {
     const { scroll } = this.props
+
+    this.innerEl.current.scrollTop = 0
 
     if (scroll)
       this.scrollDown(scroll)
+  }
+
+  componentDidMount() {
+    this.applyInitialScroll()
+  }
+
+  componentDidUpdate() {
+    this.applyInitialScroll()
   }
 
   render() {
