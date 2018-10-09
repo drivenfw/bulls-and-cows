@@ -64,7 +64,7 @@ class Controls extends Component {
     const { onSubmit } = this.props
     const value = this.inputs.map(input =>
       input.current.value
-    )
+    ).join('')
 
     onSubmit(value)
 
@@ -84,6 +84,8 @@ class Controls extends Component {
       onPlay,
       onStop
     } = this.props
+
+    // TODO: leverage reselect
     const inputOptions = Array.from({ length: options }, (_, i) => i + 1)
 
     return (

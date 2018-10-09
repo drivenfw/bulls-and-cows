@@ -1,6 +1,7 @@
 import { createReducer } from 'redux-act'
 
-import { play, stop } from '../actions/controls'
+import { stop } from '../actions/controls'
+import { addContent, clear } from '../actions/display'
 
 
 const initialState = {
@@ -20,7 +21,13 @@ const initialState = {
 }
 
 const display = createReducer({
-  [play]: () => ({
+  [addContent]: (state, { content, scroll }) => ({
+    ...state,
+    content: [...state.content, content],
+    scroll
+  }),
+  [clear]: state => ({
+    ...state,
     content: [],
     scroll: 0
   }),
