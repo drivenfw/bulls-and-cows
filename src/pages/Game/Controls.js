@@ -76,6 +76,7 @@ class Controls extends Component {
   render() {
     const {
       className,
+      options,
       playBtn,
       stopDisabled,
       submitDisabled,
@@ -83,7 +84,7 @@ class Controls extends Component {
       onPlay,
       onStop
     } = this.props
-    const inputOptions = Array.from({ length: 9 }, (_, i) => i + 1)
+    const inputOptions = Array.from({ length: options }, (_, i) => i + 1)
 
     return (
       <StyledControls className={className}>
@@ -123,9 +124,13 @@ class Controls extends Component {
 }
 
 const mapStateToProps = ({ 
-  controls: { playBtn, stopDisabled, submitDisabled }
+  controls: { playBtn, stopDisabled, submitDisabled },
+  settings: { options }
 }) => ({
-  playBtn, stopDisabled, submitDisabled  
+  options,
+  playBtn, 
+  stopDisabled, 
+  submitDisabled
 })
 
 const mapDispatchToProps = dispatch => ({
