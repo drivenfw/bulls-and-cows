@@ -67,9 +67,10 @@ class Controls extends Component {
   }
 
   playHandler = () => {
-    const { onPlay } = this.props
+    const { stopDisabled, onPlay } = this.props
 
-    this.resetInputs()
+    if (stopDisabled)
+      this.resetInputs()
     onPlay()
   }
 
