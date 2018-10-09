@@ -3,6 +3,7 @@ import { put, select, takeEvery } from 'redux-saga/effects'
 import Game from '../app/Game'
 import { tickHandler } from './clock'
 import { addContent, clear } from '../actions/display'
+import { finish } from '../actions/game'
 
 
 let game = null
@@ -41,7 +42,7 @@ function *submitHandler(action) {
   }))
 
   if (result === '++++') {
-    // TODO: Congratulate on winning
+    yield put(finish())
   }
 }
 

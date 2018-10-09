@@ -9,9 +9,9 @@ export function *tickHandler() {
 
   yield delay(1000)
 
-  const { controls: { playBtn } } = yield select()
+  const { controls: { pauseDisabled, playBtn } } = yield select()
 
-  if (!playBtn) {
+  if (!playBtn && !pauseDisabled) {
     const timeElapsed = Math.floor((Date.now() - startTime) / 1000)
     yield put(tick(timeElapsed))
   }

@@ -83,12 +83,12 @@ class Controls extends Component {
     const {
       className,
       options,
+      pauseDisabled,
       playBtn,
       stopDisabled,
       submitDisabled,
       onPause,
-      onPlay,
-      onStop
+      onPlay
     } = this.props
 
     // TODO: leverage reselect
@@ -101,7 +101,11 @@ class Controls extends Component {
             ? <StyledButton scale={1.1} onClick={onPlay}>
                 <Play />
               </StyledButton>
-            : <StyledButton scale={1.1} onClick={onPause}>
+            : <StyledButton
+                disabled={pauseDisabled} 
+                scale={1.1} 
+                onClick={onPause}
+              >
                 <Pause />
               </StyledButton>
           }
@@ -132,10 +136,11 @@ class Controls extends Component {
 }
 
 const mapStateToProps = ({ 
-  controls: { playBtn, stopDisabled, submitDisabled },
+  controls: { pauseDisabled, playBtn, stopDisabled, submitDisabled },
   settings: { options }
 }) => ({
   options,
+  pauseDisabled,
   playBtn, 
   stopDisabled, 
   submitDisabled
