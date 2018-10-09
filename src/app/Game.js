@@ -16,7 +16,6 @@ export default class Game {
 
   start() {
     this._secret = this._generateSecret()
-    console.log('this._secret = ', this._secret)
   }
 
   guess(guess) {

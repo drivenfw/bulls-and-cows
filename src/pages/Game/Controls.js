@@ -60,6 +60,16 @@ const InputGroup = styled.div`
 class Controls extends Component {
   inputs = Array.from({ length: 4 }, () => React.createRef())
 
+  stopHandler = () => {
+    const { onStop } = this.props
+
+    this.inputs.forEach(input => 
+      input.current.value = 1
+    )
+
+    onStop()
+  }
+
   submitHandler = () => {
     const { onSubmit } = this.props
     const value = this.inputs.map(input =>
@@ -67,10 +77,6 @@ class Controls extends Component {
     ).join('')
 
     onSubmit(value)
-
-    this.inputs.forEach(input => 
-      input.current.value = 1
-    )
   }
 
   render() {
@@ -102,7 +108,7 @@ class Controls extends Component {
           <StyledButton 
             disabled={stopDisabled}
             scale={1.1}
-            onClick={onStop}
+            onClick={this.stopHandler}
           >
             <Stop />
           </StyledButton>

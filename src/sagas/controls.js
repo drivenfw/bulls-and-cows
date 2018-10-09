@@ -25,9 +25,11 @@ function stopHandler() {
   game = null
 }
 
-const calcScroll = contentLength => 
-  contentLength > 6 ? contentLength - 6 : 0
+const calcScroll = contentLength => {
+  const lines = matchMedia('(min-width: 375px)').matches ? 6 : 5
 
+  return contentLength > lines ? contentLength - lines : 0
+}
 
 function *submitHandler(action) {
   const result = game.guess(action.payload)
