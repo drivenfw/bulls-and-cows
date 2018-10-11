@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styled, { keyframes } from 'styled-components'
 
+// TODO: text-shadow, width > height - ?
 
 const pulse = props => keyframes`
   0% { 
@@ -26,35 +28,66 @@ const StyledCountdown = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${pulse} 1500ms 500ms;
+`
+
+const PulsingStyledCountdown = styled(StyledCountdown)`
   animation: ${pulse} 1500ms;
 `
 
 class Countdown extends Component {
-  state = { from: 3 }
+  state = { pulse: false }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.value !== state.prevValue) {
+      return {
+        prevValue: props.value,
+        value: props.value
+      }
+    }
+
+    return null
+  }
 
   countdown = () => {
-    const { from } = this.state
+    const { value } = this.state
+    const { onFinish } = this.props
 
-    if (from > 0) {
+    if (value > 1) {
       this.setState(prevState => ({
-        from: prevState.from - 1
+        pulse: true,
+        value: prevState.value - 1
       }))
+    } else {
+      this.setState({ value: 'Go!' })
     }
   }
 
   render() {
-    const { from } = this.state
-    console.log('Countdown#render: from = ', from)
+    const { pulse, value } = this.state
+
+    const Content = pulse
+      ? PulsingStyledCountdown
+      : StyledCountdown
 
     return (
-      <StyledCountdown
-        key={from}
+      <Content
+        key={value}
         onAnimationEnd={this.countdown}
       >
-        {from}
-      </StyledCountdown>
+        {value}
+      </Content>
     )
   }
+}
+
+Countdown.propTypes = {
+  value: PropTypes.number,
+  onFinish: PropTypes.func.isRequired
+}
+
+Countdown.defaultProps = { 
+  value: 3
 }
 
 export default Countdown
