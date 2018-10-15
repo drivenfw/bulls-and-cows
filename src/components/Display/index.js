@@ -25,6 +25,12 @@ const Inner = styled.div`
   line-height: 1.5;
   display: inline-block;
   vertical-align: top;
+
+  ${props => props.center && css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  `}
 `
 
 const ScrollBar = styled.div`
@@ -104,11 +110,11 @@ class Display extends Component {
   }
 
   render() {
-    const { children, className } = this.props
+    const { children, center, className } = this.props
 
     return (
       <StyledDisplay className={className}>
-        <Inner innerRef={this.innerEl}>
+        <Inner innerRef={this.innerEl} center={center}>
           {children}
         </Inner>
         <ScrollBar>
