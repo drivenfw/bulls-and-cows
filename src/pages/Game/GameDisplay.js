@@ -5,9 +5,16 @@ import styled from 'styled-components'
 import Countdown from '../../components/Countdown'
 import Display from '../../components/Display'
 
+import './fireworks.css'
+
 
 const Congrats = styled.div`
+  width: 100%;
+  height: 100%;
   font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const StyledGameDisplay = styled(Display)`
@@ -52,8 +59,11 @@ const GameDisplay = ({
       <span key={index}>{index + 1}. {line}<br /></span>
     )
   } else if (stage === 3) {
-    center = true
-    displayContent = <Congrats>You won!</Congrats>
+    displayContent = <Congrats className="fireworks">
+      <div className="before"></div>
+      You won!
+      <div className="after"></div>
+    </Congrats>
   }
 
   return (

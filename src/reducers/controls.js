@@ -1,6 +1,6 @@
 import { createReducer } from 'redux-act'
 
-import { pause, play, stop } from '../actions/controls'
+import { pause, stop } from '../actions/controls'
 import { 
   countdownStage,
   playStage,
