@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
@@ -80,6 +81,12 @@ const Carousel = ({ children, className, direction }) =>
       ))}
     </TransitionGroup>
   </StyledCarousel>
+
+Carousel.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  direction: PropTypes.oneOf(['down', 'up']).isRequired
+}
 
 export default Carousel
 
