@@ -7,14 +7,24 @@ const primaryColor2 = color => hexToRgba(color, 0.3)
 
 export default {
   main: {
-    primaryColor: '#db7093',
-    primaryColor1: primaryColor1('#db7093'),
-    primaryColor2: primaryColor2('#db7093')
+    primaryColor: '#DB7093',
+    primaryColor1: primaryColor1('#DB7093'),
+    primaryColor2: primaryColor2('#DB7093')
   },
-  redYellow: {
+  red: {
     primaryColor: '#F06653',
-    primaryColor1: '#F39C90',
-    primaryColor2: '#F8C8C2'
+    primaryColor1: primaryColor1('#F06653'),
+    primaryColor2: primaryColor2('#F06653')
+  },
+  orange: {
+    primaryColor: '#FF8C00',
+    primaryColor1: primaryColor1('#FF8C00'),
+    primaryColor2: primaryColor2('#FF8C00')
+  },
+  green: {
+    primaryColor: '#2BC486',
+    primaryColor1: primaryColor1('#2BC486'),
+    primaryColor2: primaryColor2('#2BC486')
   }
 }
 
