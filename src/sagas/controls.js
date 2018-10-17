@@ -12,12 +12,16 @@ import {
 import { tickHandler } from './clock'
 import { game } from './game'
 
+import { gameStages } from '../reducers/game'
+
+
+const COUNTDOWN_FROM = 3
 
 function *playHandler() {
   const { game: { stage } } = yield select()
 
-  if (stage === 0) { // TODO: replace numbers with constants
-    yield put(countdownStage(3))
+  if (stage === gameStages.INIT) {
+    yield put(countdownStage(COUNTDOWN_FROM))
     yield delay(1500)
     yield put(countdown())
   } else {

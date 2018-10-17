@@ -9,15 +9,16 @@ import {
 } from '../actions/game'
 
 
-/* 0 - init
- * 1 - countdown
- * 2 - play
- * 3 - congrats
- */
+export const gameStages = {
+  INIT: 0,
+  COUNTDOWN: 1,
+  PLAY: 2,
+  CONGRATS: 3
+}
 
 const initialState = {
   countdown: 0,
-  stage: 0
+  stage: gameStages.INIT
 }
 
 const game = createReducer({
@@ -29,15 +30,15 @@ const game = createReducer({
   [countdownStage]: (state, payload) => ({
     ...state,
     countdown: payload,
-    stage: 1
+    stage: gameStages.COUNTDOWN
   }),
   [playStage]: state => ({
     ...state,
-    stage: 2
+    stage: gameStages.PLAY
   }),
   [congratsStage]: state => ({
     ...state,
-    stage: 3
+    stage: gameStages.CONGRATS
   })
 }, initialState)
 

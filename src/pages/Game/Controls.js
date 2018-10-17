@@ -11,6 +11,7 @@ import Stop from '../../icons/Stop'
 import Submit from '../../icons/Submit'
 
 import { pause, play, stop, submit } from '../../actions/controls'
+import { gameStages } from '../../reducers/game'
 
 
 const StyledControls = styled.div`
@@ -67,9 +68,9 @@ class Controls extends Component {
   }
 
   playHandler = () => {
-    const { stopDisabled, onPlay } = this.props
+    const { stage, onPlay } = this.props
 
-    if (stopDisabled)
+    if (stage === gameStages.INIT)
       this.resetInputs()
     onPlay()
   }
@@ -158,12 +159,14 @@ const mapStateToProps = ({
     stopDisabled, 
     submitDisabled 
   },
+  game: { stage },
   settings: { options }
 }) => ({
   options,
   pauseDisabled,
   playBtn, 
   playDisabled,
+  stage,
   stopDisabled, 
   submitDisabled
 })

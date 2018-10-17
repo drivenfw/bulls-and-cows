@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import Countdown from '../../components/Countdown'
 import Display from '../../components/Display'
 
+import { gameStages } from '../../reducers/game'
+
 import './fireworks.css'
 
 
@@ -49,16 +51,16 @@ const GameDisplay = ({
 }) => {
   let center = false, displayContent
 
-  if (stage === 0) {
+  if (stage === gameStages.INIT) {
     displayContent = content.join(' ')
-  } else if (stage === 1) {
+  } else if (stage === gameStages.COUNTDOWN) {
     center = true
     displayContent = <Countdown value={countdown} />
-  } else if (stage === 2) {
+  } else if (stage === gameStages.PLAY) {
     displayContent = content.map((line, index) =>
       <span key={index}>{index + 1}. {line}<br /></span>
     )
-  } else if (stage === 3) {
+  } else if (stage === gameStages.CONGRATS) {
     displayContent = <Congrats className="fireworks">
       <div className="before"></div>
       You won!
