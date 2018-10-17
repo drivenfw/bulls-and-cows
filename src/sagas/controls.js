@@ -4,10 +4,10 @@ import { put, select, takeEvery } from 'redux-saga/effects'
 import { addContent } from '../actions/display'
 import { 
   countdown, 
-  gameInit,
-  gameCountdown, 
-  gamePlay,
-  gameCongrats
+  initStage,
+  countdownStage, 
+  playStage,
+  congratsStage
 } from '../actions/game'
 import { tickHandler } from './clock'
 import { game } from './game'
@@ -17,17 +17,17 @@ function *playHandler() {
   const { game: { stage } } = yield select()
 
   if (stage === 0) { // TODO: replace numbers with constants
-    yield put(gameCountdown(3))
+    yield put(countdownStage(3))
     yield delay(1500)
     yield put(countdown())
   } else {
-    yield put(gamePlay())
+    yield put(playStage())
     yield *tickHandler()
   }
 }
 
 function *stopHandler() {
-  yield put(gameInit())
+  yield put(initStage())
 }
 
 const calcScroll = contentLength => {
@@ -46,7 +46,7 @@ function *submitHandler(action) {
   }))
 
   if (result === '++++') {
-    yield put(gameCongrats())
+    yield put(congratsStage())
   }
 }
 

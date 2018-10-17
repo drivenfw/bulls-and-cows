@@ -2,9 +2,9 @@ import { createReducer } from 'redux-act'
 
 import { pause, play, stop } from '../actions/controls'
 import { 
-  gameCountdown,
-  gamePlay,
-  gameCongrats
+  countdownStage,
+  playStage,
+  congratsStage
 } from '../actions/game'
 
 
@@ -17,16 +17,16 @@ const initialState = {
 }
 
 const controls = createReducer({
-  [gameCountdown]: state => ({
+  [countdownStage]: state => ({
     ...state,
     playDisabled: true
   }),
-  [gameCongrats]: state => ({
+  [congratsStage]: state => ({
     ...state,
     pauseDisabled: true,
     submitDisabled: true
   }),
-  [gamePlay]: state => ({
+  [playStage]: state => ({
     ...state,
     playBtn: false,
     stopDisabled: false,

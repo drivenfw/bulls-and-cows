@@ -2,10 +2,10 @@ import { createReducer } from 'redux-act'
 
 import { 
   countdown, 
-  gameInit,
-  gameCountdown,
-  gamePlay,
-  gameCongrats
+  initStage,
+  countdownStage,
+  playStage,
+  congratsStage
 } from '../actions/game'
 
 
@@ -25,17 +25,17 @@ const game = createReducer({
     ...state,
     countdown: state.countdown - 1
   }),
-  [gameInit]: () => initialState,
-  [gameCountdown]: (state, payload) => ({
+  [initStage]: () => initialState,
+  [countdownStage]: (state, payload) => ({
     ...state,
     countdown: payload,
     stage: 1
   }),
-  [gamePlay]: state => ({
+  [playStage]: state => ({
     ...state,
     stage: 2
   }),
-  [gameCongrats]: state => ({
+  [congratsStage]: state => ({
     ...state,
     stage: 3
   })

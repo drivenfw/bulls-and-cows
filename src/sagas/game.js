@@ -2,7 +2,7 @@ import { delay } from 'redux-saga'
 import { put, select, takeEvery } from 'redux-saga/effects'
 
 import { tickHandler } from './clock'
-import { countdown, gamePlay } from '../actions/game'
+import { countdown, playStage } from '../actions/game'
 import { clear } from '../actions/display'
 import Game from '../app/Game'
 
@@ -23,7 +23,7 @@ export function *countdownHandler() {
     game.start()
 
     yield put(clear())
-    yield put(gamePlay())
+    yield put(playStage())
     yield *tickHandler()
   }
 }
