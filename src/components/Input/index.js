@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import Carousel, { Value } from '../Carousel'
+import Carousel, { Value } from 'components/Carousel'
 
 
 const StyledCarousel = styled(Carousel)``

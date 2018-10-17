@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 import Carousel, { Value } from '../Carousel'
 
-import { granularTime, handLength, paddedNumber } from '../../helpers/clock'
+import { granularTime, handLength, paddedNumber } from 'helpers/clock'
 
 
 const StyledClock = styled.div`

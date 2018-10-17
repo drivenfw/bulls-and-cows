@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { keyframes } from 'styled-components'
 
-// TODO: text-shadow, width > height - ?
 
 const pulse = props => keyframes`
   0% { 
