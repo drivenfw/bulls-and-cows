@@ -10,7 +10,11 @@ import { gameStages } from '../../reducers/game'
 import './fireworks.css'
 
 
-const Congrats = styled.div`
+const Message = styled.div`
+  font-size: 2em; 
+`
+
+const Congrats = styled(Message)`
   width: 100%;
   height: 100%;
   font-size: 2em;
@@ -46,6 +50,7 @@ const GameDisplay = ({
   className, 
   content, 
   countdown,
+  playBtn,
   scroll,
   stage 
 }) => {
@@ -57,9 +62,13 @@ const GameDisplay = ({
     center = true
     displayContent = <Countdown value={countdown} />
   } else if (stage === gameStages.PLAY) {
-    displayContent = content.map((line, index) =>
-      <span key={index}>{index + 1}. {line}<br /></span>
-    )
+    displayContent = playBtn
+      ? <Message>Pause</Message>
+      : content.map((line, index) =>
+          <span key={index}>{index + 1}. {line}<br /></span>
+        )
+
+    center = playBtn
   } else if (stage === gameStages.CONGRATS) {
     displayContent = <Congrats className="fireworks">
       <div className="before"></div>
@@ -76,11 +85,13 @@ const GameDisplay = ({
 }
 
 const mapStateToProps = ({
+  controls: { playBtn },
   display: { content, scroll },
   game: { countdown, stage }
 }) => ({
   content, 
   countdown,
+  playBtn,
   scroll,
   stage
 })
