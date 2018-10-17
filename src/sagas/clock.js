@@ -1,7 +1,7 @@
 import { delay } from 'redux-saga'
 import { put, select, takeLatest } from 'redux-saga/effects'
 
-import { tick } from '../actions/clock'
+import { tick } from 'actions/clock'
 
 
 export function *tickHandler() {

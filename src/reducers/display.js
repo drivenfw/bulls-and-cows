@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-act'
 
-import { stop } from '../actions/controls'
-import { addContent, clear } from '../actions/display'
+import { stop } from 'actions/controls'
+import { addContent, clear } from 'actions/display'
 
 
 const initialState = {

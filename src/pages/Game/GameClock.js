@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
-import Clock from '../../components/Clock'
+import Clock from 'components/Clock'
 
 
 const StyledClock = styled(Clock)`

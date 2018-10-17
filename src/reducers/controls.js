@@ -1,11 +1,11 @@
 import { createReducer } from 'redux-act'
 
-import { pause, stop } from '../actions/controls'
+import { pause, stop } from 'actions/controls'
 import { 
   countdownStage,
   playStage,
   congratsStage
-} from '../actions/game'
+} from 'actions/game'
 
 
 const initialState = {

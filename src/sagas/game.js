@@ -2,9 +2,9 @@ import { delay } from 'redux-saga'
 import { put, select, takeEvery } from 'redux-saga/effects'
 
 import { tickHandler } from './clock'
-import { countdown, playStage } from '../actions/game'
-import { clear } from '../actions/display'
-import Game from '../app/Game'
+import { countdown, playStage } from 'actions/game'
+import { clear } from 'actions/display'
+import Game from 'app/Game'
 
 
 export let game = null

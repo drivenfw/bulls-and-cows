@@ -2,10 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
-import Countdown from '../../components/Countdown'
-import Display from '../../components/Display'
+import Countdown from 'components/Countdown'
+import Display from 'components/Display'
 
-import { gameStages } from '../../reducers/game'
+import { gameStages } from 'reducers/game'
 
 import './fireworks.css'
 

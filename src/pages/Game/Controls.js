@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
-import Button from '../../components/Button'
-import Input from '../../components/Input'
+import Button from 'components/Button'
+import Input from 'components/Input'
 
-import Pause from '../../icons/Pause'
-import Play from '../../icons/Play'
-import Stop from '../../icons/Stop'
-import Submit from '../../icons/Submit'
+import Pause from 'icons/Pause'
+import Play from 'icons/Play'
+import Stop from 'icons/Stop'
+import Submit from 'icons/Submit'
 
-import { pause, play, stop, submit } from '../../actions/controls'
-import { gameStages } from '../../reducers/game'
+import { pause, play, stop, submit } from 'actions/controls'
+import { gameStages } from 'reducers/game'
 
 
 const StyledControls = styled.div`

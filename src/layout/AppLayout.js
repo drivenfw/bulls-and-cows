@@ -7,8 +7,8 @@ import {
 import Loadable from 'react-loadable'
 import styled from 'styled-components'
 
-import Button from '../components/Button'
-import Spinner from '../components/Spinner'
+import Button from 'components/Button'
+import Spinner from 'components/Spinner'
 
 
 const StyledAppLayout = styled.div`

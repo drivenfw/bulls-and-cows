@@ -1,18 +1,18 @@
 import { delay } from 'redux-saga'
 import { put, select, takeEvery } from 'redux-saga/effects'
 
-import { addContent } from '../actions/display'
+import { addContent } from 'actions/display'
 import { 
   countdown, 
   initStage,
   countdownStage, 
   playStage,
   congratsStage
-} from '../actions/game'
+} from 'actions/game'
 import { tickHandler } from './clock'
 import { game } from './game'
 
-import { gameStages } from '../reducers/game'
+import { gameStages } from 'reducers/game'
 
 
 const COUNTDOWN_FROM = 3

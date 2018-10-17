@@ -6,7 +6,7 @@ import {
   countdownStage,
   playStage,
   congratsStage
-} from '../actions/game'
+} from 'actions/game'
 
 
 export const gameStages = {

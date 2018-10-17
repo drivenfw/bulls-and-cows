@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-act'
 
-import { tick } from '../actions/clock'
-import { stop } from '../actions/controls'
+import { tick } from 'actions/clock'
+import { stop } from 'actions/controls'
 
 
 const clock = createReducer({
