@@ -2,8 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
+import Countdown from '../../components/Countdown'
 import Display from '../../components/Display'
 
+
+const Congrats = styled.div`
+  font-size: 2em;
+`
 
 const StyledGameDisplay = styled(Display)`
   margin-bottom: 10px;
@@ -27,17 +32,45 @@ const StyledGameDisplay = styled(Display)`
     font-size: 1.375em;
   }
 `
-const GameDisplay = ({ className, content, scroll }) =>
-  <StyledGameDisplay scroll={scroll}>
-    {content.map((line, index) =>
+
+const GameDisplay = ({ 
+  className, 
+  content, 
+  countdown,
+  scroll,
+  stage 
+}) => {
+  let center = false, displayContent
+
+  if (stage === 0) {
+    displayContent = content.join(' ')
+  } else if (stage === 1) {
+    center = true
+    displayContent = <Countdown value={countdown} />
+  } else if (stage === 2) {
+    displayContent = content.map((line, index) =>
       <span key={index}>{index + 1}. {line}<br /></span>
-    )}
-  </StyledGameDisplay>
+    )
+  } else if (stage === 3) {
+    center = true
+    displayContent = <Congrats>You won!</Congrats>
+  }
+
+  return (
+    <StyledGameDisplay center={center} scroll={scroll}>
+      {displayContent}
+    </StyledGameDisplay>
+  )
+}
 
 const mapStateToProps = ({
-  display: { content, scroll }
+  display: { content, scroll },
+  game: { countdown, stage }
 }) => ({
-  content, scroll
+  content, 
+  countdown,
+  scroll,
+  stage
 })
 
 export default connect(mapStateToProps)(GameDisplay)

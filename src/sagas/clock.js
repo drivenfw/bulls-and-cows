@@ -1,5 +1,5 @@
 import { delay } from 'redux-saga'
-import { put, select, takeEvery } from 'redux-saga/effects'
+import { put, select, takeLatest } from 'redux-saga/effects'
 
 import { tick } from '../actions/clock'
 
@@ -18,6 +18,6 @@ export function *tickHandler() {
 }
 
 export function *watchClockActions() {
-  yield takeEvery('CLOCK_TICK', tickHandler)
+  yield takeLatest('CLOCK_TICK', tickHandler)
 }
 

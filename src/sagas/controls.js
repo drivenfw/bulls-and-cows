@@ -1,29 +1,33 @@
+import { delay } from 'redux-saga'
 import { put, select, takeEvery } from 'redux-saga/effects'
 
-import Game from '../app/Game'
+import { addContent } from '../actions/display'
+import { 
+  countdown, 
+  gameInit,
+  gameCountdown, 
+  gamePlay,
+  gameCongrats
+} from '../actions/game'
 import { tickHandler } from './clock'
-import { addContent, clear } from '../actions/display'
-import { finish } from '../actions/game'
+import { game } from './game'
 
-
-let game = null
 
 function *playHandler() {
-  if (!game) {
-    const { settings: { options } } = yield select()
+  const { game: { stage } } = yield select()
 
-    // TODO: use reselect
-    game = new Game(Array.from({ length: options }, (_, i) => i + 1))
-    game.start()
-
-    yield put(clear())
+  if (stage === 0) { // TODO: replace numbers with constants
+    yield put(gameCountdown(3))
+    yield delay(1500)
+    yield put(countdown())
+  } else {
+    yield put(gamePlay())
+    yield *tickHandler()
   }
-
-  yield *tickHandler()
 }
 
-function stopHandler() {
-  game = null
+function *stopHandler() {
+  yield put(gameInit())
 }
 
 const calcScroll = contentLength => {
@@ -42,7 +46,7 @@ function *submitHandler(action) {
   }))
 
   if (result === '++++') {
-    yield put(finish())
+    yield put(gameCongrats())
   }
 }
 

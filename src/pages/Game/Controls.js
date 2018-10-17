@@ -96,6 +96,7 @@ class Controls extends Component {
       options,
       pauseDisabled,
       playBtn,
+      playDisabled,
       stopDisabled,
       submitDisabled,
       onPause
@@ -109,6 +110,7 @@ class Controls extends Component {
         <ButtonGroup>
           {playBtn 
             ? <StyledButton
+                disabled={playDisabled}
                 scale={1.1} 
                 onClick={this.playHandler}
               >
@@ -149,12 +151,19 @@ class Controls extends Component {
 }
 
 const mapStateToProps = ({ 
-  controls: { pauseDisabled, playBtn, stopDisabled, submitDisabled },
+  controls: { 
+    pauseDisabled, 
+    playBtn, 
+    playDisabled,
+    stopDisabled, 
+    submitDisabled 
+  },
   settings: { options }
 }) => ({
   options,
   pauseDisabled,
   playBtn, 
+  playDisabled,
   stopDisabled, 
   submitDisabled
 })
