@@ -54,6 +54,42 @@ const StyledCarousel = styled.div`
   & .turn-up-exit-active {
     top: -100%;
   }
+
+  & .turn-right-enter {
+    left: -100%;
+    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
+  }
+
+  & .turn-right-enter-active {
+    left: 0;
+  }
+
+  & .turn-right-exit {
+    left: 0;
+    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
+  }
+
+  & .turn-right-exit-active {
+    left: 100%;
+  }
+
+  & .turn-left-enter {
+    left: 100%;
+    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
+  }
+
+  & .turn-left-enter-active {
+    left: 0;
+  }
+
+  & .turn-left-exit {
+    left: 0;
+    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
+  }
+
+  & .turn-left-exit-active {
+    left: -100%;
+  }
 `
 
 export const Value = styled.div`
@@ -85,7 +121,7 @@ const Carousel = ({ children, className, direction }) =>
 Carousel.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  direction: PropTypes.oneOf(['down', 'up']).isRequired
+  direction: PropTypes.oneOf(['down', 'up', 'left', 'right']).isRequired
 }
 
 export default Carousel
