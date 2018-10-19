@@ -18,15 +18,19 @@
     "styled-components": "^3.4.5"
   },
   "scripts": {
-    "start": "NODE_PATH=src react-scripts start",
-    "build": "NODE_PATH=src react-scripts build",
-    "test": "NODE_PATH=src react-scripts test --env=jsdom",
+    "start": "NODE_PATH=src react-app-rewired start",
+    "build": "NODE_PATH=src react-app-rewired build",
+    "test": "NODE_PATH=src react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "extract-messages": "NODE_ENV=development ./node_modules/.bin/extract-messages -l=en,ru -o src/i18n/ --flat 'src/**/*.js'"
   },
   "devDependencies": {
+    "babel-plugin-react-intl-auto": "^1.1.1",
+    "extract-react-intl-messages": "^0.11.1",
     "node-sass-chokidar": "^1.3.4",
+    "react-app-rewired": "^1.6.2",
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6"
   }

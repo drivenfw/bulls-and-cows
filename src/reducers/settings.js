@@ -2,6 +2,7 @@ import { createReducer } from 'redux-act'
 
 
 const initialState = {
+  locale: 'en',
   options: 6
 }
 

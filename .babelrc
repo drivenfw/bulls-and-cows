@@ -1,0 +1,7 @@
+{
+  "presets": ["react-app"],
+  "plugins": [
+    ["react-intl-auto", { "removePrefix": "src/", "filebase": true, "includeExportName": true }]
+  ]
+}
+

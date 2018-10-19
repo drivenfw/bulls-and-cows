@@ -6,9 +6,12 @@ import {
 } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl'
 
 import Button from 'components/Button'
 import Spinner from 'components/Spinner'
+
+import messages from './i18n'
 
 
 const StyledAppLayout = styled.div`
@@ -123,10 +126,14 @@ class AppLayout extends Component {
         <StyledAppLayout>
           <NavBar>
             <Link to="/">
-              <StyledButton>Game</StyledButton>
+              <StyledButton>
+                <FormattedMessage {...messages.game} />
+              </StyledButton>
             </Link>
             <Link to="/settings">
-              <StyledButton>Settings</StyledButton>
+              <StyledButton>
+                <FormattedMessage {...messages.settings} />
+              </StyledButton>
             </Link>
           </NavBar>
           <Content>

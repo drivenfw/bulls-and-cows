@@ -1,0 +1,6 @@
+{
+  "layout.i18n.game": "Game",
+  "layout.i18n.settings": "Settings",
+  "pages.Game.i18n.congrats": "You won!",
+  "pages.Game.i18n.pause": "Pause"
+}

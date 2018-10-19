@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl'
 
 import Countdown from 'components/Countdown'
 import Display from 'components/Display'
 
 import { gameStages } from 'reducers/game'
+
+import messages from './i18n'
 
 import './fireworks.css'
 
@@ -21,6 +24,7 @@ const Congrats = styled(Message)`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 `
 
 const StyledGameDisplay = styled(Display)`
@@ -63,7 +67,7 @@ const GameDisplay = ({
     displayContent = <Countdown value={countdown} />
   } else if (stage === gameStages.PLAY) {
     displayContent = playBtn
-      ? <Message>Pause</Message>
+      ? <Message><FormattedMessage {...messages.pause} /></Message>
       : content.map((line, index) =>
           <span key={index}>{index + 1}. {line}<br /></span>
         )
@@ -72,7 +76,7 @@ const GameDisplay = ({
   } else if (stage === gameStages.CONGRATS) {
     displayContent = <Congrats className="fireworks">
       <div className="before"></div>
-      You won!
+      <FormattedMessage {...messages.congrats} />
       <div className="after"></div>
     </Congrats>
   }
