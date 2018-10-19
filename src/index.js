@@ -1,8 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import registerServiceWorker from './registerServiceWorker'
+import configureStore from './configureStore'
+import themes from './themes'
+
+import App from './App'
+
+import './index.css'
+
+
+const store = configureStore()
+
+ReactDOM.render(
+  <Provider store={store}>
+    <ThemeProvider theme={themes.main}>
+      <App />
+    </ThemeProvider>
+  </Provider>,
+  document.getElementById('root')
+)
+
+registerServiceWorker()
+
