@@ -37,9 +37,9 @@ export default {
     primaryColor2: primaryColor2('#308DCD')
   },
   indigo: {
-    primaryColor: '#802CD4',
-    primaryColor1: primaryColor1('#802CD4'),
-    primaryColor2: primaryColor2('#802CD4')
+    primaryColor: '#8B20F0',
+    primaryColor1: primaryColor1('#8B20F0'),
+    primaryColor2: primaryColor2('#8B20F0')
   }
 }
 
