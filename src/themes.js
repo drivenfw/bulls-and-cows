@@ -21,10 +21,25 @@ export default {
     primaryColor1: primaryColor1('#FF8C00'),
     primaryColor2: primaryColor2('#FF8C00')
   },
+  yellow: {
+    primaryColor: '#DEC224',
+    primaryColor1: primaryColor1('#DEC224'),
+    primaryColor2: primaryColor2('#DEC224')
+  },
   green: {
     primaryColor: '#2BC486',
     primaryColor1: primaryColor1('#2BC486'),
     primaryColor2: primaryColor2('#2BC486')
+  },
+  blue: {
+    primaryColor: '#308DCD',
+    primaryColor1: primaryColor1('#308DCD'),
+    primaryColor2: primaryColor2('#308DCD')
+  },
+  indigo: {
+    primaryColor: '#802CD4',
+    primaryColor1: primaryColor1('#802CD4'),
+    primaryColor2: primaryColor2('#802CD4')
   }
 }
 
