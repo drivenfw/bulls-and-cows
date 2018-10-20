@@ -1,5 +1,7 @@
 import { createReducer } from 'redux-act'
 
+import { switchLocale } from 'actions/settings'
+
 
 const initialState = {
   locale: 'en',
@@ -7,7 +9,10 @@ const initialState = {
 }
 
 const settings = createReducer({
-
+  [switchLocale]: (state, payload) => ({
+    ...state,
+    locale: payload
+  })
 }, initialState)
 
 export default settings
