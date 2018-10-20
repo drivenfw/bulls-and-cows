@@ -55,26 +55,8 @@ const StyledCarousel = styled.div`
     top: -100%;
   }
 
-  & .turn-right-enter {
-    left: -100%;
-    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
-  }
-
-  & .turn-right-enter-active {
-    left: 0;
-  }
-
-  & .turn-right-exit {
-    left: 0;
-    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
-  }
-
-  & .turn-right-exit-active {
-    left: 100%;
-  }
-
   & .turn-left-enter {
-    left: 100%;
+    left: -100%;
     transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
@@ -88,6 +70,24 @@ const StyledCarousel = styled.div`
   }
 
   & .turn-left-exit-active {
+    left: 100%;
+  }
+
+  & .turn-right-enter {
+    left: 100%;
+    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
+  }
+
+  & .turn-right-enter-active {
+    left: 0;
+  }
+
+  & .turn-right-exit {
+    left: 0;
+    transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
+  }
+
+  & .turn-right-exit-active {
     left: -100%;
   }
 `
