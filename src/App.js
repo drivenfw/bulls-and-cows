@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { IntlProvider } from 'react-intl'
 
 import AppLayout from 'layout/AppLayout'
 
 import messages from 'i18n'
+import themes from './themes'
 
 
 const StyledApp = styled.div`
@@ -17,19 +18,23 @@ const StyledApp = styled.div`
 
 class App extends Component {
   render() {
-    const { locale } = this.props
+    const { locale, theme } = this.props
 
     return (
-      <IntlProvider locale={locale} messages={messages[locale]}>
-        <StyledApp>
-          <AppLayout />
-        </StyledApp>
-      </IntlProvider>
+      <ThemeProvider theme={themes[theme]}>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+          <StyledApp>
+            <AppLayout />
+          </StyledApp>
+        </IntlProvider>
+      </ThemeProvider>
     )
   }
 }
 
 export default connect(({
-  settings: { locale } 
-}) => ({ locale  }))(App)
+  settings: { locale, theme } 
+}) => ({ 
+  locale, theme  
+}))(App)
 

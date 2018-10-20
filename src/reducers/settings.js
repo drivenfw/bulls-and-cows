@@ -5,7 +5,8 @@ import { switchLocale } from 'actions/settings'
 
 const initialState = {
   locale: 'en',
-  options: 6
+  options: 6,
+  theme: 'main'
 }
 
 const settings = createReducer({
