@@ -1,6 +1,6 @@
 import { createReducer } from 'redux-act'
 
-import { switchLocale } from 'actions/settings'
+import { switchLocale, switchTheme } from 'actions/settings'
 
 
 const initialState = {
@@ -13,6 +13,10 @@ const settings = createReducer({
   [switchLocale]: (state, payload) => ({
     ...state,
     locale: payload
+  }),
+  [switchTheme]: (state, payload) => ({
+    ...state,
+    theme: payload
   })
 }, initialState)
 
