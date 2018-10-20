@@ -42,6 +42,10 @@ const Button = styled.div`
       0 2px 7px ${theme.primaryColor1},
       0 5px 5px ${theme.primaryColor2};
   `}
+
+  @media (min-width: 850px) {
+    font-size: 2.2em;
+  }
 `
 
 const LeftButton = styled(Button)`
@@ -104,6 +108,12 @@ class Select extends Component {
       </StyledSelect>
     )
   }
+}
+
+Select.propTypes = {
+  children: PropTypes.node,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired
 }
 
 export default Select
