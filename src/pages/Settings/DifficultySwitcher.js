@@ -1,9 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 
 import Select, { Option } from 'components/Select'
 
 import { switchDifficulty } from 'actions/settings'
+
+import messages from './i18n'
 
 
 const DifficultySwitcher = ({ difficulty, onDifficultyChange }) =>
@@ -12,19 +15,19 @@ const DifficultySwitcher = ({ difficulty, onDifficultyChange }) =>
     onChange={onDifficultyChange}
   >
     <Option value="1">
-      Easier than easy
+      <FormattedMessage {...messages.easierThanEasy} />
     </Option>
     <Option value="2">
-      Easy
+      <FormattedMessage {...messages.easy} />
     </Option>
     <Option value="3">
-      Medium
+      <FormattedMessage {...messages.medium} />
     </Option>
     <Option value="4">
-      Hard
+      <FormattedMessage {...messages.hard} />
     </Option>
     <Option value="5">
-      Harder than hard
+      <FormattedMessage {...messages.harderThanHard} />
     </Option>
   </Select>
 

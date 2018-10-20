@@ -2,5 +2,10 @@
   "layout.i18n.game": "Game",
   "layout.i18n.settings": "Settings",
   "pages.Game.i18n.congrats": "You won!",
-  "pages.Game.i18n.pause": "Pause"
+  "pages.Game.i18n.pause": "Pause",
+  "pages.Settings.i18n.easierThanEasy": "Easier than easy",
+  "pages.Settings.i18n.easy": "Easy",
+  "pages.Settings.i18n.hard": "Hard",
+  "pages.Settings.i18n.harderThanHard": "Harder than hard",
+  "pages.Settings.i18n.medium": "Medium"
 }

@@ -21,7 +21,7 @@ const StyledSelect = styled.div`
 `
 
 const StyledCarousel = styled(Carousel)`
-  width: 200px;
+  width: 230px;
   height: 35px;
   font-size: 1.6em;
 

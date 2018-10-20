@@ -2,5 +2,10 @@
   "layout.i18n.game": "Игра",
   "layout.i18n.settings": "Настройки",
   "pages.Game.i18n.congrats": "Вы победили!",
-  "pages.Game.i18n.pause": "Пауза"
+  "pages.Game.i18n.pause": "Пауза",
+  "pages.Settings.i18n.easierThanEasy": "Легче легкого",
+  "pages.Settings.i18n.easy": "Легкий",
+  "pages.Settings.i18n.hard": "Сложный",
+  "pages.Settings.i18n.harderThanHard": "Сложнее сложного",
+  "pages.Settings.i18n.medium": "Средний"
 }

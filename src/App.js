@@ -22,7 +22,11 @@ class App extends Component {
 
     return (
       <ThemeProvider theme={themes[theme]}>
-        <IntlProvider locale={locale} messages={messages[locale]}>
+        <IntlProvider 
+          key={locale}
+          locale={locale} 
+          messages={messages[locale]}
+        >
           <StyledApp>
             <AppLayout />
           </StyledApp>
