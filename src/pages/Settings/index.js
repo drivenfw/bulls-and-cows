@@ -6,7 +6,11 @@ import LocaleSwitcher from './LocaleSwitcher'
 import ThemeSwitcher from './ThemeSwitcher'
 
 
-const StyledSettings = styled.div``
+const StyledSettings = styled.div`
+  & > * {
+    margin-bottom: 20px;
+  }
+`
 
 const Settings = () => 
   <StyledSettings>
