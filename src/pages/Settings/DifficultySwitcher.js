@@ -31,8 +31,11 @@ const DifficultySwitcher = ({ difficulty, onDifficultyChange }) =>
     </Option>
   </Select>
 
-const mapStateToProps = ({ settings: { difficulty } }) => ({
-  difficulty  
+const mapStateToProps = ({ 
+  settings: { difficulty, locale } 
+}) => ({
+  difficulty,
+  locale  
 })
 
 const mapDispatchToProps = dispatch => ({
