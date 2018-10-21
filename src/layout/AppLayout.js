@@ -19,6 +19,7 @@ const StyledAppLayout = styled.div`
   height: 505px;
   border: 1px solid ${props => props.theme.primaryColor2};
   border-radius: 10px;
+  margin: 5px;
 
   @media (min-width: 375px) {
     min-width: 362px;
@@ -35,7 +36,7 @@ const StyledAppLayout = styled.div`
     height: 486px;
   }
 
-  @media (orientation: portrait) {
+  @media (orientation: landscape) {
     margin: 20px;
   }
 `
