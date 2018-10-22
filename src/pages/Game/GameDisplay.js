@@ -74,6 +74,7 @@ const GameDisplay = ({
 
     center = playBtn
   } else if (stage === gameStages.CONGRATS) {
+    center = true
     displayContent = <Congrats className="fireworks">
       <div className="before"></div>
       <FormattedMessage {...messages.congrats} />

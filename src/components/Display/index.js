@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 
 const StyledDisplay = styled.div`
@@ -31,6 +31,25 @@ const Inner = styled.div`
     align-items: center;
     justify-content: center;
   `}
+`
+
+const fadeIn = keyframes`
+  from { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+  to { 
+    opacity: 1 
+    transform: scale(1);
+  }
+`
+
+const Content = styled.div`
+  animation: ${fadeIn} 400ms ease-in;
 `
 
 const ScrollBar = styled.div`
@@ -115,7 +134,9 @@ class Display extends Component {
     return (
       <StyledDisplay className={className}>
         <Inner innerRef={this.innerEl} center={center}>
-          {children}
+          {React.Children.map(children, child => (
+            <Content>{child}</Content>
+          ))}
         </Inner>
         <ScrollBar>
           <div>
