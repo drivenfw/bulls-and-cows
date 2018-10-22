@@ -7,10 +7,12 @@ import Select, { Option } from 'components/Select'
 import { switchDifficulty } from 'actions/settings'
 
 import messages from './i18n'
+import { gameStages } from 'reducers/game'
 
 
-const DifficultySwitcher = ({ difficulty, onDifficultyChange }) =>
+const DifficultySwitcher = ({ difficulty, disabled, onDifficultyChange }) =>
   <Select
+    disabled={disabled} 
     value={difficulty}
     onChange={onDifficultyChange}
   >
@@ -31,11 +33,13 @@ const DifficultySwitcher = ({ difficulty, onDifficultyChange }) =>
     </Option>
   </Select>
 
-const mapStateToProps = ({ 
+const mapStateToProps = ({
+  game: { stage },
   settings: { difficulty, locale } 
 }) => ({
   difficulty,
-  locale  
+  disabled: [gameStages.COUNTDOWN, gameStages.PLAY].includes(stage), // TODO: reselect
+  locale
 })
 
 const mapDispatchToProps = dispatch => ({
