@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 3px;
-  padding: 3px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
