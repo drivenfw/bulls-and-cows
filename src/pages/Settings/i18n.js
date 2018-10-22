@@ -6,6 +6,7 @@ export default defineMessages({
   easy: 'Easy',
   medium: 'Medium',
   hard: 'Hard',
-  harderThanHard: 'Harder than hard'
+  harderThanHard: 'Harder than hard',
+  rememberSettings: 'Remember settings'
 })
 

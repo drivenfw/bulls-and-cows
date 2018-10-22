@@ -7,5 +7,6 @@
   "pages.Settings.i18n.easy": "Easy",
   "pages.Settings.i18n.hard": "Hard",
   "pages.Settings.i18n.harderThanHard": "Harder than hard",
-  "pages.Settings.i18n.medium": "Medium"
+  "pages.Settings.i18n.medium": "Medium",
+  "pages.Settings.i18n.rememberSettings": "Remember settings"
 }

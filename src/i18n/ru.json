@@ -7,5 +7,6 @@
   "pages.Settings.i18n.easy": "Легкий",
   "pages.Settings.i18n.hard": "Сложный",
   "pages.Settings.i18n.harderThanHard": "Сложнее сложного",
-  "pages.Settings.i18n.medium": "Средний"
+  "pages.Settings.i18n.medium": "Средний",
+  "pages.Settings.i18n.rememberSettings": "Запомнить настройки"
 }
