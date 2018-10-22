@@ -48,9 +48,9 @@ const StyledSelect = styled.div`
 `
 
 const StyledCarousel = styled(Carousel)`
-  width: 230px;
-  height: 35px;
-  font-size: 1.5em;
+  width: 215px;
+  height: 33px;
+  font-size: 1.4em;
   border-radius: 5px;
 
   @media (min-width: 850px) {
