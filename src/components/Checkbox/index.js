@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 
 const StyledCheckbox = styled.div`
@@ -35,9 +35,6 @@ const Wrapper = styled.div`
   height: 30px;
   border-radius: 3px;
   padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   ${({ theme }) => css`
     border: 1px solid ${theme.primaryColor};
@@ -47,7 +44,13 @@ const Wrapper = styled.div`
   @media (min-width: 850px) {
     width: 35px;
     height: 35px;
+    padding: 5px;
   }
+`
+
+const appear = keyframes`
+  from { transform: scale(0.9) }
+  to { transform: scale(1) }
 `
 
 const Checkmark = styled.div`
@@ -59,6 +62,8 @@ const Checkmark = styled.div`
     background: ${theme.primaryColor};
     box-shadow: 0 0 3px 1px ${theme.primaryColor2};
   `}
+
+  animation: ${appear} 50ms linear;
 `
 
 class Checkbox extends Component {
