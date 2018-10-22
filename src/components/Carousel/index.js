@@ -19,75 +19,75 @@ const StyledCarousel = styled.div`
     box-shadow: 0 0 5px 3px ${theme.primaryColor2};
   `}
 
-  & .turn-down-enter {
+  & .scroll-down-enter {
     top: -100%;
     transition: top 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-down-enter-active {
+  & .scroll-down-enter-active {
     top: 0;
   }
 
-  & .turn-down-exit {
+  & .scroll-down-exit {
     top: 0;
     transition: top 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-down-exit-active {
+  & .scroll-down-exit-active {
     top: 100%;
   }
 
-  & .turn-up-enter {
+  & .scroll-up-enter {
     top: 100%;
     transition: top 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-up-enter-active {
+  & .scroll-up-enter-active {
     top: 0;
   }
 
-  & .turn-up-exit {
+  & .scroll-up-exit {
     top: 0;
     transition: top 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-up-exit-active {
+  & .scroll-up-exit-active {
     top: -100%;
   }
 
-  & .turn-left-enter {
+  & .scroll-left-enter {
     left: -100%;
     transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-left-enter-active {
+  & .scroll-left-enter-active {
     left: 0;
   }
 
-  & .turn-left-exit {
+  & .scroll-left-exit {
     left: 0;
     transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-left-exit-active {
+  & .scroll-left-exit-active {
     left: 100%;
   }
 
-  & .turn-right-enter {
+  & .scroll-right-enter {
     left: 100%;
     transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-right-enter-active {
+  & .scroll-right-enter-active {
     left: 0;
   }
 
-  & .turn-right-exit {
+  & .scroll-right-exit {
     left: 0;
     transition: left 500ms cubic-bezier(0, 0.7, 0.25, 1.19);
   }
 
-  & .turn-right-exit-active {
+  & .scroll-right-exit-active {
     left: -100%;
   }
 `
@@ -108,7 +108,7 @@ const Carousel = ({ children, className, direction }) =>
       {React.Children.map(children, child => (
         <CSSTransition
           timeout={500}
-          classNames={`turn-${direction}`}
+          classNames={`scroll-${direction}`}
           mountOnEnter
           unmountOnExit
         >
