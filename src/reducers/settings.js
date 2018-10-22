@@ -3,7 +3,8 @@ import { createReducer } from 'redux-act'
 import {
   switchDifficulty,
   switchLocale, 
-  switchTheme 
+  switchTheme,
+  toggleRememberSettings
 } from 'actions/settings'
 
 
@@ -11,6 +12,7 @@ const initialState = {
   difficulty: '1',
   locale: 'en',
   options: 6,
+  rememberSettings: false,
   theme: 'main'
 }
 
@@ -26,6 +28,10 @@ const settings = createReducer({
   [switchTheme]: (state, payload) => ({
     ...state,
     theme: payload
+  }),
+  [toggleRememberSettings]: (state, payload) => ({
+    ...state,
+    rememberSettings: payload
   })
 }, initialState)
 

@@ -7,3 +7,5 @@ export const switchLocale = createAction('SETTINGS_SWITCH_LOCALE')
 
 export const switchTheme = createAction('SETTINGS_SWITCH_THEME')
 
+export const toggleRememberSettings = createAction('TOGGLE_REMEMBER_SETTINGS')
+
