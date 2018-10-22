@@ -10,6 +10,14 @@ import ThemeSwitcher from './ThemeSwitcher'
 const StyledSettings = styled.div`
   & > * {
     margin-bottom: 20px;
+
+    @media (min-width: 550px) {
+      margin-bottom: 7px;
+    }
+
+    @media (min-width: 850px) {
+      margin-bottom: 20px;
+    }
   }
 `
 
