@@ -23,12 +23,13 @@ const StyledSelect = styled.div`
 const StyledCarousel = styled(Carousel)`
   width: 230px;
   height: 35px;
-  font-size: 1.6em;
+  font-size: 1.5em;
+  border-radius: 5px;
 
   @media (min-width: 850px) {
     width: 300px;
     height: 40px;
-    font-size: 1.8em;
+    font-size: 1.7em;
   }
 `
 
