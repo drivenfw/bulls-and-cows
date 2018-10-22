@@ -18,6 +18,33 @@ const StyledSelect = styled.div`
   align-items: center; 
   padding: 3px;
   overflow: hidden;
+
+
+  ${({ disabled, theme }) => css`
+    opacity: ${disabled && 0.5};
+
+    & > ${Button} {
+      cursor: ${disabled ? 'auto' : 'pointer'};
+    }
+
+    & > ${LeftButton}:active {
+      ${disabled && css`
+        transform: rotate(-90deg) scaleX(2.2) scaleY(0.9);
+        text-shadow:
+          0 2px 7px ${theme.primaryColor1},
+          0 5px 5px ${theme.primaryColor2};
+      `}
+    }
+
+    & > ${RightButton}:active {
+      ${disabled && css`
+        transform: rotate(90deg) scaleX(2.2) scaleY(0.9);
+        text-shadow:
+          0 2px 7px ${theme.primaryColor1},
+          0 5px 5px ${theme.primaryColor2};
+      `}
+    }
+  `}
 `
 
 const StyledCarousel = styled(Carousel)`
@@ -36,7 +63,6 @@ const StyledCarousel = styled(Carousel)`
 const Button = styled.div`
   font-size: 1.8em;
   text-align: center;
-  cursor: pointer;
   user-select: none;
   transition: all 0.1s ease;
 
@@ -76,34 +102,38 @@ class Select extends Component {
   direction = 'right'
 
   left = () => {
-    const { children, value, onChange } = this.props
+    const { children, disabled, value, onChange } = this.props
 
-    const childArray = React.Children.toArray(children)
-    const index = childArray.findIndex(child => child.props.value === value)
-    const nextIndex = index > 0 ? index - 1 : childArray.length - 1
+    if (!disabled) {
+      const childArray = React.Children.toArray(children)
+      const index = childArray.findIndex(child => child.props.value === value)
+      const nextIndex = index > 0 ? index - 1 : childArray.length - 1
 
-    this.direction = 'left'
-    onChange(childArray[nextIndex].props.value)
+      this.direction = 'left'
+      onChange(childArray[nextIndex].props.value)
+    }
   } 
 
   right = () => {
-    const { children, value, onChange } = this.props
+    const { children, disabled, value, onChange } = this.props
 
-    const childArray = React.Children.toArray(children)
-    const index = childArray.findIndex(child => child.props.value === value)
-    const nextIndex = index < childArray.length - 1 ? index + 1 : 0
+    if (!disabled) {
+      const childArray = React.Children.toArray(children)
+      const index = childArray.findIndex(child => child.props.value === value)
+      const nextIndex = index < childArray.length - 1 ? index + 1 : 0
 
-    this.direction = 'right'
-    onChange(childArray[nextIndex].props.value)
+      this.direction = 'right'
+      onChange(childArray[nextIndex].props.value)
+    }
   }
 
   render() {
-    const { children, value } = this.props
+    const { children, disabled, value } = this.props
     const selected = React.Children.toArray(children)
       .find(child => child.props.value === value)
 
     return (
-      <StyledSelect>
+      <StyledSelect disabled={disabled}>
         <LeftButton onClick={this.left}>⌃</LeftButton>
         <StyledCarousel direction={this.direction}>
           <Value key={value}>{selected}</Value>
@@ -116,6 +146,7 @@ class Select extends Component {
 
 Select.propTypes = {
   children: PropTypes.node,
+  disabled: PropTypes.bool,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired
 }
