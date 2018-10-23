@@ -5,9 +5,9 @@ import { FormattedMessage } from 'react-intl'
 import Select, { Option } from 'components/Select'
 
 import { switchDifficulty } from 'actions/settings'
+import { getDifficultySwitcherState } from 'selectors'
 
 import messages from './i18n'
-import { gameStages } from 'reducers/game'
 
 
 const DifficultySwitcher = ({ difficulty, disabled, onDifficultyChange }) =>
@@ -34,11 +34,11 @@ const DifficultySwitcher = ({ difficulty, disabled, onDifficultyChange }) =>
   </Select>
 
 const mapStateToProps = ({
-  game: { stage },
+  game,
   settings: { difficulty, locale } 
 }) => ({
   difficulty,
-  disabled: [gameStages.COUNTDOWN, gameStages.PLAY].includes(stage), // TODO: reselect
+  disabled: getDifficultySwitcherState({ game }),
   locale
 })
 
