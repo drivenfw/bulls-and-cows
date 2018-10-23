@@ -61,7 +61,7 @@ const GameDisplay = ({
   let center = false, displayContent
 
   if (stage === gameStages.INIT) {
-    displayContent = content.join(' ')
+    displayContent = <span key="descr">{content.join(' ')}</span>
   } else if (stage === gameStages.COUNTDOWN) {
     center = true
     displayContent = <Countdown value={countdown} />
