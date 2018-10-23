@@ -9,9 +9,8 @@ import {
 
 
 const initialState = {
-  difficulty: '1',
+  difficulty: 1,
   locale: 'en',
-  options: 6,
   rememberSettings: false,
   theme: 'main'
 }

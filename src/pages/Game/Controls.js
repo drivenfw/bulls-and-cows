@@ -12,6 +12,7 @@ import Submit from 'icons/Submit'
 
 import { pause, play, stop, submit } from 'actions/controls'
 import { gameStages } from 'reducers/game'
+import { getOptions } from 'selectors'
 
 
 const StyledControls = styled.div`
@@ -63,7 +64,7 @@ class Controls extends Component {
 
   resetInputs = () => {
     this.inputs.forEach(input => 
-      input.current.value = 1
+      input.current.value = 0
     )
   }
 
@@ -103,9 +104,6 @@ class Controls extends Component {
       onPause
     } = this.props
 
-    // TODO: leverage reselect
-    const inputOptions = Array.from({ length: options }, (_, i) => i + 1)
-
     return (
       <StyledControls className={className}>
         <ButtonGroup>
@@ -134,10 +132,10 @@ class Controls extends Component {
           </StyledButton>
         </ButtonGroup>
         <InputGroup>
-          <Input ref={this.inputs[0]} options={inputOptions} />
-          <Input ref={this.inputs[1]} options={inputOptions} />
-          <Input ref={this.inputs[2]} options={inputOptions} />
-          <Input ref={this.inputs[3]} options={inputOptions} />
+          <Input ref={this.inputs[0]} options={options} />
+          <Input ref={this.inputs[1]} options={options} />
+          <Input ref={this.inputs[2]} options={options} />
+          <Input ref={this.inputs[3]} options={options} />
         </InputGroup>
         <StyledButton
           disabled={submitDisabled}
@@ -160,9 +158,9 @@ const mapStateToProps = ({
     submitDisabled 
   },
   game: { stage },
-  settings: { options }
+  settings
 }) => ({
-  options,
+  options: getOptions({ settings }),
   pauseDisabled,
   playBtn, 
   playDisabled,

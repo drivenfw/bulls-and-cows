@@ -147,7 +147,10 @@ class Select extends Component {
 Select.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
   onChange: PropTypes.func.isRequired
 }
 

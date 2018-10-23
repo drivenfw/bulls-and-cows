@@ -16,19 +16,19 @@ const DifficultySwitcher = ({ difficulty, disabled, onDifficultyChange }) =>
     value={difficulty}
     onChange={onDifficultyChange}
   >
-    <Option value="1">
+    <Option value={1}>
       <FormattedMessage {...messages.easierThanEasy} />
     </Option>
-    <Option value="2">
+    <Option value={2}>
       <FormattedMessage {...messages.easy} />
     </Option>
-    <Option value="3">
+    <Option value={3}>
       <FormattedMessage {...messages.medium} />
     </Option>
-    <Option value="4">
+    <Option value={4}>
       <FormattedMessage {...messages.hard} />
     </Option>
-    <Option value="5">
+    <Option value={5}>
       <FormattedMessage {...messages.harderThanHard} />
     </Option>
   </Select>
