@@ -9,6 +9,7 @@ import {
   playStage,
   congratsStage
 } from 'actions/game'
+import { play, stop, submit } from 'actions/controls'
 import { tickHandler } from './clock'
 import { game } from './game'
 
@@ -55,8 +56,8 @@ function *submitHandler(action) {
 }
 
 export function *watchControlsActions() {
-  yield takeEvery('CONTROLS_PLAY', playHandler)
-  yield takeEvery('CONTROLS_STOP', stopHandler)
-  yield takeEvery('CONTROLS_SUBMIT', submitHandler)
+  yield takeEvery(play, playHandler)
+  yield takeEvery(stop, stopHandler)
+  yield takeEvery(submit, submitHandler)
 }
 

@@ -18,6 +18,6 @@ export function *tickHandler() {
 }
 
 export function *watchClockActions() {
-  yield takeLatest('CLOCK_TICK', tickHandler)
+  yield takeLatest(tick, tickHandler)
 }
 
