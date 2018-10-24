@@ -7,13 +7,8 @@ import {
   toggleRememberSettings
 } from 'actions/settings'
 
+import { defaultSettings as initialState } from 'loadSettings'
 
-const initialState = {
-  difficulty: 1,
-  locale: 'en',
-  rememberSettings: false,
-  theme: 'main'
-}
 
 const settings = createReducer({
   [switchDifficulty]: (state, payload) => ({
