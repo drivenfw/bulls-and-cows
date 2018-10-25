@@ -1,13 +1,17 @@
 import Marker from './Marker'
 
 
+const _generateSecret = Symbol('_generateSecret')
+const _options = Symbol('_options')
+const _secret = Symbol('_secret')
+
 export default class Game {
   constructor(options) {
-    this._options = options
+    this[_options] = options
   }
 
-  _generateSecret() {
-    const opt = this._options.slice()
+  [_generateSecret]() {
+    const opt = this[_options].slice()
 
     return [...Array(4)].map(() => 
       opt.splice(Math.floor(Math.random() * opt.length), 1).pop()
@@ -15,11 +19,11 @@ export default class Game {
   }
 
   start() {
-    this._secret = this._generateSecret()
+    this[_secret] = this[_generateSecret]()
   }
 
   guess(guess) {
-    const marker = new Marker(this._secret, guess)
+    const marker = new Marker(this[_secret], guess)
     const bulls = [...Array(marker.exactMatchCount())].map(() => '+').join('')
     const cows = [...Array(marker.numberMatchCount())].map(() => '-').join('')
 
