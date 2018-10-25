@@ -1,14 +1,14 @@
 import VERSION from '../version'
 
 
-const loadFromStorage = Symbol('loadFromStorage')
-const saveToStorage = Symbol('saveToStorage')
-const storageKey = Symbol('storageKey')
+const _loadFromStorage = Symbol('_loadFromStorage')
+const _saveToStorage = Symbol('_saveToStorage')
+const _storageKey = Symbol('_storageKey')
 
-export class Storage {
-  [loadFromStorage]() {
+export default class Storage {
+  [_loadFromStorage]() {
     if (localStorage) {
-      const json = localStorage.getItem(Storage[storageKey])
+      const json = localStorage.getItem(Storage[_storageKey])
 
       try {
         return json ? JSON.parse(json) : {}
@@ -20,61 +20,34 @@ export class Storage {
     }
   }
 
-  [saveToStorage](value) {
-    localStorage.setItem(Storage[storageKey], JSON.stringify(value))
+  [_saveToStorage](value) {
+    localStorage.setItem(Storage[_storageKey], JSON.stringify(value))
   }
 
   set(key, value) {
-    const data = this[loadFromStorage]()
+    const data = this[_loadFromStorage]()
 
     if (data) {
       data[key] = value
-      this[saveToStorage](data)
+      this[_saveToStorage](data)
     }
   }
 
   get(key) {
-    const data = this[loadFromStorage]()
+    const data = this[_loadFromStorage]()
 
     return data && data[key]
   }
 
   remove(key) {
-    const data = this[loadFromStorage]()
+    const data = this[_loadFromStorage]()
 
     if (data) {
       delete data[key]
-      this[saveToStorage](data)
+      this[_saveToStorage](data)
     }
   }
 }
 
-Storage[storageKey] = `BULLS-AND-COWS-${VERSION}`
-
-export class SettingsStorage extends Storage {
-  getSetting(name) {
-    const settings = this.get('settings')
-
-    return settings && settings[name]
-  }
-
-  setSetting(name, value) {
-    const settings = this.get('settings') || {}
-
-    settings[name] = value
-    this.set('settings', settings)
-  }
-
-  setAllSettings(settings) {
-    this.set('settings', settings)
-  }
-
-  getAllSettings() {
-    return (this.get('settings') || {})
-  }
-
-  resetSettings() {
-    this.remove('settings')
-  }
-}
+Storage[_storageKey] = `BULLS-AND-COWS-${VERSION}`
 

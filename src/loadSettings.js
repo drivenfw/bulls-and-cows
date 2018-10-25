@@ -1,4 +1,4 @@
-import { SettingsStorage } from 'app/Storage'
+import SettingsStorage from 'app/SettingsStorage'
 
 
 export const defaultSettings = {

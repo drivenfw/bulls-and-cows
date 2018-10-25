@@ -1,6 +1,7 @@
 import { select, take } from 'redux-saga/effects'
 
-import { SettingsStorage } from 'app/Storage'
+import SettingsStorage from 'app/SettingsStorage'
+
 import { 
   switchDifficulty,
   switchLocale,
