@@ -3,7 +3,7 @@ import Marker from './Marker'
 
 describe('Marker', () => {
   describe('exactMatchCount', () => {
-    test('with no matches', () => {
+    describe('with no matches', () => {
       it('returns 0', () => {
         const marker = new Marker('1234', '5555')
 
@@ -11,7 +11,7 @@ describe('Marker', () => {
       })
     })
 
-    test('with one exact match', () => {
+    describe('with one exact match', () => {
       it('returns 1', () => {
         const marker = new Marker('1234', '1555')
 
@@ -19,7 +19,7 @@ describe('Marker', () => {
       })
     })
 
-    test('with one number match', () => {
+    describe('with one number match', () => {
       it('returns 0', () => {
         const marker = new Marker('1234', '5551')
 
@@ -27,7 +27,7 @@ describe('Marker', () => {
       })
     })
 
-    test('with one exact match and one number match', () => {
+    describe('with one exact match and one number match', () => {
       it('returns 1', () => {
         const marker = new Marker('1234', '1525')
 
@@ -37,7 +37,7 @@ describe('Marker', () => {
   })
 
   describe('numberMatchCount', () => {
-    test('with no matches', () => {
+    describe('with no matches', () => {
       it('returns 0', () => {
         const marker = new Marker('1234', '5555')
 
@@ -45,7 +45,7 @@ describe('Marker', () => {
       })
     })
 
-    test('with one number match', () => {
+    describe('with one number match', () => {
       it('returns 1', () => {
         const marker = new Marker('1234', '5155')
 
@@ -53,7 +53,7 @@ describe('Marker', () => {
       }) 
     })
 
-    test('with one exact match', () => {
+    describe('with one exact match', () => {
       it('returns 0', () => {
         const marker = new Marker('1234', '1555')
 
@@ -61,7 +61,7 @@ describe('Marker', () => {
       }) 
     })
 
-    test('with one exact match and one number match', () => {
+    describe('with one exact match and one number match', () => {
       it('returns 1', () => {
         const marker = new Marker('1234', '1525')
 
@@ -69,11 +69,11 @@ describe('Marker', () => {
       }) 
     })
 
-    test('with one exact match duplicated in guess', () => {
+    describe('with one exact match duplicated in guess', () => {
       it('returns 0', () => {
         const marker = new Marker('1234', '1155')
 
-        expect(marker.numberMatchCount()).toBe(1)
+        expect(marker.numberMatchCount()).toBe(0)
       }) 
     })
   })
