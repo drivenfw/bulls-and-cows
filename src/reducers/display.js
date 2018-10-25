@@ -5,18 +5,7 @@ import { addContent, clear } from 'actions/display'
 
 
 const initialState = {
-  content: [
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum'
-  ],
+  content: [],
   scroll: 0
 }
 

@@ -15,12 +15,33 @@ import './fireworks.css'
 
 const Message = styled.div`
   font-size: 2em; 
+
+  @media (min-width: 550px) {
+    font-size: 1.9em;
+  }
+
+  @media (min-width: 850px) {
+    font-size: 2.2em;
+  }
+`
+
+const InitMsg = styled(Message)`
+  width: 170px;
+  line-height: 1.2em;
+  text-align: ${props => props.textAlign || 'center'};
+
+  @media (min-width: 550px) {
+    width: 160px;
+  }
+
+  @media (min-width: 850px) {
+    width: 200px;
+  }
 `
 
 const Congrats = styled(Message)`
   width: 100%;
   height: 100%;
-  font-size: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,14 +79,24 @@ const GameDisplay = ({
   scroll,
   stage 
 }) => {
-  let center = false, displayContent
+  let center = true, displayContent
 
   if (stage === gameStages.INIT) {
-    displayContent = <span key="descr">{content.join(' ')}</span>
+    displayContent = <div key="init">
+        <InitMsg textAlign="left">
+          <FormattedMessage {...messages.bulls} />
+        </InitMsg>
+        <InitMsg>
+          <FormattedMessage {...messages.and} />
+        </InitMsg>
+        <InitMsg textAlign="right">
+          <FormattedMessage {...messages.cows} />
+        </InitMsg>
+      </div>
   } else if (stage === gameStages.COUNTDOWN) {
-    center = true
     displayContent = <Countdown value={countdown} />
   } else if (stage === gameStages.PLAY) {
+    center = false
     displayContent = playBtn
       ? <Message><FormattedMessage {...messages.pause} /></Message>
       : content.map((line, index) =>
@@ -74,7 +105,6 @@ const GameDisplay = ({
 
     center = playBtn
   } else if (stage === gameStages.CONGRATS) {
-    center = true
     displayContent = <Congrats className="fireworks">
       <div className="before"></div>
       <FormattedMessage {...messages.congrats} />

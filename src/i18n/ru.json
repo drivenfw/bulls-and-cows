@@ -1,7 +1,10 @@
 {
   "layout.i18n.game": "Игра",
   "layout.i18n.settings": "Настройки",
+  "pages.Game.i18n.and": "и",
+  "pages.Game.i18n.bulls": "Быки",
   "pages.Game.i18n.congrats": "Вы победили!",
+  "pages.Game.i18n.cows": "Коровы",
   "pages.Game.i18n.pause": "Пауза",
   "pages.Settings.i18n.easierThanEasy": "Легче легкого",
   "pages.Settings.i18n.easy": "Легкий",

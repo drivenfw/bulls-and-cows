@@ -2,7 +2,10 @@ import { defineMessages } from 'react-intl'
 
 
 export default defineMessages({
-  pause: 'Pause',
-  congrats: 'You won!'
+  and: 'and',
+  bulls: 'Bulls',
+  congrats: 'You won!',
+  cows: 'Cows',
+  pause: 'Pause'
 })
 
