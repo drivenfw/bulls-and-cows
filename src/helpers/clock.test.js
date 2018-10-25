@@ -1,4 +1,4 @@
-import { granularTime } from './clock'
+import { granularTime, paddedNumber } from './clock'
 
 
 describe('granularTime', () => {
@@ -65,5 +65,51 @@ describe('granularTime', () => {
     expect(mins).toBe(29) 
     expect(secs).toBe(34) 
   }) 
+})
+
+describe('paddedNumber', () => {
+  test('formats 0 correctly', () => {
+    expect(paddedNumber(0, 3)).toBe('000')
+  })
+
+  test('formats 3 correctly', () => {
+    expect(paddedNumber(3, 3)).toBe('003')
+  })
+
+  test('formats 23 correctly', () => {
+    expect(paddedNumber(23, 3)).toBe('023')
+  })
+
+  test('formats 50 correctly', () => {
+    expect(paddedNumber(50, 3)).toBe('050')
+  })
+
+  test('formats 278 correctly', () => {
+    expect(paddedNumber(278, 3)).toBe('278')
+  })
+
+  test('formats 999 correctly', () => {
+    expect(paddedNumber(999, 3)).toBe('999')
+  })
+
+  test('formats 1000 correctly', () => {
+    expect(paddedNumber(1000, 3)).toBe('000')
+  })
+
+  test('formats 5 correctly', () => {
+    expect(paddedNumber(5, 2)).toBe('05')
+  })
+
+  test('formats 33 correctly', () => {
+    expect(paddedNumber(33, 2)).toBe('33')
+  })
+
+  test('formats 127 correctly', () => {
+    expect(paddedNumber(127, 2)).toBe('27')
+  })
+
+  test('formats 99 correctly', () => {
+    expect(paddedNumber(99, 5)).toBe('00099')
+  })
 })
 
