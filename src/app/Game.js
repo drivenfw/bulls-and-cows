@@ -1,7 +1,6 @@
 import Marker from './Marker'
 
 
-const _generateSecret = Symbol('_generateSecret')
 const _options = Symbol('_options')
 const _secret = Symbol('_secret')
 
@@ -10,7 +9,7 @@ export default class Game {
     this[_options] = options
   }
 
-  [_generateSecret]() {
+  generateSecret() {
     const opt = this[_options].slice()
 
     return [...Array(4)].map(() => 
@@ -19,7 +18,7 @@ export default class Game {
   }
 
   start() {
-    this[_secret] = this[_generateSecret]()
+    this[_secret] = this.generateSecret()
   }
 
   guess(guess) {
