@@ -111,12 +111,12 @@ const StyledSpinner = styled(Spinner)`
 `
 
 const GamePage = Loadable({
-  loader: () => import('../pages/Game'),
+  loader: () => import('pages/Game'),
   loading: StyledSpinner
 })
 
 const SettingsPage = Loadable({
-  loader: () => import('../pages/Settings'),
+  loader: () => import('pages/Settings'),
   loading: StyledSpinner
 })
 
