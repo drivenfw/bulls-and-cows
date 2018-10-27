@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, intlShape } from 'react-intl'
 
 import Countdown from 'components/Countdown'
 import Display from 'components/Display'
@@ -9,6 +9,8 @@ import Display from 'components/Display'
 import { gameStages } from 'reducers/game'
 
 import messages from './i18n'
+
+import { nbspPadding } from 'helpers/display'
 
 import './fireworks.css'
 
@@ -81,6 +83,8 @@ const GameDisplay = ({
   playBtn,
   scroll,
   stage 
+}, {
+  intl: { locale } 
 }) => {
   let center = true, displayContent
 
@@ -102,9 +106,25 @@ const GameDisplay = ({
     center = false
     displayContent = playBtn
       ? <Message><FormattedMessage {...messages.pause} /></Message>
-      : content.map((line, index) =>
-          <span key={index}>{index + 1}. {line}<br /></span>
-        )
+      : [
+          <span key="title">
+            <FormattedMessage {...messages['#']} />
+            {nbspPadding(2)}
+            <FormattedMessage {...messages.guess} />
+            {locale === 'en' ? nbspPadding(5) : nbspPadding(5)}
+            <FormattedMessage {...messages.result} />
+          </span>,
+          content.map((line, index) =>
+            <span key={index}>
+              {index + 1}.
+              {locale === 'en' ? nbspPadding(1) : nbspPadding(3)}
+              {line.split(' ')[0]}
+              {locale === 'en' ? nbspPadding(7) : nbspPadding(4)}
+              {line.split(' ')[1]}
+              <br />
+            </span>
+          )
+        ]
 
     center = playBtn
   } else if (stage === gameStages.CONGRATS) {
@@ -120,6 +140,10 @@ const GameDisplay = ({
       {displayContent}
     </StyledGameDisplay>
   )
+}
+
+GameDisplay.contextTypes = {
+  intl: intlShape
 }
 
 const mapStateToProps = ({

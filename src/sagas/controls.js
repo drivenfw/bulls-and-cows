@@ -46,8 +46,8 @@ function *submitHandler(action) {
   const { display: { content } } = yield select()
 
   yield put(addContent({
-    content: `${action.payload}: ${result}`,
-    scroll: calcScroll(content.length + 1)
+    content: `${action.payload} ${result}`,
+    scroll: calcScroll(content.length + 2)
   }))
 
   if (result === '++++') {
