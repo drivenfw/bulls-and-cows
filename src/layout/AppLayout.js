@@ -17,7 +17,7 @@ import messages from './i18n'
 const StyledAppLayout = styled.div`
   min-width: 310px;
   height: 505px;
-  border: 1px solid ${props => props.theme.primaryColor2};
+  border: 2px solid ${props => props.theme.primaryColor1};
   border-radius: 10px;
   margin: 5px;
 
