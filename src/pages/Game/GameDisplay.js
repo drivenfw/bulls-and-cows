@@ -17,6 +17,9 @@ import './fireworks.css'
 
 const Message = styled.div`
   font-size: 2em; 
+  text-shadow: 
+    1px 1px 3px ${props => props.theme.primaryColor2},
+    2px 2px 5px ${props => props.theme.primaryColor1};
 
   @media (min-width: 550px) {
     font-size: 1.9em;
@@ -31,9 +34,6 @@ const InitMsg = styled(Message)`
   width: 170px;
   line-height: 1.2em;
   text-align: ${props => props.textAlign || 'center'};
-  text-shadow: 
-    1px 1px 3px ${props => props.theme.primaryColor2},
-    2px 2px 5px ${props => props.theme.primaryColor1};
 
   @media (min-width: 550px) {
     width: 160px;
