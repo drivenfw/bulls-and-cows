@@ -31,7 +31,7 @@ function *playHandler() {
   }
 }
 
-function *stopHandler() {
+export function *stopHandler() {
   yield put(initStage())
 }
 
