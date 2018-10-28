@@ -1,4 +1,4 @@
-import { granularTime, paddedNumber } from './clock'
+import { granularTime, paddedNumber } from 'helpers/clock'
 
 
 describe('granularTime', () => {

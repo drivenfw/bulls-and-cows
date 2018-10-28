@@ -1,4 +1,4 @@
-import { nbspPadding } from './display'
+import { nbspPadding } from 'helpers/display'
 
 
 test('nbspPadding', () => {

@@ -1,4 +1,4 @@
-import { hexToRgba } from './color'
+import { hexToRgba } from 'helpers/color'
 
 
 test('hexToRgba', () => {
