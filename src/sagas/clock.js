@@ -1,5 +1,5 @@
 import { delay } from 'redux-saga'
-import { put, select, takeLatest } from 'redux-saga/effects'
+import { call, put, select, takeLatest } from 'redux-saga/effects'
 
 import { tick } from 'actions/clock'
 
@@ -7,7 +7,7 @@ import { tick } from 'actions/clock'
 export function *tickHandler() {
   const startTime = Date.now()
 
-  yield delay(1000)
+  yield call(delay, 1000)
 
   const { controls: { pauseDisabled, playBtn } } = yield select()
 
