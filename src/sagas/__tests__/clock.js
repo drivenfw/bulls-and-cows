@@ -1,7 +1,7 @@
 import { delay } from 'redux-saga'
 import { call, put, select } from 'redux-saga/effects'
 
-import { tickHandler } from './clock'
+import { tickHandler } from 'sagas/clock'
 import { tick } from 'actions/clock'
 
 

@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects'
 
+import { stopHandler } from 'sagas/controls'
 import { initStage } from 'actions/game'
-import { stopHandler } from './controls'
 
 
 test('stopHandler', () => {
