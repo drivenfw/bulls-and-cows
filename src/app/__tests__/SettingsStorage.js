@@ -1,4 +1,4 @@
-import SettingsStorage from './SettingsStorage'
+import SettingsStorage from 'app/SettingsStorage'
 import VERSION from 'version'
 
 

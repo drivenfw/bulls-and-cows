@@ -1,10 +1,10 @@
-import Game from './Game'
+import Game from 'app/Game'
 import Marker, { 
   mockExactMatchCount, 
   mockNumberMatchCount 
-} from './Marker'
+} from 'app/Marker'
 
-jest.mock('./Marker')
+jest.mock('app/Marker')
 
 
 describe('Game', () => {

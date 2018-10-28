@@ -1,4 +1,4 @@
-import Marker from './Marker'
+import Marker from 'app/Marker'
 
 
 describe('Marker', () => {
