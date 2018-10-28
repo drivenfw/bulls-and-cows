@@ -15,6 +15,8 @@ import { game } from './game'
 
 import { gameStages } from 'reducers/game'
 
+import { calcScroll } from 'helpers/display'
+
 
 const COUNTDOWN_FROM = 3
 
@@ -33,12 +35,6 @@ function *playHandler() {
 
 export function *stopHandler() {
   yield put(initStage())
-}
-
-const calcScroll = contentLength => {
-  const lines = matchMedia('(min-width: 375px)').matches ? 6 : 5
-
-  return contentLength > lines ? contentLength - lines : 0
 }
 
 function *submitHandler(action) {
