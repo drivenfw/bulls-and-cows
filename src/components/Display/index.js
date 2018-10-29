@@ -15,6 +15,14 @@ const StyledDisplay = styled.div`
     box-shadow: inset 0 0 3px 2px ${theme.primaryColor2};
     color: ${theme.primaryColor};
   `}
+
+  @media (min-width: 550px) {
+    padding: .52em;
+  }
+
+  @media (min-width: 850px) {
+    padding: .52em .78em;
+  }
 `
 
 const Inner = styled.div`

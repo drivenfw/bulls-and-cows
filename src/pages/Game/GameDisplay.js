@@ -10,8 +10,6 @@ import { gameStages } from 'reducers/game'
 
 import messages from './i18n'
 
-import { nbspPadding } from 'helpers/display'
-
 import './fireworks.css'
 
 
@@ -53,6 +51,11 @@ const Congrats = styled(Message)`
   text-align: center;
 `
 
+const Column = styled.div`
+  display: inline-block;
+  width: ${props => props.width}; 
+`
+
 const StyledGameDisplay = styled(Display)`
   margin-bottom: 10px;
 
@@ -61,9 +64,9 @@ const StyledGameDisplay = styled(Display)`
   }
 
   @media (min-width: 550px) {
-    width: 200px;
+    width: 230px;
     height: 180px;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-bottom: 0;
     font-size: 1.25em;
   }
@@ -104,23 +107,32 @@ const GameDisplay = ({
     displayContent = <Countdown value={countdown} />
   } else if (stage === gameStages.PLAY) {
     center = false
+
     displayContent = playBtn
       ? <Message><FormattedMessage {...messages.pause} /></Message>
       : [
           <span key="title">
-            <FormattedMessage {...messages['#']} />
-            {nbspPadding(2)}
-            <FormattedMessage {...messages.guess} />
-            {locale === 'en' ? nbspPadding(5) : nbspPadding(5)}
-            <FormattedMessage {...messages.result} />
+            <Column width="25%">
+              <FormattedMessage {...messages['#']} />
+            </Column>
+            <Column width="35%">
+              <FormattedMessage {...messages.guess} />
+            </Column>
+            <Column width="40%">
+              <FormattedMessage {...messages.result} />
+            </Column>
           </span>,
           content.map((line, index) =>
             <span key={index}>
-              {index + 1}.
-              {locale === 'en' ? nbspPadding(1) : nbspPadding(3)}
-              {line.split(' ')[0]}
-              {locale === 'en' ? nbspPadding(7) : nbspPadding(4)}
-              {line.split(' ')[1]}
+              <Column width="25%">
+                {index + 1}.
+              </Column>
+              <Column width="35%">
+                {line.split(' ')[0]}
+              </Column>
+              <Column width="40%">
+                {line.split(' ')[1]}
+              </Column>
               <br />
             </span>
           )

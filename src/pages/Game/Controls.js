@@ -57,6 +57,16 @@ const InputGroup = styled.div`
   justify-content: center;
   margin-left: 15px;
   margin-right: 15px;
+
+  @media (min-width: 550px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media (min-width: 850px) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 `
 
 class Controls extends Component {
