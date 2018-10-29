@@ -1,5 +1,5 @@
 import { delay } from 'redux-saga'
-import { put, select, takeEvery } from 'redux-saga/effects'
+import { call, put, select, takeEvery } from 'redux-saga/effects'
 
 import { addContent } from 'actions/display'
 import { 
@@ -18,14 +18,14 @@ import { gameStages } from 'reducers/game'
 import { calcScroll } from 'helpers/display'
 
 
-const COUNTDOWN_FROM = 3
+export const COUNTDOWN_FROM = 3
 
-function *playHandler() {
+export function *playHandler() {
   const { game: { stage } } = yield select()
 
   if (stage === gameStages.INIT) {
     yield put(countdownStage(COUNTDOWN_FROM))
-    yield delay(1500)
+    yield call(delay, 1500)
     yield put(countdown())
   } else {
     yield put(playStage())
