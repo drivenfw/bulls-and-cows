@@ -8,89 +8,6 @@ jest.mock('app/Marker')
 
 
 describe('Game', () => {
-  describe('generateSecret', () => {
-    describe('with 6 options', () => {
-      const options = [0, 1, 2, 3, 4, 5]
-      const game = new Game(options)
-      const secret = game.generateSecret()
-
-      it('generates 4 digit secret', () => {
-        expect(secret).toEqual(expect.stringMatching(/^[0-5]{4}$/))
-      })
-
-      it('generates secret from options', () => {
-        expect(secret.split('').every(d => options.includes(+d))).toBe(true) 
-      })
-    })
-
-    describe('with 7 options', () => {
-      const options = [0, 1, 2, 3, 4, 5, 6]
-      const game = new Game(options)
-      const secret = game.generateSecret()
-
-      it('generates 4 digit secret', () => {
-        expect(secret).toEqual(expect.stringMatching(/^[0-6]{4}$/))
-      })
-
-      it('generates secret from options', () => {
-        expect(secret.split('').every(d => options.includes(+d))).toBe(true) 
-      })
-    })
-
-    describe('with 8 options', () => {
-      const options = [0, 1, 2, 3, 4, 5, 6, 7]
-      const game = new Game(options)
-      const secret = game.generateSecret()
-
-      it('generates 4 digit secret', () => {
-        expect(secret).toEqual(expect.stringMatching(/^[0-7]{4}$/))
-      })
-
-      it('generates secret from options', () => {
-        expect(secret.split('').every(d => options.includes(+d))).toBe(true) 
-      })
-    })
-
-    describe('with 9 options', () => {
-      const options = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-      const game = new Game(options)
-      const secret = game.generateSecret()
-
-      it('generates 4 digit secret', () => {
-        expect(secret).toEqual(expect.stringMatching(/^[0-8]{4}$/))
-      })
-
-      it('generates secret from options', () => {
-        expect(secret.split('').every(d => options.includes(+d))).toBe(true) 
-      })
-    })
-
-    describe('with 10 options', () => {
-      const options = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      const game = new Game(options)
-      const secret = game.generateSecret()
-
-      it('generates 4 digit secret', () => {
-        expect(secret).toEqual(expect.stringMatching(/^[0-9]{4}$/))
-      })
-
-      it('generates secret from options', () => {
-        expect(secret.split('').every(d => options.includes(+d))).toBe(true) 
-      })
-    })
-  })
-
-  describe('start', () => {
-    it('calls generateSecret', () => {
-      const generateSecret = jest.spyOn(Game.prototype, 'generateSecret')
-      const game = new Game([0, 1, 2, 3, 4, 5])
-
-      game.start()
-
-      expect(generateSecret).toHaveBeenCalled()
-    })
-  })
-
   describe('guess', () => {
     beforeEach(() => {
       Marker.mockClear()
@@ -100,9 +17,8 @@ describe('Game', () => {
 
     describe('leverages Marker\'s functionality', () => {
       beforeEach(() => {
-        const game = new Game([0, 1, 2, 3, 4, 5])
+        const game = new Game('1234')
 
-        game.start()
         game.guess('0123')
       })
 
@@ -129,9 +45,7 @@ describe('Game', () => {
         })
 
         it('returns \'\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('')
@@ -147,9 +61,7 @@ describe('Game', () => {
         })
 
         it('returns \'+\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('+')
@@ -165,9 +77,7 @@ describe('Game', () => {
         })
 
         it('returns \'++\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('++')
@@ -183,9 +93,7 @@ describe('Game', () => {
         })
 
         it('returns \'+++\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('+++')
@@ -201,9 +109,7 @@ describe('Game', () => {
         })
 
         it('returns \'++++\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('++++')
@@ -219,9 +125,7 @@ describe('Game', () => {
         })
 
         it('returns \'-\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('-')
@@ -237,9 +141,7 @@ describe('Game', () => {
         })
 
         it('returns \'--\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('--')
@@ -255,9 +157,7 @@ describe('Game', () => {
         })
 
         it('returns \'---\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('---')
@@ -273,9 +173,7 @@ describe('Game', () => {
         })
 
         it('returns \'----\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('----')
@@ -291,9 +189,7 @@ describe('Game', () => {
         })
 
         it('returns \'+-\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('+-')
@@ -309,9 +205,7 @@ describe('Game', () => {
         })
 
         it('returns \'++-\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('++-')
@@ -327,9 +221,7 @@ describe('Game', () => {
         })
 
         it('returns \'+++-\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('+++-')
@@ -345,9 +237,7 @@ describe('Game', () => {
         })
 
         it('returns \'+--\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('+--')
@@ -363,9 +253,7 @@ describe('Game', () => {
         })
 
         it('returns \'+---\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('+---')
@@ -381,9 +269,7 @@ describe('Game', () => {
         })
 
         it('returns \'++--\'', () => {
-          const game = new Game([0, 1, 2, 3, 4, 5])
-
-          game.start()
+          const game = new Game('1234')
           const result = game.guess('0123')
 
           expect(result).toBe('++--')

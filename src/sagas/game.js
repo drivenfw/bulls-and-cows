@@ -5,7 +5,9 @@ import { tickHandler } from './clock'
 import { countdown, initStage, playStage } from 'actions/game'
 import { clear } from 'actions/display'
 import { getOptions } from 'selectors'
+
 import Game from 'app/Game'
+import generateSecret from 'app/generateSecret'
 
 
 export let game = null
@@ -17,8 +19,8 @@ export function *countdownHandler() {
     yield delay(1500)
     yield put(countdown())
   } else {
-    game = new Game(getOptions({ settings }))
-    game.start()
+    const secret = generateSecret(getOptions({ settings }))
+    game = new Game(secret)
 
     yield put(clear())
     yield put(playStage())

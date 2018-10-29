@@ -1,24 +1,11 @@
 import Marker from './Marker'
 
 
-const _options = Symbol('_options')
 const _secret = Symbol('_secret')
 
 export default class Game {
-  constructor(options) {
-    this[_options] = options
-  }
-
-  generateSecret() {
-    const opt = this[_options].slice()
-
-    return [...Array(4)].map(() => 
-      opt.splice(Math.floor(Math.random() * opt.length), 1).pop()
-    ).join('')
-  }
-
-  start() {
-    this[_secret] = this.generateSecret()
+  constructor(secret) {
+    this[_secret] = secret
   }
 
   guess(guess) {
