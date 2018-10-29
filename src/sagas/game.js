@@ -6,8 +6,7 @@ import { countdown, initStage, playStage } from 'actions/game'
 import { clear } from 'actions/display'
 import { getOptions } from 'selectors'
 
-import Game from 'app/Game'
-import generateSecret from 'app/generateSecret'
+import Game, { generateSecret } from 'app/Game'
 
 
 export let game = null
