@@ -46,7 +46,7 @@ function *submitHandler(action) {
     scroll: calcScroll(content.length + 2)
   }))
 
-  if (result === '++++') {
+  if (result === 'BBBB') {
     yield put(congratsStage())
   }
 }

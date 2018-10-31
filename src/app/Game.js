@@ -18,8 +18,8 @@ export default class Game {
 
   guess(guess) {
     const marker = new Marker(this[_secret], guess)
-    const bulls = [...Array(marker.exactMatchCount())].map(() => '+').join('')
-    const cows = [...Array(marker.numberMatchCount())].map(() => '-').join('')
+    const bulls = [...Array(marker.exactMatchCount())].map(() => 'B').join('')
+    const cows = [...Array(marker.numberMatchCount())].map(() => 'C').join('')
 
     return bulls + cows
   }

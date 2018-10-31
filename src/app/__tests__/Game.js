@@ -127,11 +127,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'+\'', () => {
+        it('returns \'B\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('+')
+          expect(result).toBe('B')
         })
       })
 
@@ -143,11 +143,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'++\'', () => {
+        it('returns \'BB\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('++')
+          expect(result).toBe('BB')
         })
       })
 
@@ -159,11 +159,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'+++\'', () => {
+        it('returns \'BBB\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('+++')
+          expect(result).toBe('BBB')
         })
       })
 
@@ -175,11 +175,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'++++\'', () => {
+        it('returns \'BBBB\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('++++')
+          expect(result).toBe('BBBB')
         })
       })
 
@@ -191,11 +191,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'-\'', () => {
+        it('returns \'C\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('-')
+          expect(result).toBe('C')
         })
       })
 
@@ -207,11 +207,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'--\'', () => {
+        it('returns \'CC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('--')
+          expect(result).toBe('CC')
         })
       })
 
@@ -223,11 +223,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'---\'', () => {
+        it('returns \'CCC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('---')
+          expect(result).toBe('CCC')
         })
       })
 
@@ -239,11 +239,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'----\'', () => {
+        it('returns \'CCCC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('----')
+          expect(result).toBe('CCCC')
         })
       })
 
@@ -255,11 +255,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'+-\'', () => {
+        it('returns \'BC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('+-')
+          expect(result).toBe('BC')
         })
       })
 
@@ -271,11 +271,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'++-\'', () => {
+        it('returns \'BBC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('++-')
+          expect(result).toBe('BBC')
         })
       })
 
@@ -287,11 +287,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'+++-\'', () => {
+        it('returns \'BBBC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('+++-')
+          expect(result).toBe('BBBC')
         })
       })
 
@@ -303,11 +303,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'+--\'', () => {
+        it('returns \'BCC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('+--')
+          expect(result).toBe('BCC')
         })
       })
 
@@ -319,11 +319,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'+---\'', () => {
+        it('returns \'BCCC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('+---')
+          expect(result).toBe('BCCC')
         })
       })
 
@@ -335,11 +335,11 @@ describe('Game', () => {
           }))
         })
 
-        it('returns \'++--\'', () => {
+        it('returns \'BBCC\'', () => {
           const game = new Game('1234')
           const result = game.guess('0123')
 
-          expect(result).toBe('++--')
+          expect(result).toBe('BBCC')
         })
       })
     })
