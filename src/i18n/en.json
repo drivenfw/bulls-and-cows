@@ -2,6 +2,8 @@
   "layout.i18n.game": "Game",
   "layout.i18n.settings": "Settings",
   "pages.Game.i18n.#": "#",
+  "pages.Game.i18n.B": "B",
+  "pages.Game.i18n.C": "C",
   "pages.Game.i18n.and": "and",
   "pages.Game.i18n.bulls": "Bulls",
   "pages.Game.i18n.congrats": "You won!",

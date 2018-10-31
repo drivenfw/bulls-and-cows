@@ -2,6 +2,8 @@
   "layout.i18n.game": "Игра",
   "layout.i18n.settings": "Настройки",
   "pages.Game.i18n.#": "№",
+  "pages.Game.i18n.B": "Б",
+  "pages.Game.i18n.C": "К",
   "pages.Game.i18n.and": "и",
   "pages.Game.i18n.bulls": "Быки",
   "pages.Game.i18n.congrats": "Вы победили!",

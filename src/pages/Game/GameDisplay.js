@@ -131,7 +131,9 @@ const GameDisplay = ({
                 {line.split(' ')[0]}
               </Column>
               <Column width="40%">
-                {line.split(' ')[1]}
+                {line.split(' ')[1].split('').map((l, i) =>
+                  <FormattedMessage key={i} {...messages[l]} />
+                )}
               </Column>
               <br />
             </span>
