@@ -6,27 +6,13 @@ const storage = new Storage
 
 const storageKey = 'BULLS-AND-COWS-' + VERSION
 
-global.localStorage = {
-  _storage: {},
-
-  getItem: function(key) {
-    return this._storage[key]
-  },
-
-  setItem: function(key, value) {
-    this._storage[key] = value.toString()
-  },
-
-  clear: function() {
-    this._storage = {}
-  }
-}
-
 const initLocalStorage = value =>
-  global.localStorage._storage[storageKey] = JSON.stringify(value)
+  localStorage.setItem(storageKey, JSON.stringify(value))
 
-const resetLocalStorage = () =>
-  global.localStorage._storage[storageKey] = {}
+const resetLocalStorage = () => {
+  localStorage.clear()
+  // localStorage.setItem(storageKey, JSON.stringify({}))
+}
 
 describe('version', () => {
   test('version is correct', () => {
@@ -37,6 +23,9 @@ describe('version', () => {
 describe('Storage', () => {
   afterEach(() => {
     resetLocalStorage()
+    localStorage.setItem.mockClear()
+    localStorage.getItem.mockClear()
+    localStorage.removeItem.mockClear()
   })
 
   describe('get', () => {

@@ -1,4 +1,4 @@
-import VERSION from '../version'
+import VERSION from 'version'
 
 
 const _loadFromStorage = Symbol('_loadFromStorage')
