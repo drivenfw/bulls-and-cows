@@ -4,16 +4,6 @@ import VERSION from 'version'
 
 const storage = new Storage
 
-const storageKey = 'BULLS-AND-COWS-' + VERSION
-
-const initLocalStorage = value =>
-  localStorage.setItem(storageKey, JSON.stringify(value))
-
-const resetLocalStorage = () => {
-  localStorage.clear()
-  // localStorage.setItem(storageKey, JSON.stringify({}))
-}
-
 describe('version', () => {
   test('version is correct', () => {
     expect(VERSION).toBe('1.0.0')

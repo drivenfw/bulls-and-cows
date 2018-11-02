@@ -1,18 +1,7 @@
 import SettingsStorage from 'app/SettingsStorage'
-import VERSION from 'version'
 
 
 const settingsStorage = new SettingsStorage
-
-const storageKey = 'BULLS-AND-COWS-' + VERSION
-
-const initLocalStorage = value =>
-  localStorage.setItem(storageKey, JSON.stringify(value))
-
-const resetLocalStorage = () => {
-  localStorage.clear()
-  // localStorage.setItem(storageKey, JSON.stringify({}))
-}
 
 describe('SettingsStorage', () => {
   afterEach(() => {

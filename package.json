@@ -35,8 +35,5 @@
     "react-app-rewired": "^1.6.2",
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6"
-  },
-  "jest": {
-    "setupFiles": ["jest-localstorage-mock"]
   }
 }
