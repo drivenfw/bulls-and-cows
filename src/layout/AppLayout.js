@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { 
   BrowserRouter as Router, 
+  Link,
+  Redirect,
   Route,
-  Link
+  Switch
 } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import styled from 'styled-components'
@@ -138,8 +140,11 @@ class AppLayout extends Component {
             </Link>
           </NavBar>
           <Content>
-            <Route exact path="/" component={GamePage} />
-            <Route path="/settings" component={SettingsPage} />
+            <Switch>
+              <Route exact path="/" component={GamePage} />
+              <Route path="/settings" component={SettingsPage} />
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
           </Content>
         </StyledAppLayout>
       </Router>
