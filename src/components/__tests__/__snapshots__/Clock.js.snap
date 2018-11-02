@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Clock /> snapshot test should match the snapshot 1`] = `
+<Clock
+  timeSecs={0}
+>
+  <styled.div
+    innerRef={
+      Object {
+        "current": <div
+          class="sc-htpNat bVcGTz"
+      >
+          <div
+              class="sc-bZQynM hhTrkN"
+          >
+              <div
+                  class="sc-EHOje deRQDs"
+              >
+                  <div
+                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                  >
+                      <div>
+                          <div
+                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                          >
+                              0
+                          </div>
+                      </div>
+                  </div>
+                  <div
+                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                  >
+                      <div>
+                          <div
+                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                          >
+                              0
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div
+                  class="sc-EHOje deRQDs"
+              >
+                  <div
+                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                  >
+                      <div>
+                          <div
+                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                          >
+                              0
+                          </div>
+                      </div>
+                  </div>
+                  <div
+                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                  >
+                      <div>
+                          <div
+                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                          >
+                              0
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div
+              class="sc-gzVnrw hvMpkW"
+              rotate="0"
+              width="NaN"
+          />
+      </div>,
+      }
+    }
+  >
+    <div
+      className="sc-htpNat bVcGTz"
+    >
+      <styled.div>
+        <div
+          className="sc-bZQynM hhTrkN"
+        >
+          <styled.div>
+            <div
+              className="sc-EHOje deRQDs"
+            >
+              <Styled(Carousel)
+                direction="down"
+              >
+                <Carousel
+                  className="sc-bxivhb dQNVgY"
+                  direction="down"
+                >
+                  <styled.div
+                    className="sc-bxivhb dQNVgY"
+                  >
+                    <div
+                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component="div"
+                      >
+                        <div>
+                          <CSSTransition
+                            classNames="scroll-down"
+                            in={true}
+                            key=".$.$0"
+                            mountOnEnter={true}
+                            onExited={[Function]}
+                            timeout={500}
+                            unmountOnExit={true}
+                          >
+                            <Transition
+                              appear={false}
+                              enter={true}
+                              exit={true}
+                              in={true}
+                              mountOnEnter={true}
+                              onEnter={[Function]}
+                              onEntered={[Function]}
+                              onEntering={[Function]}
+                              onExit={[Function]}
+                              onExited={[Function]}
+                              onExiting={[Function]}
+                              timeout={500}
+                              unmountOnExit={true}
+                            >
+                              <Styled(styled.div)
+                                key="0"
+                              >
+                                <styled.div
+                                  className="sc-ifAKCX eXRWbD"
+                                >
+                                  <div
+                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                  >
+                                    0
+                                  </div>
+                                </styled.div>
+                              </Styled(styled.div)>
+                            </Transition>
+                          </CSSTransition>
+                        </div>
+                      </TransitionGroup>
+                    </div>
+                  </styled.div>
+                </Carousel>
+              </Styled(Carousel)>
+              <Styled(Carousel)
+                direction="down"
+              >
+                <Carousel
+                  className="sc-bxivhb dQNVgY"
+                  direction="down"
+                >
+                  <styled.div
+                    className="sc-bxivhb dQNVgY"
+                  >
+                    <div
+                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component="div"
+                      >
+                        <div>
+                          <CSSTransition
+                            classNames="scroll-down"
+                            in={true}
+                            key=".$.$0"
+                            mountOnEnter={true}
+                            onExited={[Function]}
+                            timeout={500}
+                            unmountOnExit={true}
+                          >
+                            <Transition
+                              appear={false}
+                              enter={true}
+                              exit={true}
+                              in={true}
+                              mountOnEnter={true}
+                              onEnter={[Function]}
+                              onEntered={[Function]}
+                              onEntering={[Function]}
+                              onExit={[Function]}
+                              onExited={[Function]}
+                              onExiting={[Function]}
+                              timeout={500}
+                              unmountOnExit={true}
+                            >
+                              <Styled(styled.div)
+                                key="0"
+                              >
+                                <styled.div
+                                  className="sc-ifAKCX eXRWbD"
+                                >
+                                  <div
+                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                  >
+                                    0
+                                  </div>
+                                </styled.div>
+                              </Styled(styled.div)>
+                            </Transition>
+                          </CSSTransition>
+                        </div>
+                      </TransitionGroup>
+                    </div>
+                  </styled.div>
+                </Carousel>
+              </Styled(Carousel)>
+            </div>
+          </styled.div>
+          <styled.div>
+            <div
+              className="sc-EHOje deRQDs"
+            >
+              <Styled(Carousel)
+                direction="down"
+              >
+                <Carousel
+                  className="sc-bxivhb dQNVgY"
+                  direction="down"
+                >
+                  <styled.div
+                    className="sc-bxivhb dQNVgY"
+                  >
+                    <div
+                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component="div"
+                      >
+                        <div>
+                          <CSSTransition
+                            classNames="scroll-down"
+                            in={true}
+                            key=".$.$0"
+                            mountOnEnter={true}
+                            onExited={[Function]}
+                            timeout={500}
+                            unmountOnExit={true}
+                          >
+                            <Transition
+                              appear={false}
+                              enter={true}
+                              exit={true}
+                              in={true}
+                              mountOnEnter={true}
+                              onEnter={[Function]}
+                              onEntered={[Function]}
+                              onEntering={[Function]}
+                              onExit={[Function]}
+                              onExited={[Function]}
+                              onExiting={[Function]}
+                              timeout={500}
+                              unmountOnExit={true}
+                            >
+                              <Styled(styled.div)
+                                key="0"
+                              >
+                                <styled.div
+                                  className="sc-ifAKCX eXRWbD"
+                                >
+                                  <div
+                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                  >
+                                    0
+                                  </div>
+                                </styled.div>
+                              </Styled(styled.div)>
+                            </Transition>
+                          </CSSTransition>
+                        </div>
+                      </TransitionGroup>
+                    </div>
+                  </styled.div>
+                </Carousel>
+              </Styled(Carousel)>
+              <Styled(Carousel)
+                direction="down"
+              >
+                <Carousel
+                  className="sc-bxivhb dQNVgY"
+                  direction="down"
+                >
+                  <styled.div
+                    className="sc-bxivhb dQNVgY"
+                  >
+                    <div
+                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component="div"
+                      >
+                        <div>
+                          <CSSTransition
+                            classNames="scroll-down"
+                            in={true}
+                            key=".$.$0"
+                            mountOnEnter={true}
+                            onExited={[Function]}
+                            timeout={500}
+                            unmountOnExit={true}
+                          >
+                            <Transition
+                              appear={false}
+                              enter={true}
+                              exit={true}
+                              in={true}
+                              mountOnEnter={true}
+                              onEnter={[Function]}
+                              onEntered={[Function]}
+                              onEntering={[Function]}
+                              onExit={[Function]}
+                              onExited={[Function]}
+                              onExiting={[Function]}
+                              timeout={500}
+                              unmountOnExit={true}
+                            >
+                              <Styled(styled.div)
+                                key="0"
+                              >
+                                <styled.div
+                                  className="sc-ifAKCX eXRWbD"
+                                >
+                                  <div
+                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                  >
+                                    0
+                                  </div>
+                                </styled.div>
+                              </Styled(styled.div)>
+                            </Transition>
+                          </CSSTransition>
+                        </div>
+                      </TransitionGroup>
+                    </div>
+                  </styled.div>
+                </Carousel>
+              </Styled(Carousel)>
+            </div>
+          </styled.div>
+        </div>
+      </styled.div>
+      <styled.div
+        rotate={0}
+        width={NaN}
+      >
+        <div
+          className="sc-gzVnrw hvMpkW"
+          rotate={0}
+          width={NaN}
+        />
+      </styled.div>
+    </div>
+  </styled.div>
+</Clock>
+`;

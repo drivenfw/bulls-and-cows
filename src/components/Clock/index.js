@@ -154,7 +154,7 @@ class Clock extends Component {
 }
 
 Clock.defaultProps = {
-  timeSecs: 44
+  timeSecs: 0
 }
 
 export default Clock
