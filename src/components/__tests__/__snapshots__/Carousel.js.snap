@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Carousel /> snapshot test should match the snapshot 1`] = `
+<styled.div>
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+  >
+    <CSSTransition
+      classNames="scroll-up"
+      key=".0"
+      mountOnEnter={true}
+      timeout={500}
+      unmountOnExit={true}
+    >
+      <styled.div>
+        One
+      </styled.div>
+    </CSSTransition>
+  </TransitionGroup>
+</styled.div>
+`;
