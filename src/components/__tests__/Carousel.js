@@ -61,6 +61,19 @@ describe('<Carousel />', () => {
 
       expect(wrapper.find('CSSTransition').props().classNames).toBe('scroll-right')
     })
+
+    it('passes className prop to root child component', () => {
+      const wrapper = shallow(
+        <Carousel
+          className="custom-carousel"
+          direction="right"
+        >
+          <Value>One</Value>
+        </Carousel>
+      )
+
+      expect(wrapper.find({ className: 'custom-carousel' }).length).toBe(1)
+    })
   })
 })
 
