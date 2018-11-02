@@ -6,31 +6,20 @@ const settingsStorage = new SettingsStorage
 
 const storageKey = 'BULLS-AND-COWS-' + VERSION
 
-global.localStorage = {
-  _storage: {},
-
-  getItem: function(key) {
-    return this._storage[key]
-  },
-
-  setItem: function(key, value) {
-    this._storage[key] = value.toString()
-  },
-
-  clear: function() {
-    this._storage = {}
-  }
-}
-
 const initLocalStorage = value =>
-  global.localStorage._storage[storageKey] = JSON.stringify(value)
+  localStorage.setItem(storageKey, JSON.stringify(value))
 
-const resetLocalStorage = () =>
-  global.localStorage._storage[storageKey] = {}
+const resetLocalStorage = () => {
+  localStorage.clear()
+  // localStorage.setItem(storageKey, JSON.stringify({}))
+}
 
 describe('SettingsStorage', () => {
   afterEach(() => {
     resetLocalStorage()
+    localStorage.setItem.mockClear()
+    localStorage.getItem.mockClear()
+    localStorage.removeItem.mockClear()
   })
 
   describe('getSetting', () => {
