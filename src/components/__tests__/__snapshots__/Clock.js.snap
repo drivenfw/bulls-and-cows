@@ -67,9 +67,9 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
               </div>
           </div>
           <div
-              class="sc-gzVnrw hvMpkW"
+              class="sc-gzVnrw eInPmc"
               rotate="0"
-              width="NaN"
+              width="0"
           />
       </div>,
       }
@@ -350,12 +350,12 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
       </styled.div>
       <styled.div
         rotate={0}
-        width={NaN}
+        width={0}
       >
         <div
-          className="sc-gzVnrw hvMpkW"
+          className="sc-gzVnrw eInPmc"
           rotate={0}
-          width={NaN}
+          width={0}
         />
       </styled.div>
     </div>
