@@ -10,9 +10,11 @@ export const handLength = (clockWidth, clockHeight, angleRad) => {
   const a = clockWidth / 2, b = clockHeight / 2
   const { cos, pow, sin, sqrt } = Math
 
-  return a * b / 
+  const hL = a * b / 
     sqrt(pow(b, 2) * pow(sin(angleRad), 2) + pow(a, 2) * pow(cos(angleRad), 2))
     - 10
+
+  return isNaN(hL) ? 0 : hL
 }
 
 export const paddedNumber = (number, paddingSize) => {

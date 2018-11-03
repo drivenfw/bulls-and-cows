@@ -1,4 +1,4 @@
-import { granularTime, paddedNumber } from 'helpers/clock'
+import { granularTime, handLength, paddedNumber } from 'helpers/clock'
 
 
 describe('granularTime', () => {
@@ -65,6 +65,12 @@ describe('granularTime', () => {
     expect(mins).toBe(29) 
     expect(secs).toBe(34) 
   }) 
+})
+
+describe('handLength', () => {
+  test('returns 0 if clockWidth and clockHeight equal to 0', () => {
+    expect(handLength(0, 0, 0)).toBe(0)
+  })
 })
 
 describe('paddedNumber', () => {
