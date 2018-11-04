@@ -1,14 +1,274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Checkbox /> snapshot test should match the snapshot 1`] = `
-<styled.div
-  onClick={[Function]}
+exports[`<Checkbox /> snapshot test checked should match the snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.c0:active .c3 {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 0 2px 3px;
+}
+
+.c1 {
+  font-size: 1.4em;
+  margin-right: 0.7em;
+  cursor: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  padding: 4px;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+.c4 {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  box-shadow: 0 0 3px 1px;
+  -webkit-animation: gOrsEz 50ms linear;
+  animation: gOrsEz 50ms linear;
+}
+
+@media (min-width:850px) {
+  .c1 {
+    font-size: 1.7em;
+  }
+}
+
+@media (min-width:850px) {
+  .c2 {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+}
+
+<Checkbox
+  checked={true}
+  label="Custom"
+  onChange={[Function]}
 >
-  <styled.label>
-    Custom
-  </styled.label>
-  <styled.div>
-    <styled.div />
+  <styled.div
+    onClick={[Function]}
+  >
+    <div
+      className="c0"
+      onClick={[Function]}
+    >
+      <styled.label>
+        <label
+          className="c1"
+        >
+          Custom
+        </label>
+      </styled.label>
+      <styled.div>
+        <div
+          className="c2"
+        >
+          <styled.div>
+            <div
+              className="c3 c4"
+            />
+          </styled.div>
+        </div>
+      </styled.div>
+    </div>
   </styled.div>
-</styled.div>
+</Checkbox>
+`;
+
+exports[`<Checkbox /> snapshot test no label should match the snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.c0:active .c3 {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 0 2px 3px;
+}
+
+.c1 {
+  font-size: 1.4em;
+  margin-right: 0.7em;
+  cursor: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  padding: 4px;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+@media (min-width:850px) {
+  .c1 {
+    font-size: 1.7em;
+  }
+}
+
+@media (min-width:850px) {
+  .c2 {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+}
+
+<Checkbox
+  checked={false}
+  onChange={[Function]}
+>
+  <styled.div
+    onClick={[Function]}
+  >
+    <div
+      className="c0"
+      onClick={[Function]}
+    >
+      <styled.label>
+        <label
+          className="c1"
+        />
+      </styled.label>
+      <styled.div>
+        <div
+          className="c2"
+        />
+      </styled.div>
+    </div>
+  </styled.div>
+</Checkbox>
+`;
+
+exports[`<Checkbox /> snapshot test unchecked should match the snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.c0:active .c3 {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 0 2px 3px;
+}
+
+.c1 {
+  font-size: 1.4em;
+  margin-right: 0.7em;
+  cursor: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  padding: 4px;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+@media (min-width:850px) {
+  .c1 {
+    font-size: 1.7em;
+  }
+}
+
+@media (min-width:850px) {
+  .c2 {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+}
+
+<Checkbox
+  checked={false}
+  label="Custom"
+  onChange={[Function]}
+>
+  <styled.div
+    onClick={[Function]}
+  >
+    <div
+      className="c0"
+      onClick={[Function]}
+    >
+      <styled.label>
+        <label
+          className="c1"
+        >
+          Custom
+        </label>
+      </styled.label>
+      <styled.div>
+        <div
+          className="c2"
+        />
+      </styled.div>
+    </div>
+  </styled.div>
+</Checkbox>
 `;
