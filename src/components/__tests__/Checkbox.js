@@ -52,4 +52,26 @@ describe('<Checkbox />', () => {
       })
     })
   })
+
+  describe('click test', () => {
+    describe('checked', () => {
+      it('calls onchange event handler with \'true\' as an argument', () => {
+        const changeHandler = jest.fn()
+        const tree = mount(<Checkbox checked onChange={changeHandler} />)
+
+        tree.simulate('click') 
+        expect(changeHandler).toHaveBeenCalledWith(false)
+      })
+    })
+
+    describe('unchecked', () => {
+      it('calls onchange event handler with \'false\' as an argument', () => {
+        const changeHandler = jest.fn()
+        const tree = mount(<Checkbox checked={false} onChange={changeHandler} />)
+
+        tree.simulate('click') 
+        expect(changeHandler).toHaveBeenCalledWith(true)
+      })
+    })
+  })
 })
