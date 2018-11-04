@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> snapshot test scaled should match the snapshot 1`] = `
+.c0 {
+  width: 120px;
+  font-size: 1em;
+  padding: 0.5em;
+  outline: none;
+  border-radius: 100px / 70px;
+  background: white;
+  -webkit-transition: all 50ms ease-in;
+  transition: all 50ms ease-in;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:active {
+  border-width: 2px;
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
+
+.c0:disabled {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  border: 1px solid;
+  box-shadow: inset 0 0 2px;
+  background: white;
+  cursor: auto;
+}
+
+<button
+  className="c0"
+  scale={2}
+/>
+`;
+
+exports[`<Button /> snapshot test themed should match the snapshot 1`] = `
+.c0 {
+  width: 120px;
+  font-size: 1em;
+  padding: 0.5em;
+  outline: none;
+  border-radius: 100px / 70px;
+  background: white;
+  -webkit-transition: all 50ms ease-in;
+  transition: all 50ms ease-in;
+  border: 1px solid #DB7093;
+  box-shadow: 0 0 5px 3px rgba(219,112,147,0.3);
+  color: #DB7093;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:active {
+  border-width: 2px;
+  background: rgba(219,112,147,0.3);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c0 #icon-fill path {
+  fill: #DB7093;
+}
+
+.c0:disabled {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  border: 1px solid rgba(219,112,147,0.3);
+  box-shadow: inset 0 0 2px rgba(219,112,147,0.3);
+  background: white;
+  cursor: auto;
+}
+
+.c0:disabled #icon-fill path {
+  fill: rgba(219,112,147,0.3);
+}
+
+<ThemeProvider
+  theme={
+    Object {
+      "primaryColor": "#DB7093",
+      "primaryColor1": "rgba(219,112,147,0.6)",
+      "primaryColor2": "rgba(219,112,147,0.3)",
+    }
+  }
+>
+  <styled.button>
+    <button
+      className="c0"
+    />
+  </styled.button>
+</ThemeProvider>
+`;
