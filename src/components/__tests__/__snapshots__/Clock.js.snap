@@ -1,38 +1,436 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Clock /> snapshot test should match the snapshot 1`] = `
+.c5 {
+  box-sizing: border-box;
+  width: 35px;
+  height: 60px;
+  border-radius: 3px;
+  font-size: 2em;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+.c5 .scroll-down-enter {
+  top: -100%;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-down-enter-active {
+  top: 0;
+}
+
+.c5 .scroll-down-exit {
+  top: 0;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-down-exit-active {
+  top: 100%;
+}
+
+.c5 .scroll-up-enter {
+  top: 100%;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-up-enter-active {
+  top: 0;
+}
+
+.c5 .scroll-up-exit {
+  top: 0;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-up-exit-active {
+  top: -100%;
+}
+
+.c5 .scroll-left-enter {
+  left: -100%;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-left-enter-active {
+  left: 0;
+}
+
+.c5 .scroll-left-exit {
+  left: 0;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-left-exit-active {
+  left: 100%;
+}
+
+.c5 .scroll-right-enter {
+  left: 100%;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-right-enter-active {
+  left: 0;
+}
+
+.c5 .scroll-right-exit {
+  left: 0;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-right-exit-active {
+  left: -100%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.c0 {
+  height: 70px;
+  border-radius: 50%;
+  padding: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  background: white;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+.c4 {
+  width: 20px;
+  height: 30px;
+  font-size: 1.5em;
+  border: 1px solid;
+  box-shadow: 0 0 3px 1px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 > .c3:first-child {
+  margin-right: 3px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.c7 {
+  width: 0px;
+  height: 1px;
+  box-shadow: -2px 2px 3px;
+  -webkit-transform-origin: 100%;
+  -ms-transform-origin: 100%;
+  transform-origin: 100%;
+  -webkit-transform: translateX(-50%) rotate(90deg);
+  -ms-transform: translateX(-50%) rotate(90deg);
+  transform: translateX(-50%) rotate(90deg);
+  position: absolute;
+}
+
+@media (min-width:375px) {
+  .c4 {
+    width: 25px;
+    height: 35px;
+    font-size: 1.8em;
+  }
+}
+
+@media (min-width:850px) {
+  .c4 {
+    width: 30px;
+    height: 40px;
+    font-size: 2em;
+  }
+}
+
+@media (min-width:850px) {
+  .c1 {
+    width: 250px;
+  }
+}
+
 <Clock
   timeSecs={0}
 >
   <styled.div
     innerRef={
       Object {
-        "current": <div
-          class="sc-htpNat bVcGTz"
+        "current": .c5 {
+        box-sizing: border-box;
+        width: 35px;
+        height: 60px;
+        border-radius: 3px;
+        font-size: 2em;
+        position: relative;
+        overflow: hidden;
+        background: white;
+        border: 1px solid;
+        box-shadow: 0 0 5px 3px;
+      }
+      
+      .c5 .scroll-down-enter {
+        top: -100%;
+        -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-down-enter-active {
+        top: 0;
+      }
+      
+      .c5 .scroll-down-exit {
+        top: 0;
+        -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-down-exit-active {
+        top: 100%;
+      }
+      
+      .c5 .scroll-up-enter {
+        top: 100%;
+        -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-up-enter-active {
+        top: 0;
+      }
+      
+      .c5 .scroll-up-exit {
+        top: 0;
+        -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-up-exit-active {
+        top: -100%;
+      }
+      
+      .c5 .scroll-left-enter {
+        left: -100%;
+        -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-left-enter-active {
+        left: 0;
+      }
+      
+      .c5 .scroll-left-exit {
+        left: 0;
+        -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-left-exit-active {
+        left: 100%;
+      }
+      
+      .c5 .scroll-right-enter {
+        left: 100%;
+        -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-right-enter-active {
+        left: 0;
+      }
+      
+      .c5 .scroll-right-exit {
+        left: 0;
+        -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+        transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+      }
+      
+      .c5 .scroll-right-exit-active {
+        left: -100%;
+      }
+      
+      .c6 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      
+      .c0 {
+        height: 70px;
+        border-radius: 50%;
+        padding: 3px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: relative;
+        background: white;
+        border: 1px solid;
+        box-shadow: 0 0 5px 3px;
+      }
+      
+      .c4 {
+        width: 20px;
+        height: 30px;
+        font-size: 1.5em;
+        border: 1px solid;
+        box-shadow: 0 0 3px 1px;
+      }
+      
+      .c2 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+      }
+      
+      .c2 > .c3:first-child {
+        margin-right: 3px;
+      }
+      
+      .c1 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 180px;
+      }
+      
+      .c7 {
+        width: 0px;
+        height: 1px;
+        box-shadow: -2px 2px 3px;
+        -webkit-transform-origin: 100%;
+        -ms-transform-origin: 100%;
+        transform-origin: 100%;
+        -webkit-transform: translateX(-50%) rotate(90deg);
+        -ms-transform: translateX(-50%) rotate(90deg);
+        transform: translateX(-50%) rotate(90deg);
+        position: absolute;
+      }
+      
+      @media (min-width:375px) {
+        .c4 {
+          width: 25px;
+          height: 35px;
+          font-size: 1.8em;
+        }
+      }
+      
+      @media (min-width:850px) {
+        .c4 {
+          width: 30px;
+          height: 40px;
+          font-size: 2em;
+        }
+      }
+      
+      @media (min-width:850px) {
+        .c1 {
+          width: 250px;
+        }
+      }
+      
+      <div
+          class="c0"
       >
           <div
-              class="sc-bZQynM hhTrkN"
+              class="c1"
           >
               <div
-                  class="sc-EHOje deRQDs"
+                  class="c2"
               >
                   <div
-                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      class="c3 c4 c5"
                   >
                       <div>
                           <div
-                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                              class="c6"
                           >
                               0
                           </div>
                       </div>
                   </div>
                   <div
-                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      class="c3 c4 c5"
                   >
                       <div>
                           <div
-                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                              class="c6"
                           >
                               0
                           </div>
@@ -40,25 +438,25 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                   </div>
               </div>
               <div
-                  class="sc-EHOje deRQDs"
+                  class="c2"
               >
                   <div
-                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      class="c3 c4 c5"
                   >
                       <div>
                           <div
-                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                              class="c6"
                           >
                               0
                           </div>
                       </div>
                   </div>
                   <div
-                      class="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      class="c3 c4 c5"
                   >
                       <div>
                           <div
-                              class="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                              class="c6"
                           >
                               0
                           </div>
@@ -67,7 +465,7 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
               </div>
           </div>
           <div
-              class="sc-gzVnrw eInPmc"
+              class="c7"
               rotate="0"
               width="0"
           />
@@ -76,28 +474,28 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
     }
   >
     <div
-      className="sc-htpNat bVcGTz"
+      className="c0"
     >
       <styled.div>
         <div
-          className="sc-bZQynM hhTrkN"
+          className="c1"
         >
           <styled.div>
             <div
-              className="sc-EHOje deRQDs"
+              className="c2"
             >
               <Styled(Carousel)
                 direction="down"
               >
                 <Carousel
-                  className="sc-bxivhb dQNVgY"
+                  className="c3 c4"
                   direction="down"
                 >
                   <styled.div
-                    className="sc-bxivhb dQNVgY"
+                    className="c3 c4"
                   >
                     <div
-                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      className="c3 c4 c5"
                     >
                       <TransitionGroup
                         childFactory={[Function]}
@@ -132,10 +530,10 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                                 key="0"
                               >
                                 <styled.div
-                                  className="sc-ifAKCX eXRWbD"
+                                  className=""
                                 >
                                   <div
-                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                    className="c6"
                                   >
                                     0
                                   </div>
@@ -153,14 +551,14 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                 direction="down"
               >
                 <Carousel
-                  className="sc-bxivhb dQNVgY"
+                  className="c3 c4"
                   direction="down"
                 >
                   <styled.div
-                    className="sc-bxivhb dQNVgY"
+                    className="c3 c4"
                   >
                     <div
-                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      className="c3 c4 c5"
                     >
                       <TransitionGroup
                         childFactory={[Function]}
@@ -195,10 +593,10 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                                 key="0"
                               >
                                 <styled.div
-                                  className="sc-ifAKCX eXRWbD"
+                                  className=""
                                 >
                                   <div
-                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                    className="c6"
                                   >
                                     0
                                   </div>
@@ -216,20 +614,20 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-EHOje deRQDs"
+              className="c2"
             >
               <Styled(Carousel)
                 direction="down"
               >
                 <Carousel
-                  className="sc-bxivhb dQNVgY"
+                  className="c3 c4"
                   direction="down"
                 >
                   <styled.div
-                    className="sc-bxivhb dQNVgY"
+                    className="c3 c4"
                   >
                     <div
-                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      className="c3 c4 c5"
                     >
                       <TransitionGroup
                         childFactory={[Function]}
@@ -264,10 +662,10 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                                 key="0"
                               >
                                 <styled.div
-                                  className="sc-ifAKCX eXRWbD"
+                                  className=""
                                 >
                                   <div
-                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                    className="c6"
                                   >
                                     0
                                   </div>
@@ -285,14 +683,14 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                 direction="down"
               >
                 <Carousel
-                  className="sc-bxivhb dQNVgY"
+                  className="c3 c4"
                   direction="down"
                 >
                   <styled.div
-                    className="sc-bxivhb dQNVgY"
+                    className="c3 c4"
                   >
                     <div
-                      className="sc-bxivhb dQNVgY sc-bdVaJa hJKpzc"
+                      className="c3 c4 c5"
                     >
                       <TransitionGroup
                         childFactory={[Function]}
@@ -327,10 +725,10 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
                                 key="0"
                               >
                                 <styled.div
-                                  className="sc-ifAKCX eXRWbD"
+                                  className=""
                                 >
                                   <div
-                                    className="sc-ifAKCX eXRWbD sc-bwzfXH jvxqEc"
+                                    className="c6"
                                   >
                                     0
                                   </div>
@@ -353,7 +751,7 @@ exports[`<Clock /> snapshot test should match the snapshot 1`] = `
         width={0}
       >
         <div
-          className="sc-gzVnrw eInPmc"
+          className="c7"
           rotate={0}
           width={0}
         />
