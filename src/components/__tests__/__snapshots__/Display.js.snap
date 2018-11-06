@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Display /> snapshot test should match the snapshot 1`] = `
+.c0 {
+  height: 150px;
+  padding: .52em .78em;
+  border-radius: 10px;
+  font-size: 1.25em;
+  background: white;
+  border: 1px solid;
+  box-shadow: inset 0 0 3px 2px;
+}
+
+.c1 {
+  width: 86%;
+  height: 100%;
+  padding-right: 3%;
+  overflow-y: scroll;
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.c2 {
+  width: 10%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.c2 > div:first-child {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c4 {
+  text-align: right;
+  -webkit-transform: scaleX(1.3) scaleY(3);
+  -ms-transform: scaleX(1.3) scaleY(3);
+  transform: scaleX(1.3) scaleY(3);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c3 {
+  text-shadow: 0 2px 5px;
+}
+
+.c3:active {
+  -webkit-transform: scaleX(1.4) scaleY(3) translateY(1px);
+  -ms-transform: scaleX(1.4) scaleY(3) translateY(1px);
+  transform: scaleX(1.4) scaleY(3) translateY(1px);
+  text-shadow: 0 1px 3px;
+}
+
+.c5 {
+  text-shadow: 0 -2px 5px;
+}
+
+.c5:active {
+  -webkit-transform: scaleX(1.4) scaleY(3) translateY(-1px);
+  -ms-transform: scaleX(1.4) scaleY(3) translateY(-1px);
+  transform: scaleX(1.4) scaleY(3) translateY(-1px);
+  text-shadow: 0 -1px 3px;
+}
+
+@media (min-width:550px) {
+  .c0 {
+    padding: .52em;
+  }
+}
+
+@media (min-width:850px) {
+  .c0 {
+    padding: .52em .78em;
+  }
+}
+
+<Display>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <styled.div
+        innerRef={
+          Object {
+            "current": .c0 {
+            width: 86%;
+            height: 100%;
+            padding-right: 3%;
+            overflow-y: scroll;
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: top;
+          }
+          
+          <div
+              class="c0"
+          />,
+          }
+        }
+      >
+        <div
+          className="c1"
+        />
+      </styled.div>
+      <styled.div>
+        <div
+          className="c2"
+        >
+          <div>
+            <Styled(styled.div)
+              onClick={[Function]}
+            >
+              <styled.div
+                className="c3"
+                onClick={[Function]}
+              >
+                <div
+                  className="c3 c4"
+                  onClick={[Function]}
+                >
+                  ⬆
+                </div>
+              </styled.div>
+            </Styled(styled.div)>
+            <Styled(styled.div)
+              onClick={[Function]}
+            >
+              <styled.div
+                className="c5"
+                onClick={[Function]}
+              >
+                <div
+                  className="c5 c4"
+                  onClick={[Function]}
+                >
+                  ⬇
+                </div>
+              </styled.div>
+            </Styled(styled.div)>
+          </div>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</Display>
+`;
