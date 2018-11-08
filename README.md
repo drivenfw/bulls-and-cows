@@ -1,2 +1,2 @@
-Another bulls and cows game =)
+Another Bulls and Cows game =)
 

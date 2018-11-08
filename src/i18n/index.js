@@ -6,6 +6,7 @@ import ru from 'react-intl/locale-data/ru'
 import enMessages from './en.json'
 import ruMessages from './ru.json'
 
+
 addLocaleData([...en, ...ru])
 
 export default ({
