@@ -156,7 +156,7 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
-  options: PropTypes.array
+  options: PropTypes.array.isRequired
 }
 
 export default Input
