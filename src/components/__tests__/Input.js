@@ -17,5 +17,23 @@ describe('<Input />', () => {
       expect(toJson(tree)).toMatchSnapshot()
     })
   })
+
+  describe('get value', () => {
+    const wrapper = shallow(<Input options={['a', 'b', 'c']} />)
+
+    it('returns current value', () => {
+      expect(wrapper.instance().value).toBe('a')
+    })
+
+    it('returns current value', () => {
+      wrapper.setState({ index: 1 })
+      expect(wrapper.instance().value).toBe('b')
+    })
+
+    it('returns current value', () => {
+      wrapper.setState({ index: 2 })
+      expect(wrapper.instance().value).toBe('c')
+    })
+  })
 })
 
