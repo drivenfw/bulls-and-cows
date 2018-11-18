@@ -35,5 +35,24 @@ describe('<Input />', () => {
       expect(wrapper.instance().value).toBe('c')
     })
   })
+
+  describe('set value', () => {
+    const wrapper = shallow(<Input options={['a', 'b', 'c']} />)
+   
+    it('sets current value', () => {
+      wrapper.instance().value = 'b'
+      expect(wrapper.instance().value).toBe('b')
+    }) 
+
+    it('sets current value', () => {
+      wrapper.instance().value = 'c'
+      expect(wrapper.instance().value).toBe('c')
+    }) 
+
+    it('does not set value that is not among options', () => {
+      wrapper.instance().value = 'd'
+      expect(wrapper.instance().value).toBe('c')
+    })
+  })
 })
 
