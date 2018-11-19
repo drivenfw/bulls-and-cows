@@ -54,5 +54,13 @@ describe('<Input />', () => {
       expect(wrapper.instance().value).toBe('c')
     })
   })
+
+  describe('buttons', () => {
+    const wrapper = mount(<Input options={['a', 'b', 'c']} />)
+
+    it('contains two div elements with onClick attribute', () => {
+      expect(wrapper.find('div[onClick]').length).toBe(2)
+    })
+  })
 })
 
