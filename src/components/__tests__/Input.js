@@ -61,6 +61,23 @@ describe('<Input />', () => {
     it('contains two div elements with onClick attribute', () => {
       expect(wrapper.find('div[onClick]').length).toBe(2)
     })
+
+    it('click on the up button scrolls input up', () => {
+      const upButton = wrapper.find('div[onClick]').first()
+
+      upButton.simulate('click')
+      expect(wrapper.instance().value).toBe('b')
+    })
+
+    it('click on the down button scrolls input down', () => {
+      const upButton = wrapper.find('div[onClick]').last()
+
+      upButton.simulate('click')
+      expect(wrapper.instance().value).toBe('a')
+
+      upButton.simulate('click')
+      expect(wrapper.instance().value).toBe('c')
+    })
   })
 })
 
