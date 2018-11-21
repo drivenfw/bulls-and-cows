@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> snapshot test should match the snapshot 1`] = `
+.c5 {
+  box-sizing: border-box;
+  width: 35px;
+  height: 60px;
+  border-radius: 3px;
+  font-size: 2em;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border: 1px solid;
+  box-shadow: 0 0 5px 3px;
+}
+
+.c5 .scroll-down-enter {
+  top: -100%;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-down-enter-active {
+  top: 0;
+}
+
+.c5 .scroll-down-exit {
+  top: 0;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-down-exit-active {
+  top: 100%;
+}
+
+.c5 .scroll-up-enter {
+  top: 100%;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-up-enter-active {
+  top: 0;
+}
+
+.c5 .scroll-up-exit {
+  top: 0;
+  -webkit-transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: top 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-up-exit-active {
+  top: -100%;
+}
+
+.c5 .scroll-left-enter {
+  left: -100%;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-left-enter-active {
+  left: 0;
+}
+
+.c5 .scroll-left-exit {
+  left: 0;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-left-exit-active {
+  left: 100%;
+}
+
+.c5 .scroll-right-enter {
+  left: 100%;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-right-enter-active {
+  left: 0;
+}
+
+.c5 .scroll-right-exit {
+  left: 0;
+  -webkit-transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+  transition: left 500ms cubic-bezier(0,0.7,0.25,1.19);
+}
+
+.c5 .scroll-right-exit-active {
+  left: -100%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.c0 > .c2 {
+  cursor: pointer;
+}
+
+.c4 {
+  width: 215px;
+  height: 33px;
+  font-size: 1.4em;
+  border-radius: 5px;
+}
+
+.c3 {
+  font-size: 1.8em;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  text-shadow: 0 2px 7px , 0 5px 5px;
+}
+
+.c1 {
+  margin-right: 5px;
+  -webkit-transform: rotate(-90deg) scaleX(2.2) scaleY(0.9);
+  -ms-transform: rotate(-90deg) scaleX(2.2) scaleY(0.9);
+  transform: rotate(-90deg) scaleX(2.2) scaleY(0.9);
+}
+
+.c1:active {
+  -webkit-transform: rotate(-90deg) scaleX(2.2) scaleY(0.8) translateY(1px);
+  -ms-transform: rotate(-90deg) scaleX(2.2) scaleY(0.8) translateY(1px);
+  transform: rotate(-90deg) scaleX(2.2) scaleY(0.8) translateY(1px);
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+
+.c7 {
+  margin-left: 5px;
+  -webkit-transform: rotate(90deg) scaleX(2.2) scaleY(0.9);
+  -ms-transform: rotate(90deg) scaleX(2.2) scaleY(0.9);
+  transform: rotate(90deg) scaleX(2.2) scaleY(0.9);
+}
+
+.c7:active {
+  -webkit-transform: rotate(90deg) scaleX(2.2) scaleY(0.9) translateY(1px);
+  -ms-transform: rotate(90deg) scaleX(2.2) scaleY(0.9) translateY(1px);
+  transform: rotate(90deg) scaleX(2.2) scaleY(0.9) translateY(1px);
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+
+@media (min-width:850px) {
+  .c4 {
+    width: 300px;
+    height: 40px;
+    font-size: 1.7em;
+  }
+}
+
+@media (min-width:850px) {
+  .c3 {
+    font-size: 2.2em;
+  }
+}
+
+<Select
+  onChange={[Function]}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <Styled(styled.div)
+        onClick={[Function]}
+      >
+        <styled.div
+          className="c1"
+          onClick={[Function]}
+        >
+          <div
+            className="c1 c2 c3"
+            onClick={[Function]}
+          >
+            ⌃
+          </div>
+        </styled.div>
+      </Styled(styled.div)>
+      <Styled(Carousel)
+        direction="right"
+      >
+        <Carousel
+          className="c4"
+          direction="right"
+        >
+          <styled.div
+            className="c4"
+          >
+            <div
+              className="c4 c5"
+            >
+              <TransitionGroup
+                childFactory={[Function]}
+                component="div"
+              >
+                <div>
+                  <CSSTransition
+                    classNames="scroll-right"
+                    in={true}
+                    key=".$.0"
+                    mountOnEnter={true}
+                    onExited={[Function]}
+                    timeout={500}
+                    unmountOnExit={true}
+                  >
+                    <Transition
+                      appear={false}
+                      enter={true}
+                      exit={true}
+                      in={true}
+                      mountOnEnter={true}
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={500}
+                      unmountOnExit={true}
+                    >
+                      <styled.div>
+                        <div
+                          className="c6"
+                        />
+                      </styled.div>
+                    </Transition>
+                  </CSSTransition>
+                </div>
+              </TransitionGroup>
+            </div>
+          </styled.div>
+        </Carousel>
+      </Styled(Carousel)>
+      <Styled(styled.div)
+        onClick={[Function]}
+      >
+        <styled.div
+          className="c7"
+          onClick={[Function]}
+        >
+          <div
+            className="c7 c2 c3"
+            onClick={[Function]}
+          >
+            ⌃
+          </div>
+        </styled.div>
+      </Styled(styled.div)>
+    </div>
+  </styled.div>
+</Select>
+`;
