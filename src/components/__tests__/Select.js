@@ -17,5 +17,13 @@ describe('<Select />', () => {
       expect(toJson(tree)).toMatchSnapshot()
     })
   })
+
+  describe('buttons', () => {
+    const wrapper = mount(<Select onChange={() => {}} />)
+
+    it('contains two div elements with onClick attribute', () => {
+      expect(wrapper.find('div[onClick]').length).toBe(2)
+    })
+  })
 })
 
