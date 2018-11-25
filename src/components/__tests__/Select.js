@@ -21,7 +21,10 @@ describe('<Select />', () => {
   describe('buttons', () => {
     const onChangeHandler = jest.fn()
     const wrapper = mount(
-      <Select onChange={onChangeHandler}>
+      <Select
+        value={1}
+        onChange={onChangeHandler}
+      >
         <Option value={1}>A</Option>
         <Option value={2}>B</Option>
         <Option value={3}>C</Option>
@@ -37,6 +40,13 @@ describe('<Select />', () => {
 
       leftButton.simulate('click')
       expect(onChangeHandler).toHaveBeenCalledWith(3)
+    })
+
+    it('click on the right button scrolls select right', () => {
+      const rightButton = wrapper.find('div[onClick]').last()
+
+      rightButton.simulate('click')
+      expect(onChangeHandler).toHaveBeenCalledWith(2)
     })
   })
 })
