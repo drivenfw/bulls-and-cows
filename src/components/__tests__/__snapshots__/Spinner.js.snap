@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Spinner /> snapshot test themed should match the snapshot 1`] = `
+.c0 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid;
+  -webkit-animation: MQNGw 1s linear infinite;
+  animation: MQNGw 1s linear infinite;
+}
+
+<styled.div>
+  <div
+    className="c0"
+  />
+</styled.div>
+`;
