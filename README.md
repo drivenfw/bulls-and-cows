@@ -4,4 +4,5 @@ Technologies:
 
 React
 Redux
+Redux-Saga
 
