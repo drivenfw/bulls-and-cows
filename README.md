@@ -5,4 +5,5 @@ Technologies:
 React
 Redux
 Redux-Saga
+React-Intl
 
