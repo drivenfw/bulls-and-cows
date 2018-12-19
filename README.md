@@ -2,6 +2,7 @@ Another Bulls and Cows game =)
 
 Technologies:
 
+Enzyme
 Jest
 React
 React-Intl
