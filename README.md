@@ -8,4 +8,5 @@ React
 React-Intl
 Redux
 Redux-Saga
+Styled-Components
 
