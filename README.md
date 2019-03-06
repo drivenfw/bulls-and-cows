@@ -5,7 +5,7 @@ Technologies:
 Enzyme\
 Jest\
 React\
-React-Intl
+React-Intl\
 Redux
 Redux-Saga
 Styled-Components
