@@ -6,7 +6,7 @@ Enzyme\
 Jest\
 React\
 React-Intl\
-Redux
+Redux\
 Redux-Saga
 Styled-Components
 
