@@ -7,6 +7,6 @@ Jest\
 React\
 React-Intl\
 Redux\
-Redux-Saga
+Redux-Saga\
 Styled-Components
 
